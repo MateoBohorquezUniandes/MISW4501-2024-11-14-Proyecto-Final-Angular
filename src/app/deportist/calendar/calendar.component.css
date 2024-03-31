@@ -1,0 +1,6 @@
+.col{
+  width:140px;
+  height:140px;
+  flex: none;
+  border:1px solid #000;
+}
