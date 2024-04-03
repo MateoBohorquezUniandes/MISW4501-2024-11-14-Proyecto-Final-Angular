@@ -1,4 +1,66 @@
 .btn-primario {
   background-color: #5227cc;
   color: white;
+  vertical-align: middle;
+  width: 136px;
+  height: 30px;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: bold;
+}
+.container {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.card {
+  align-self: center;
+  height: 500px;
+  width: 525px;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-45%);
+}
+h5 {
+  font-family: "Roboto";
+  font-size: 34px;
+  font-weight: bold;
+}
+label {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 0px;
+}
+#logo_uniandes {
+  width: 100px;
+  height: 100px;
+}
+a,
+input,
+option,
+p,
+select {
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+  font-weight: bold;
+}
+#selector_tipo_usuario {
+  width: 240px;
+  height: 38px;
+}
+#selector_tipo_documento {
+  width: 75px;
+  height: 38px;
+  display: inline-block;
+}
+#input_password {
+  width: 240px;
+  height: 38px;
+}
+#input_numero_documento {
+  width: 240px;
+  height: 38px;
+  display: inline-block;
+  margin-left: 3px;
 }

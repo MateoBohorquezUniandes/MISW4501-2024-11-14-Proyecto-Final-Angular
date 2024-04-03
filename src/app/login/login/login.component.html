@@ -1,238 +1,69 @@
-<div
-  class="container"
-  style="justify-content: center; text-align: center; display: flex"
->
-  <div
-    class="card"
-    style="
-      align-self: center;
-      height: 500px;
-      width: 525px;
-      position: absolute;
-      top: 45%;
-      transform: translateY(-45%);
-    "
-  >
+<div class="container">
+  <div class="card">
     <div class="card-body">
-      <h5
-        class="card-title"
-        style="font-family: 'Roboto'; font-size: 34px; font-weight: bold"
-      >
-        Bienvenido a SportApp
-      </h5>
+      <h5 class="card-title">Bienvenido a SportApp</h5>
       <img
+        id="logo_uniandes"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/University_of_Los_Andes_logo.svg/1200px-University_of_Los_Andes_logo.svg.png"
-        style="width: 100px; height: 100px"
       />
       <br />
       <br />
       <div class="mb-3 row">
-        <label
-          for="staticEmail"
-          class="col-sm-3 col-form-label"
-          style="
-            font-family: 'Roboto';
-            font-size: 18px;
-            font-weight: bold;
-            padding-right: 0px;
-          "
-          >Tipo Usuario</label
-        >
+        <label class="col-sm-3 col-form-label">Tipo Usuario</label>
         <div class="col-sm-8">
           <select
+            id="selector_tipo_usuario"
             class="form-select"
             aria-label="Default select example"
-            style="
-              width: 240px;
-              height: 38px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
           >
-            <option
-              selected
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Seleccionar
-            </option>
-            <option
-              value="1"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Deportista
-            </option>
-            <option
-              value="2"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Socio de negocio
-            </option>
-            <option
-              value="3"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Organizador de eventos
-            </option>
+            <option selected>Seleccionar</option>
+            <option value="1">Deportista</option>
+            <option value="2">Socio de negocio</option>
+            <option value="3">Organizador de eventos</option>
           </select>
         </div>
       </div>
       <div class="mb-3 row">
-        <label
-          for="staticEmail"
-          class="col-sm-3 col-form-label"
-          style="
-            font-family: 'Roboto';
-            font-size: 18px;
-            font-weight: bold;
-            padding-right: 0px;
-          "
-          >Número de identificación</label
-        >
+        <label class="col-sm-3 col-form-label">Número de identificación</label>
         <div class="col-sm-8">
           <select
+            id="selector_tipo_documento"
             class="form-select"
             aria-label="Default select example"
-            style="
-              width: 75px;
-              height: 38px;
-              display: inline-block;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
           >
-            <option
-              selected
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Tipo
-            </option>
-            <option
-              value="1"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              CC
-            </option>
-            <option
-              value="2"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              NIT
-            </option>
-            <option
-              value="3"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              CE
-            </option>
+            <option selected>Tipo</option>
+            <option value="1">CC</option>
+            <option value="2">NIT</option>
+            <option value="3">CE</option>
           </select>
           <input
+            id="input_numero_documento"
             type="number"
             class="form-control"
-            id="exampleFormControlInput1"
             placeholder="123456789"
-            style="
-              width: 240px;
-              height: 38px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
           />
         </div>
       </div>
       <div class="mb-3 row">
-        <label
-          for="inputPassword"
-          class="col-sm-3 col-form-label"
-          style="font-family: 'Roboto'; font-size: 18px; font-weight: bold"
+        <label for="inputPassword" class="col-sm-3 col-form-label"
           >Contraseña</label
         >
         <div class="col-sm-9">
           <input
+            id="input_password"
             type="password"
             class="form-control"
             placeholder="***********"
-            id="inputPassword"
-            style="
-              width: 240px;
-              height: 38px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
           />
         </div>
       </div>
       <div class="mb-1 row">
-        <p
-          style="
-            font-family: 'Roboto Condensed';
-            font-size: 16px;
-            font-weight: bold;
-          "
-        >
+        <p>
           Aun no te has registrado?
-          <a
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            href="/registry"
-            >Registrarse</a
-          >
+          <a href="/registry">Registrarse</a>
         </p>
       </div>
-      <button
-        type="button"
-        class="btn btn-primario"
-        style="
-          vertical-align: middle;
-          width: 136px;
-          height: 30px;
-          font-family: 'Roboto';
-          font-size: 16px;
-          font-weight: bold;
-        "
-      >
-        Iniciar Sesión
-      </button>
+      <button type="button" class="btn btn-primario">Iniciar Sesión</button>
     </div>
   </div>
 </div>
