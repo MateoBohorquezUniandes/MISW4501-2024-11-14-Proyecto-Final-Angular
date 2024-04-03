@@ -11,9 +11,8 @@ describe('RegistryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegistryComponent ]
-    })
-    .compileComponents();
+      declarations: [RegistryComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,28 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-.color-primary-purple{
-  background-color:#5227CC;
+.color-primary-purple {
+  background-color: #5227cc;
 }
-.color-secondary{
-  background-color:#F2DFD7;
+.color-secondary {
+  background-color: #f2dfd7;
 }
-.color-terceary{
-  background-color:#D4C1EC;
+.color-terceary {
+  background-color: #d4c1ec;
 }
-.color-cuaternary{
-  background-color:#9F9FED;
+.color-cuaternary {
+  background-color: #9f9fed;
 }
-.color-green{
-  background-color:#8cc7a1;;
+.color-green {
+  background-color: #8cc7a1;
 }
-.color-black{
-  background-color:#000000;
+.color-black {
+  background-color: #000000;
 }
-.color-disable{
-  background-color:#7C7C7C;
+.color-disable {
+  background-color: #7c7c7c;
 }
-body{
-  --bs-body-bg: #9F9FED;
+body {
+  --bs-body-bg: #9f9fed;
 }
-.card{
-  --bs-body-bg: #FFFFFF;
+.card {
+  --bs-body-bg: #ffffff;
 }
