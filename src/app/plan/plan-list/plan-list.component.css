@@ -1,0 +1,10 @@
+.my-card-title {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.btn-continue {
+  width: 228px;
+  height: 30px;
+  margin-top: 50px;
+}
