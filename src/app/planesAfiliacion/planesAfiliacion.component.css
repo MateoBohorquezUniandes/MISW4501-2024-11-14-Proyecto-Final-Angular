@@ -55,7 +55,8 @@ p{
 
 button {
   vertical-align: bottom;
-  width: 90%;
+  width:fit-content;
+  padding: 5px;
   height: 30px;
   font-family: 'Roboto';
   font-size: 15px;
@@ -64,13 +65,23 @@ button {
 }
 
 #btn_PlanGratuito {
-  width:30%;
+  width:fit-content;
+  padding: 5px;
   margin: 50px;
+
 }
 
 #div_btn_gratuito {
   text-align: center;
 }
 
+#a_deportistalink {
+  color: white;
+  text-decoration: none; /* no underline */
+}
+
+.card-footer {
+  text-align: center;
+}
 
 
