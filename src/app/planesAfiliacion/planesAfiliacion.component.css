@@ -1,0 +1,76 @@
+*{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed";
+}
+
+body{
+  background-color: #CC99FF;
+}
+
+.container {
+  width:85%;
+  margin: 0px auto;
+  padding: 30px;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap:25px;
+}
+
+#CardGratuito {
+  background-color: #9966FF;
+  font-size: 15px;
+  height: 90%;
+  margin: 20px;
+  padding:20px
+}
+
+#CardPremium {
+  background-color: #FFFFFF;
+  font-size: 15px;
+  height: 110%;
+  padding:20px
+}
+
+#CardIntermedio {
+ background-color: #FFCCCC;
+ font-size: 15px;
+ height: 90%;
+ margin: 20px;
+ padding:20px
+}
+
+ol {
+  padding: 10px;
+}
+
+p{
+  padding: 5px;
+}
+
+button {
+  vertical-align: bottom;
+  width: 90%;
+  height: 30px;
+  font-family: 'Roboto';
+  font-size: 15px;
+  background-color: #5227cc;
+  color: white;
+}
+
+#btn_PlanGratuito {
+  width:30%;
+  margin: 50px;
+}
+
+#div_btn_gratuito {
+  text-align: center;
+}
+
+
+
