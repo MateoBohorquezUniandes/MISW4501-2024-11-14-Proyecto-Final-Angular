@@ -15,8 +15,6 @@
 }
 .card {
   align-self: center;
-  height: 500px;
-  width: 525px;
   position: absolute;
   top: 45%;
   transform: translateY(-45%);

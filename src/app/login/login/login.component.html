@@ -8,62 +8,151 @@
       />
       <br />
       <br />
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Tipo Usuario</label>
-        <div class="col-sm-8">
-          <select
-            id="selector_tipo_usuario"
-            class="form-select"
-            aria-label="Default select example"
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="
+          !loginForm.invalid &&
+            login(
+              loginForm.controls.tipo_usuario.value,
+              loginForm.controls.tipo_doc.value,
+              loginForm.controls.documento.value,
+              loginForm.controls.contrasena.value
+            )
+        "
+      >
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Tipo Usuario</label>
+          <div class="col-sm-8">
+            <select
+              id="selector_tipo_usuario"
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="tipo_usuario"
+            >
+              <option value="0">Seleccionar</option>
+              <option value="1">Deportista</option>
+              <option value="2">Socio de negocio</option>
+              <option value="3">Organizador de eventos</option>
+            </select>
+            <div
+              style="max-width: 240px"
+              class="alert alert-danger dismissible fade show"
+              *ngIf="
+                loginForm.get('tipo_usuario')!.hasError('min') &&
+                loginForm.get('tipo_usuario')!.touched
+              "
+            >
+              Debe seleccionar un tipo de usuario
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label"
+            >Número de identificación</label
           >
-            <option selected>Seleccionar</option>
-            <option value="1">Deportista</option>
-            <option value="2">Socio de negocio</option>
-            <option value="3">Organizador de eventos</option>
-          </select>
+          <div class="col-sm-8">
+            <select
+              id="selector_tipo_documento"
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="tipo_doc"
+            >
+              <option value="0">Tipo</option>
+              <option value="1">CC</option>
+              <option value="2">NIT</option>
+              <option value="3">CE</option>
+            </select>
+            <input
+              id="input_numero_documento"
+              type="text"
+              class="form-control"
+              placeholder="123456789"
+              formControlName="documento"
+            />
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 321px"
+              *ngIf="
+                loginForm.get('tipo_doc')!.hasError('min') &&
+                loginForm.get('tipo_doc')!.touched
+              "
+            >
+              Debe seleccionar un tipo de documento
+            </div>
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 321px"
+              *ngIf="
+                loginForm.get('documento')!.hasError('required') &&
+                loginForm.get('documento')!.touched
+              "
+            >
+              Debe ingresar un número de documento
+            </div>
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 321px"
+              *ngIf="
+                loginForm.get('documento')!.hasError('minlength') &&
+                loginForm.get('documento')!.touched
+              "
+            >
+              El número de documento debe tener minimo 7 caracteres
+            </div>
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 321px"
+              *ngIf="
+                loginForm.get('documento')!.hasError('maxlength') &&
+                loginForm.get('documento')!.touched
+              "
+            >
+              El número de documento debe tener maximo 11 caracteres
+            </div>
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 321px"
+              *ngIf="
+                loginForm.get('documento')!.hasError('pattern') &&
+                loginForm.get('documento')!.touched
+              "
+            >
+              El número de documento debe estar conformado solo de numeros
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Número de identificación</label>
-        <div class="col-sm-8">
-          <select
-            id="selector_tipo_documento"
-            class="form-select"
-            aria-label="Default select example"
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"
+            >Contraseña</label
           >
-            <option selected>Tipo</option>
-            <option value="1">CC</option>
-            <option value="2">NIT</option>
-            <option value="3">CE</option>
-          </select>
-          <input
-            id="input_numero_documento"
-            type="number"
-            class="form-control"
-            placeholder="123456789"
-          />
+          <div class="col-sm-9">
+            <input
+              id="input_password"
+              type="password"
+              class="form-control"
+              placeholder="***********"
+              formControlName="contrasena"
+            />
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 240px"
+              *ngIf="
+                loginForm.get('contrasena')!.hasError('required') &&
+                loginForm.get('contrasena')!.touched
+              "
+            >
+              Debe ingresar una contraseña
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-3 col-form-label"
-          >Contraseña</label
-        >
-        <div class="col-sm-9">
-          <input
-            id="input_password"
-            type="password"
-            class="form-control"
-            placeholder="***********"
-          />
+        <div class="mb-1 row">
+          <p>
+            Aun no te has registrado?
+            <a href="/registry">Registrarse</a>
+          </p>
         </div>
-      </div>
-      <div class="mb-1 row">
-        <p>
-          Aun no te has registrado?
-          <a href="/registry">Registrarse</a>
-        </p>
-      </div>
-      <button type="button" class="btn btn-primario">Iniciar Sesión</button>
+        <button type="submit" class="btn btn-primario">Iniciar Sesión</button>
+      </form>
     </div>
   </div>
 </div>
