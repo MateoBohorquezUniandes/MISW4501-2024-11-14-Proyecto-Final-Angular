@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es-CO" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="8447570688439069061" datatype="html">
+        <source>Gratuito</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6350605256533110679" datatype="html">
+        <source>Tus beneficios: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8077510708398474123" datatype="html">
+        <source> acompañamiento durante tus practicas </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="573353429740937089" datatype="html">
+        <source> Aviso de eventos deportivos </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3556831421330190180" datatype="html">
+        <source> motivación para terminar tus objetivos </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7153271928406881470" datatype="html">
+        <source> integración con aplicaciones como Strava </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1485131053364701914" datatype="html">
+        <source> ¡¡¡¡Ya tienes esto!!!! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8958531078371076584" datatype="html">
+        <source>Premium</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8917863475723470668" datatype="html">
+        <source>Tus ultra mega beneficios: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="82567220574182650" datatype="html">
+        <source> todo lo del plan intermedio </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6631512265674005561" datatype="html">
+        <source> servicio de entrenador personalizado </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6161189180909231631" datatype="html">
+        <source> agendamiento con medicos </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7076037088350229310" datatype="html">
+        <source> Continuar como premium </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8410541882862454603" datatype="html">
+        <source>Intermedio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8722181441508184055" datatype="html">
+        <source> todo lo del plan gratuito </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2105322537270266344" datatype="html">
+        <source> monitoreo de tus objetivos </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1309421469287996581" datatype="html">
+        <source> monitoreo de recuperación efectiva post entrenamiento </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7383503086709438905" datatype="html">
+        <source> Continuar como intermedio </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4804545707170177078" datatype="html">
+        <source> Continuar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">95,96</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
