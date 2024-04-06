@@ -1,0 +1,161 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Bienvenido a SportApp</h5>
+      <img
+        id="logo_uniandes"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/University_of_Los_Andes_logo.svg/1200px-University_of_Los_Andes_logo.svg.png"
+      />
+      <br />
+      <br />
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="
+          !loginForm.invalid &&
+            login(
+              loginForm.controls.tipo_usuario.value,
+              loginForm.controls.tipo_doc.value,
+              loginForm.controls.documento.value,
+              loginForm.controls.contrasena.value
+            )
+        "
+      >
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Tipo Usuario</label>
+          <div class="col-sm-8">
+            <select
+              id="selector_tipo_usuario"
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="tipo_usuario"
+            >
+              <option value="0">Seleccionar</option>
+              <option value="DEPORTISTA">Deportista</option>
+              <option value="SOCIO">Socio de negocio</option>
+              <option value="ORGANIZADOR">Organizador de eventos</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label"
+            >Número de identificación</label
+          >
+          <div class="col-sm-2">
+            <select
+              id="selector_tipo_documento"
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="tipo_doc"
+            >
+              <option value="0">Tipo</option>
+              <option value="CC">CC</option>
+              <option value="NIT">NIT</option>
+              <option value="CE">CE</option>
+            </select>
+          </div>
+          <div class="col-sm-6">
+            <input
+              id="input_numero_documento"
+              type="text"
+              class="form-control"
+              placeholder="123456789"
+              formControlName="documento"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-3 col-form-label"
+            >Contraseña</label
+          >
+          <div class="col-sm-9">
+            <input
+              id="input_password"
+              type="password"
+              class="form-control"
+              placeholder="***********"
+              formControlName="contrasena"
+            />
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 240px"
+              *ngIf="
+                (loginForm.get('contrasena')!.touched &&
+                  loginForm.get('contrasena')!.errors) ||
+                (loginForm.get('documento')!.touched &&
+                  loginForm.get('documento')!.errors) ||
+                (loginForm.get('tipo_doc')!.touched &&
+                  loginForm.get('tipo_doc')!.errors) ||
+                (loginForm.get('tipo_usuario')!.touched &&
+                  loginForm.get('tipo_usuario')!.errors)
+              "
+            >
+              <p
+                *ngIf="
+                  loginForm.get('contrasena')!.hasError('required') &&
+                  loginForm.get('contrasena')!.touched
+                "
+              >
+                Debe ingresar una contraseña
+              </p>
+              <p
+                *ngIf="
+                  loginForm.get('documento')!.hasError('pattern') &&
+                  loginForm.get('documento')!.touched
+                "
+              >
+                El número de documento debe estar conformado solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  loginForm.get('documento')!.hasError('maxlength') &&
+                  loginForm.get('documento')!.touched
+                "
+              >
+                El número de documento debe tener maximo 20 caracteres
+              </p>
+              <p
+                *ngIf="
+                  loginForm.get('documento')!.hasError('minlength') &&
+                  loginForm.get('documento')!.touched
+                "
+              >
+                El número de documento debe tener minimo 7 caracteres
+              </p>
+              <p
+                *ngIf="
+                  loginForm.get('documento')!.hasError('required') &&
+                  loginForm.get('documento')!.touched
+                "
+              >
+                Debe ingresar un número de documento
+              </p>
+              <p
+                *ngIf="
+                  loginForm.get('tipo_doc')!.hasError('min') &&
+                  loginForm.get('tipo_doc')!.touched
+                "
+              >
+                Debe seleccionar un tipo de documento
+              </p>
+              <p
+                *ngIf="
+                  loginForm.get('tipo_usuario')!.hasError('min') &&
+                  loginForm.get('tipo_usuario')!.touched
+                "
+              >
+                Debe seleccionar un tipo de usuario
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="mb-1 row">
+          <p>
+            Aun no te has registrado?
+            <a href="/registry">Registrarse</a>
+          </p>
+        </div>
+        <button type="submit" class="btn btn-primario">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>
+</div>
