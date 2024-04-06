@@ -9,9 +9,12 @@ on:
       - 'release/**'
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - name: check repo
+      uses: actions/checkout@v3
+
     - name: Use Node.js 18.13.0
       uses: actions/setup-node@v1
       with:
