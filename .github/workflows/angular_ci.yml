@@ -1,5 +1,12 @@
 name: 'Angular test workflow'
-on: [push]
+on:
+  push:
+    branches:
+      - 'main'
+      - 'feat/**'
+      - 'fix/**'
+      - 'chore/**'
+      - 'release/**'
 jobs:
   build:
     runs-on: ubuntu-18.04
