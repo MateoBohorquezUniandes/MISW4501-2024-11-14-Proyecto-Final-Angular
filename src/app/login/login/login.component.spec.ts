@@ -114,7 +114,7 @@ describe('LoginComponent', () => {
     const contrasena = component.loginForm.controls['contrasena'];
     tipo_usuario.setValue(1);
     tipo_doc.setValue(1);
-    documento.setValue('37863345345234532');
+    documento.setValue('3786334534523453216789');
     contrasena.setValue('mocos123');
 
     expect(component.loginForm.invalid).toBeTrue();

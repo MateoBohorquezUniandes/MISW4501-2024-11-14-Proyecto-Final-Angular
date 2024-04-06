@@ -50,15 +50,12 @@ select {
 #selector_tipo_documento {
   width: 75px;
   height: 38px;
-  display: inline-block;
 }
 #input_password {
   width: 240px;
   height: 38px;
 }
 #input_numero_documento {
-  width: 240px;
+  width: 157px;
   height: 38px;
-  display: inline-block;
-  margin-left: 3px;
 }

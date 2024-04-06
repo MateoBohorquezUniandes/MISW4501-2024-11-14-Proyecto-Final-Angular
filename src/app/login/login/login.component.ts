@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from "ngx-cookie-service";
 import {
   FormBuilder,
   FormGroup,
@@ -12,14 +13,10 @@ import { LoginService } from '../login.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  providers:[ CookieService ]
 })
 export class LoginComponent implements OnInit {
-  /*rol: string;
-  tipo_identificación: string;
-  identificacion: string;
-  contraseña: string;*/
-
-  //loginForm!: FormGroup;
+  usuario: string = '';
   loginForm = this.formBuilder.group({
     tipo_usuario: [0, [Validators.required, Validators.min(1)]],
     tipo_doc: [0, [Validators.required, Validators.min(1)]],
@@ -28,7 +25,7 @@ export class LoginComponent implements OnInit {
       [
         Validators.required,
         Validators.minLength(7),
-        Validators.maxLength(11),
+        Validators.maxLength(20),
         Validators.pattern('^[0-9]*$'),
       ],
     ],
@@ -44,42 +41,29 @@ export class LoginComponent implements OnInit {
     tipo_usuario: number | null,
     tipo_doc: number | null,
     documento: string | null,
-    contraseña: string | null
+    contrasena: string | null
   ) {
-    /*switch(tipo_usuario){
-      case 1:
-        tipo_usuario = "Deportista";
-      case
-    }*/
     const user = {
+      contrasena: contrasena,
+      identificacion: {
+        tipo: tipo_doc,
+        valor: documento
+      },
       rol: tipo_usuario,
-      tipo_identificacion: tipo_doc,
-      identificación: documento,
-      contraseña: contraseña,
     };
-    console.log('rol:' + tipo_usuario);
-    console.log('tipo_identificacion:' + tipo_doc);
-    console.log('identificación:' + documento);
-    console.log('contraseña:' + contraseña);
-    this.toastr.error("Error", "System not configured")
-    /*this.loginService.login(user).subscribe(
+    this.loginService.login(user).subscribe(
       data => {
         this.loginService.setToken(data.token);
-        switch(){
-          case 1:
-            algo para redirect
-        },
+        switch(0){
+          case 0:
+            console.log("Caso 0")
+        }},
       error => {
-      console.log(error);
-    });*/
+        console.log(error);
+        this.toastr.error("Error", "Error al iniciar sesión:" + error)
+    });
 
   }
   ngOnInit() {
-    /*this.loginForm = this.formBuilder.group({
-      tipo_usuario:["",[Validators.required]],
-      tipo_doc:["",[Validators.required]],
-      documento:["",[Validators.required]],
-      contrasena:["",[Validators.required]]
-    })*/
   }
 }

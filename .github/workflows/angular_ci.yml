@@ -1,0 +1,23 @@
+name: 'Angular test workflow'
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 18.13.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 18.13.0
+    - name: Install dependencies
+      run: npm install
+    - name: Lint
+      run: npm run lint
+    - name: Build
+      #run: npm run build -- --prod
+      run: npm run build
+    - name: Test
+      #run: npm test -- --configuration=ci
+      run: npm test -- --code-coverage
+    #- name: E2E
+    #  run: npm run e2e -- --configuration=ci
