@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DeportistaComponent } from './deportista.component';
+import { DeportistaHomeComponent } from './deportista-home/deportista-home.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -8,6 +8,6 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  declarations: [DeportistaComponent]
+  declarations: [DeportistaHomeComponent]
 })
 export class DeportistaModule { }
