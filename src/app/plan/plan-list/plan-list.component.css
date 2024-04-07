@@ -8,3 +8,8 @@
   height: 30px;
   margin-top: 50px;
 }
+
+#a_deportistalink {
+  color: white;
+  text-decoration: none; /* no underline */
+}
