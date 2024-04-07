@@ -7,6 +7,6 @@ import { DeportistaComponent } from './deportista/deportista.component';
 export const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'registry', component: RegistroComponent },
-  { path: 'plans', component: PlanListComponent}
-    { path: 'deportista', component: DeportistaComponent }
+  { path: 'plans', component: PlanListComponent},
+  { path: 'deportista', component: DeportistaComponent }
 ];
