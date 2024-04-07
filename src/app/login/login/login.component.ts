@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(7),
         Validators.maxLength(20),
-        Validators.pattern('^[0-9]*$'),
+        //Validators.pattern('^[0-9]*$'),
       ],
     ],
     contrasena: ['', [Validators.required]],
@@ -34,7 +35,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {}
 
   login(
@@ -54,9 +56,19 @@ export class LoginComponent implements OnInit {
     this.loginService.login(user).subscribe(
       data => {
         this.loginService.setToken(data.token);
-        switch(0){
-          case 0:
-            console.log("Caso 0")
+        console.log(data)
+        switch(data.rol){
+          case "DEPORTISTA":
+            console.log("Caso DEPORTISTA");
+            break;
+          case "SOCIO":
+            this.router.navigateByUrl("/socios")
+            break;
+          case "ORGANIZADOR":
+            console.log("Caso ORGANIZADOR");
+            break;
+          default:
+            break;
         }},
       error => {
         console.log(error);
