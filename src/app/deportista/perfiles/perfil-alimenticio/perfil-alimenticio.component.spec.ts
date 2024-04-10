@@ -2,22 +2,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PerfilAlimenticioComponent } from './perfil-alimenticio.component';
 
-import { DeportistaHomeComponent } from './deportista-home.component';
-
-describe('DeportistaHomeComponent', () => {
-  let component: DeportistaHomeComponent;
-  let fixture: ComponentFixture<DeportistaHomeComponent>;
+describe('PerfilAlimenticioComponent', () => {
+  let component: PerfilAlimenticioComponent;
+  let fixture: ComponentFixture<PerfilAlimenticioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ DeportistaHomeComponent ]
+      imports: [ PerfilAlimenticioComponent, RouterTestingModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeportistaHomeComponent);
+    fixture = TestBed.createComponent(PerfilAlimenticioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

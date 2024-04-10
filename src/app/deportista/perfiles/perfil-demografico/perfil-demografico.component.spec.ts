@@ -2,22 +2,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { DeportistaHomeComponent } from './deportista-home.component';
+import { PerfilDemograficoComponent } from './perfil-demografico.component';
 
-describe('DeportistaHomeComponent', () => {
-  let component: DeportistaHomeComponent;
-  let fixture: ComponentFixture<DeportistaHomeComponent>;
+describe('PerfilDemograficoComponent', () => {
+  let component: PerfilDemograficoComponent;
+  let fixture: ComponentFixture<PerfilDemograficoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ DeportistaHomeComponent ]
+      imports: [ PerfilDemograficoComponent, RouterTestingModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeportistaHomeComponent);
+    fixture = TestBed.createComponent(PerfilDemograficoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
