@@ -11,7 +11,7 @@ describe('DeportistaHomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeportistaHomeComponent ]
+      imports: [ DeportistaHomeComponent ]
     })
     .compileComponents();
   }));

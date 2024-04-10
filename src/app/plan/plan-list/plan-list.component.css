@@ -13,3 +13,9 @@
   color: white;
   text-decoration: none; /* no underline */
 }
+
+p, li {
+  font-family: "Roboto Condensed";
+  font-size: 18px;
+  font-weight: bold;
+}

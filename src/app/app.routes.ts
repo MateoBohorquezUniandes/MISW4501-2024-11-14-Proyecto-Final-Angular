@@ -12,14 +12,14 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'registry', component: RegistroComponent },
   { path: 'plans', component: PlanListComponent},
-  { path: 'deportista', component: DeportistaHomeComponent },
+  //{ path: 'deportista', component: DeportistaHomeComponent },
   {
     path: '',
     component: LayoutComponent,
     children: [
       { path: 'socios', component: SocioHomeComponent },
-      { path: 'deportista', component: DeportistaHomeComponent },
-      { path: 'organizador', component: OrganizadorHomeComponent}
+      { path: 'deportista', loadChildren: () => import('./deportista/deportista.routing').then( r => r.routes) },
+      { path: 'organizador', component: OrganizadorHomeComponent},
     ]
   }
 ];
