@@ -1,0 +1,25 @@
+.main-container {
+  display: flex;
+  height: 100vh;
+
+}
+
+.content {
+  flex: 1;
+}
+
+.side-nav-bar {
+  /* position: fixed; */
+  z-index: 1001;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 280px;
+  background-color: #FFFFFF;
+}
+
+.nav .nav-link {
+  color: black;
+  font-family: "Roboto";
+}
