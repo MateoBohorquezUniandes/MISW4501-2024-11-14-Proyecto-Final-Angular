@@ -3,14 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { CookieService } from "ngx-cookie-service";
-import { Habito} from './habito';
-import { Molestia } from './molestia';
+import { PerfilDeportivo} from "./perfil_deportivo"
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerfilesService {
-  private apiUrl = environment.baseUrl + 'usuarios/login';
+  private apiUrl = environment.UrlPerfiles + 'usuarios/login';
   constructor(private http:HttpClient, private cookies: CookieService) {}
 
   createHeaders(){
@@ -22,14 +21,14 @@ export class PerfilesService {
     return headers
   }
 
-  getAllHabits(): Observable<Habito[]>{
+  getAllHabits(): Observable<PerfilDeportivo[]>{
     let header = this.createHeaders();
-    return this.http.get<Habito[]>(this.apiUrl, { headers: header });
+    return this.http.get<PerfilDeportivo[]>(this.apiUrl, { headers: header });
   }
 
-  getAllDiscomforts(): Observable<Molestia[]>{
+  getAllDiscomforts(): Observable<PerfilDeportivo[]>{
     let header = this.createHeaders();
-    return this.http.get<Molestia[]>(this.apiUrl, { headers: header });
+    return this.http.get<PerfilDeportivo[]>(this.apiUrl, { headers: header });
   }
 
 }
