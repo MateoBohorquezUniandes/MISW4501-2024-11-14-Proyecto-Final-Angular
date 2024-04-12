@@ -22,11 +22,6 @@ describe('LoginComponent', () => {
   let spy = jasmine.createSpyObj('LoginService', ['login', 'setToken']);
   let router: Router;
 
-  // class MockLoginService {
-  //   login(user:any) {
-  //       return {token: "fgdsdfgdgdsgs", rol:"SOCIO"};
-  //   }
-  // }
   beforeEach(async(() => {
 
 

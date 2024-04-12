@@ -1,4 +1,4 @@
-class Habito {
+export class Habito {
   titulo:string;
   frecuencia:string;
   descripcion:string;
@@ -13,7 +13,7 @@ class Habito {
   }
 }
 
-class Molestia {
+export class Molestia {
   titulo:string;
   fecha:string;
   tipo:string;

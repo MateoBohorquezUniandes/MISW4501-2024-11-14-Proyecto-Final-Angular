@@ -21,14 +21,9 @@ export class PerfilesService {
     return headers
   }
 
-  getAllHabits(): Observable<PerfilDeportivo[]>{
+  getSportProfiles(): Observable<PerfilDeportivo>{
     let header = this.createHeaders();
-    return this.http.get<PerfilDeportivo[]>(this.apiUrl, { headers: header });
-  }
-
-  getAllDiscomforts(): Observable<PerfilDeportivo[]>{
-    let header = this.createHeaders();
-    return this.http.get<PerfilDeportivo[]>(this.apiUrl, { headers: header });
+    return this.http.get<PerfilDeportivo>(this.apiUrl, { headers: header });
   }
 
 }
