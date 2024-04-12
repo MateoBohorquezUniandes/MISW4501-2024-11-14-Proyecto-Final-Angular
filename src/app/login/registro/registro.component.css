@@ -2,10 +2,67 @@
   background-color: #5227cc;
   color: white;
 }
+
 #login-card {
   & label {
     font-family: "Roboto Condensed";
     font-size: 16px;
     font-weight: bold;
   }
+}
+
+.campo_n {
+  width: 265px;
+  height: 37px;
+  display: inline-block;
+  margin-left: 3px;
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.campo_p {
+  width: 179px;
+  height: 37px;
+  display: inline-block;
+  margin-left: 3px;
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  font-weight: bold;
+}
+
+img {
+  width: 100px;
+  height: 100px
+}
+
+.label_d {
+  margin-left: 30px;
+}
+
+label,
+option {
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.row {
+  justify-content: initial;
+  text-align: initial;
+  display: flex;
+  padding-left: 100px;
+}
+
+button {
+  vertical-align: middle;
+  width: 136px;
+  height: 30px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#boton_registro {
+  margin-left: 30px;
 }
