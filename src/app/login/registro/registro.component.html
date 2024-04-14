@@ -10,667 +10,577 @@
     <div class="card-body">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/University_of_Los_Andes_logo.svg/1200px-University_of_Los_Andes_logo.svg.png"
-        style="width: 100px; height: 100px"
       />
       <br />
       <br />
       <label>Necesitamos saber mas de ti...</label>
       <br />
       <br />
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
+      <form
+        [formGroup]="registroForm"
+        (ngSubmit)="!registroForm.invalid && registrarse(
+          registroForm.controls.nombre.value,
+          registroForm.controls.apellido.value,
+          registroForm.controls.tipo_doc.value,
+          registroForm.controls.documento.value,
+          registroForm.controls.contrasena.value,
+          registroForm.controls.genero.value,
+          registroForm.controls.edad.value,
+          registroForm.controls.peso.value,
+          registroForm.controls.altura.value,
+          registroForm.controls.pais_nacimiento.value,
+          registroForm.controls.ciudad_nacimiento.value,
+          registroForm.controls.pais_vivienda.value,
+          registroForm.controls.ciudad_vivienda.value,
+          registroForm.controls.tiempo.value,
+          registroForm.controls.deporte.value
+        )"
       >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cúal es tu nombre?</label
-          >
-          <br />
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: Gustavo"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
+        <div class="row">
+          <div class="col">
+            <label>¿Cúal es tu nombre?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_n"
+              placeholder="Ej: Gustavo"
+              formControlName="nombre"
+            />
+          </div>
+          <div class="col">
+            <label>¿Cúal es tu altura?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_p"
+              placeholder="Ej: 182"
+              formControlName="altura"
+            />
+            <label class="label_d">Metros</label>
+          </div>
         </div>
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cúal es tu altura?</label
-          >
-          <br />
-          <input
-            type="number"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: 182"
-            style="
-              width: 179px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              margin-left: 30px;
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >Metros</label
-          >
+        <div class="row">
+          <div class="col">
+            <label>¿Cúal es tu apellido?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_n"
+              placeholder="Ej: Rodriguez"
+              formControlName="apellido"
+            />
+          </div>
+          <div class="col">
+            <label>¿En que pais naciste?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_n"
+              placeholder="Ej: Brasil"
+              formControlName="pais_nacimiento"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
-      >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cúal es tu apellido?</label
-          >
-          <br />
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: Rodriguez"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
+        <div class="row">
+          <div class="col">
+            <label>¿Como te identificamos?</label>
+            <br />
+            <select
+              class="form-select"
+              id="select_tipo"
+              aria-label="Default select example"
+              formControlName="tipo_doc"
+            >
+              <option selected value="0">Tipo</option>
+              <option value="CC">CC</option>
+              <option value="NIT">NIT</option>
+              <option value="CE">CE</option>
+            </select>
+            <input
+              type="text"
+              class="form-control campo_p"
+              placeholder="123456789"
+              formControlName="documento"
+            />
+          </div>
+          <div class="col">
+            <label>¿En que ciudad naciste?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_n"
+              placeholder="Ej: Medellin"
+              formControlName="ciudad_nacimiento"
+            />
+          </div>
         </div>
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿En que pais naciste?</label
-          >
-          <br />
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: Brasil"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
+        <div class="row">
+          <div class="col">
+            <label>¿Cúal será tu contraseña?</label>
+            <br />
+            <input
+              type="password"
+              class="form-control campo_n"
+              formControlName="contrasena"
+            />
+          </div>
+          <div class="col">
+            <label>¿En que pais vives?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_n"
+              formControlName="pais_vivienda"
+              placeholder="Ej: Japon"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
-      >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Como te identificamos?</label
-          >
-          <br />
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            style="
-              width: 75px;
-              height: 38px;
-              display: inline-block;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          >
-            <option
-              selected
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
+        <div class="row">
+          <div class="col">
+            <label>Confirma tu contraseña</label>
+            <br />
+            <input
+              type="password"
+              class="form-control campo_n"
+              formControlName="contrasena2"
+            />
+          </div>
+          <div class="col">
+            <label>¿En que ciudad vives?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_n"
+              placeholder="Ej: Tokio"
+              formControlName="ciudad_vivienda"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>¿Cúal es tu género?</label>
+            <br />
+            <select
+              class="form-select campo_n"
+              aria-label="Default select example"
+              formControlName="genero"
+            >
+              <option selected value="0">Seleccionar</option>
+              <option value="F">Femenino</option>
+              <option value="M">Masculino</option>
+              <option value="N">Prefiero no especificar</option>
+            </select>
+          </div>
+          <div class="col">
+            <label>¿Cuanto tiempo vives viviendo allí?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_p"
+              placeholder="Ej: 9"
+              formControlName="tiempo"
+            />
+            <label class="label_d">Años</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>¿Cúal es tu edad?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_p"
+              placeholder="Ej: 32"
+              formControlName="edad"
+            />
+            <label class="label_d">Años</label>
+          </div>
+          <div class="col">
+            <label>¿Que deporte practivas o deseas practicar?</label>
+            <br />
+            <select
+              class="form-select campo_n"
+              aria-label="Default select example"
+              formControlName="deporte"
+            >
+              <option selected value="0">Tipo</option>
+              <option value="ATLETISMO">Atletismo</option>
+              <option value="CICLISMO">Ciclismo</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>¿Cúal es tu peso?</label>
+            <br />
+            <input
+              type="text"
+              class="form-control campo_p"
+              placeholder="Ej: 82"
+              formControlName="peso"
+            />
+            <label class="label_d">Kg</label>
+          </div>
+          <div class="col">
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 240px"
+              *ngIf="
+                (registroForm.get('nombre')!.touched &&
+                  registroForm.get('nombre')!.errors) ||
+                (registroForm.get('apellido')!.touched &&
+                  registroForm.get('apellido')!.errors) ||
+                (registroForm.get('tipo_doc')!.touched &&
+                  registroForm.get('tipo_doc')!.errors) ||
+                (registroForm.get('documento')!.touched &&
+                  registroForm.get('documento')!.errors) ||
+                (registroForm.get('contrasena')!.touched &&
+                  registroForm.get('contrasena')!.errors) ||
+                (registroForm.get('contrasena2')!.touched &&
+                  registroForm.get('contrasena2')!.errors) ||
+                (registroForm.get('genero')!.touched &&
+                  registroForm.get('genero')!.errors) ||
+                (registroForm.get('edad')!.touched &&
+                  registroForm.get('edad')!.errors) ||
+                (registroForm.get('peso')!.touched &&
+                  registroForm.get('peso')!.errors) ||
+                (registroForm.get('altura')!.touched &&
+                  registroForm.get('altura')!.errors) ||
+                (registroForm.get('pais_nacimiento')!.touched &&
+                  registroForm.get('pais_nacimiento')!.errors) ||
+                (registroForm.get('ciudad_nacimiento')!.touched &&
+                  registroForm.get('ciudad_nacimiento')!.errors) ||
+                (registroForm.get('pais_vivienda')!.touched &&
+                  registroForm.get('pais_vivienda')!.errors) ||
+                (registroForm.get('ciudad_vivienda')!.touched &&
+                  registroForm.get('ciudad_vivienda')!.errors) ||
+                (registroForm.get('tiempo')!.touched &&
+                  registroForm.get('tiempo')!.errors) ||
+                (registroForm.get('deporte')!.touched &&
+                  registroForm.get('deporte')!.errors)
               "
             >
-              Tipo
-            </option>
-            <option
-              value="1"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              CC
-            </option>
-            <option
-              value="2"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              NIT
-            </option>
-            <option
-              value="3"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              CE
-            </option>
-          </select>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="123456789"
-            style="
-              width: 179px;
-              height: 38px;
-              display: inline-block;
-              margin-left: 14px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
+              <p
+                *ngIf="
+                  registroForm.get('nombre')!.hasError('required') &&
+                  registroForm.get('nombre')!.touched
+                "
+              >
+                Debe ingresar un nombre
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('nombre')!.hasError('minLength') &&
+                  registroForm.get('nombre')!.touched
+                "
+              >
+                El nombre debe tener minimo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('apellido')!.hasError('required') &&
+                  registroForm.get('apellido')!.touched
+                "
+              >
+                Debe ingresar un apellido
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('apellido')!.hasError('minLength') &&
+                  registroForm.get('apellido')!.touched
+                "
+              >
+                El apellido debe tener minimo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('tipo_doc')!.hasError('min') &&
+                  registroForm.get('tipo_doc')!.touched
+                "
+              >
+                Debe seleccionar un tipo de documento
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('documento')!.hasError('pattern') &&
+                  registroForm.get('documento')!.touched
+                "
+              >
+                El número de documento debe estar conformado solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('documento')!.hasError('maxlength') &&
+                  registroForm.get('documento')!.touched
+                "
+              >
+                El número de documento debe tener maximo 20 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('documento')!.hasError('minlength') &&
+                  registroForm.get('documento')!.touched
+                "
+              >
+                El número de documento debe tener minimo 7 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('documento')!.hasError('required') &&
+                  registroForm.get('documento')!.touched
+                "
+              >
+                Debe ingresar un número de documento
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('contrasena')!.hasError('maxlength') &&
+                  registroForm.get('contrasena')!.touched
+                "
+              >
+                La contraseña debe tener maximo 20 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('contrasena')!.hasError('minlength') &&
+                  registroForm.get('contrasena')!.touched
+                "
+              >
+                La contraseña debe tener minimo 8 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('contrasena')!.hasError('required') &&
+                  registroForm.get('contrasena')!.touched
+                "
+              >
+                Debe ingresar una contraseña
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('contrasena2')!.hasError('maxlength') &&
+                  registroForm.get('contrasena2')!.touched
+                "
+              >
+                La confirmación de la contraseña debe tener maximo 20 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('contrasena2')!.hasError('minlength') &&
+                  registroForm.get('contrasena2')!.touched
+                "
+              >
+                La confirmación de la contraseña debe tener minimo 8 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('contrasena2')!.hasError('required') &&
+                  registroForm.get('contrasena2')!.touched
+                "
+              >
+                Debe confirmar su contraseña
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('contrasena2')!.hasError('confirmedValidator') &&
+                  registroForm.get('contrasena2')!.touched
+                "
+              >
+                Las contraseñas no coinsiden
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('genero')!.hasError('min') &&
+                  registroForm.get('genero')!.touched
+                "
+              >
+                Debe seleccionar un genero
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('edad')!.hasError('pattern') &&
+                  registroForm.get('edad')!.touched
+                "
+              >
+                La edad debe estar conformada solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('edad')!.hasError('maxlength') &&
+                  registroForm.get('edad')!.touched
+                "
+              >
+                La edad debe tener maximo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('edad')!.hasError('minlength') &&
+                  registroForm.get('edad')!.touched
+                "
+              >
+                La edad debe tener minimo 1 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('edad')!.hasError('required') &&
+                  registroForm.get('edad')!.touched
+                "
+              >
+                Debe ingresar una edad
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('peso')!.hasError('pattern') &&
+                  registroForm.get('peso')!.touched
+                "
+              >
+                El peso debe estar conformado solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('peso')!.hasError('maxlength') &&
+                  registroForm.get('peso')!.touched
+                "
+              >
+                El peso debe tener maximo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('peso')!.hasError('minlength') &&
+                  registroForm.get('peso')!.touched
+                "
+              >
+                El peso debe tener minimo 2 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('peso')!.hasError('required') &&
+                  registroForm.get('peso')!.touched
+                "
+              >
+                Debe ingresar un peso
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('altura')!.hasError('pattern') &&
+                  registroForm.get('altura')!.touched
+                "
+              >
+                La altura debe estar conformada solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('altura')!.hasError('maxlength') &&
+                  registroForm.get('altura')!.touched
+                "
+              >
+                La altura debe tener maximo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('altura')!.hasError('minlength') &&
+                  registroForm.get('altura')!.touched
+                "
+              >
+                La altura debe tener minimo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('altura')!.hasError('required') &&
+                  registroForm.get('altura')!.touched
+                "
+              >
+                Debe ingresar una altura
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('pais_nacimiento')!.hasError('required') &&
+                  registroForm.get('pais_nacimiento')!.touched
+                "
+              >
+                Debe ingresar un pais de nacimiento
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('ciudad_nacimiento')!.hasError('required') &&
+                  registroForm.get('ciudad_nacimiento')!.touched
+                "
+              >
+                Debe ingresar una ciudad de nacimiento
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('pais_vivienda')!.hasError('required') &&
+                  registroForm.get('pais_vivienda')!.touched
+                "
+              >
+                Debe ingresar un pais donde este viviendo
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('ciudad_vivienda')!.hasError('required') &&
+                  registroForm.get('ciudad_vivienda')!.touched
+                "
+              >
+                Debe ingresar una ciudad donde este viviendo
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('tiempo')!.hasError('pattern') &&
+                  registroForm.get('tiempo')!.touched
+                "
+              >
+                El tiempo de vivienda debe estar conformado solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('tiempo')!.hasError('maxlength') &&
+                  registroForm.get('tiempo')!.touched
+                "
+              >
+                El tiempo de vivienda debe tener maximo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('tiempo')!.hasError('minlength') &&
+                  registroForm.get('tiempo')!.touched
+                "
+              >
+                El tiempo de vivienda debe tener minimo 1 caracteres
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('tiempo')!.hasError('required') &&
+                  registroForm.get('tiempo')!.touched
+                "
+              >
+                Debe ingresar un tiempo de vivienda
+              </p>
+              <p
+                *ngIf="
+                  registroForm.get('deporte')!.hasError('min') &&
+                  registroForm.get('deporte')!.touched
+                "
+              >
+                Debe seleccionar un deporte
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿En que ciudad naciste?</label
-          >
-          <br />
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: Medellin"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col">
+            <br />
+            <button type="button" id="boton_volver" class="btn btn-primario" (click)="volver()">
+              Volver
+            </button>
+            <button type="submit" id="boton_registro" class="btn btn-primario">
+              Registrarse
+            </button>
+          </div>
         </div>
-      </div>
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
-      >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cúal será tu contraseña?</label
-          >
-          <br />
-          <input
-            type="password"
-            class="form-control"
-            id="exampleFormControlInput1"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-        </div>
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿En que pais vives?</label
-          >
-          <br />
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: Japon"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-        </div>
-      </div>
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
-      >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >Confirma tu contraseña</label
-          >
-          <br />
-          <input
-            type="password"
-            class="form-control"
-            id="exampleFormControlInput1"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-        </div>
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿En que ciudad vives?</label
-          >
-          <br />
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: Tokio"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-        </div>
-      </div>
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
-      >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cúal es tu género?</label
-          >
-          <br />
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          >
-            <option
-              selected
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Seleccionar
-            </option>
-            <option
-              value="1"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Femenino
-            </option>
-            <option
-              value="2"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Masculino
-            </option>
-            <option
-              value="3"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Prefiero no especificar
-            </option>
-          </select>
-        </div>
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cuanto tiempo vives viviendo allí?</label
-          >
-          <br />
-          <input
-            type="number"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: 9"
-            style="
-              width: 179px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              margin-left: 30px;
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >Años</label
-          >
-        </div>
-      </div>
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
-      >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cúal es tu edad?</label
-          >
-          <br />
-          <input
-            type="number"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: 32"
-            style="
-              width: 179px;
-              height: 37px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              margin-left: 30px;
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >Años</label
-          >
-        </div>
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Que deporte practivas o deseas practicar?</label
-          >
-          <br />
-          <select
-            class="form-select"
-            aria-label="Default select example"
-            style="
-              width: 265px;
-              height: 37px;
-              display: inline-block;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          >
-            <option
-              selected
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Tipo
-            </option>
-            <option
-              value="1"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Atletismo
-            </option>
-            <option
-              value="2"
-              style="
-                font-family: 'Roboto Condensed';
-                font-size: 16px;
-                font-weight: bold;
-              "
-            >
-              Ciclismo
-            </option>
-          </select>
-        </div>
-      </div>
-      <div
-        class="row"
-        style="
-          justify-content: initial;
-          text-align: initial;
-          display: flex;
-          padding-left: 100px;
-        "
-      >
-        <div class="col">
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >¿Cúal es tu peso?</label
-          >
-          <br />
-          <input
-            type="number"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Ej: 82"
-            style="
-              width: 179px;
-              height: 38px;
-              display: inline-block;
-              margin-left: 3px;
-              font-family: 'Roboto Condensed';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          />
-          <label
-            style="
-              font-family: 'Roboto Condensed';
-              margin-left: 30px;
-              font-size: 16px;
-              font-weight: bold;
-            "
-            >Kg</label
-          >
-        </div>
-        <div class="col">
-          <br />
-          <button
-            type="button"
-            class="btn btn-primario"
-            style="
-              vertical-align: middle;
-              width: 136px;
-              height: 30px;
-              font-family: 'Roboto';
-              font-size: 16px;
-              font-weight: bold;
-            "
-          >
-            Volver
-          </button>
-          <button
-            type="button"
-            class="btn btn-primario"
-            style="
-              vertical-align: middle;
-              width: 136px;
-              height: 30px;
-              font-family: 'Roboto';
-              font-size: 16px;
-              font-weight: bold;
-              margin-left: 30px;
-            "
-          >
-            Registrarse
-          </button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

@@ -20,4 +20,7 @@ export class LoginService {
   getToken(){
     return this.cookies.get("token");
   }
+  registrarse(request: any): Observable<any>{
+    return this.http.post<string>(this.apiUrl, request);
+  }
 }
