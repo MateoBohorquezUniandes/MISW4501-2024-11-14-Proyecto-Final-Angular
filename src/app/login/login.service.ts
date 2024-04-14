@@ -8,11 +8,11 @@ import { CookieService } from "ngx-cookie-service";
   providedIn: 'root',
 })
 export class LoginService {
-  private apiUrl = environment.UrlUsuarios + 'usuarios/login';
+  private apiUrl = environment.UrlUsuarios + 'usuarios';
   constructor(private http:HttpClient, private cookies: CookieService) {}
 
   login(request: any): Observable<any> {
-    return this.http.post<string>(this.apiUrl,request)
+    return this.http.post<string>(this.apiUrl + '/login',request)
   }
   setToken(token: string){
     this.cookies.set("token", token);
