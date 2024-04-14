@@ -62,6 +62,154 @@
           <context context-type="linenumber">20,21</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="8781722962959743892" datatype="html">
+        <source>Bienvenido a SportApp</source><target>Welcome to SportApp</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1811903958803912978" datatype="html">
+        <source>Tipo Usuario</source><target>User Type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2229594745304510307" datatype="html">
+        <source>Seleccionar</source><target>Select</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3652222630724651775" datatype="html">
+        <source>Deportista</source><target>Sportsman</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6945661853617182528" datatype="html">
+        <source>Socio de negocio</source><target>Business Partner</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2973568856054416904" datatype="html">
+        <source>Organizador de eventos</source><target>Event organizer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="723288048376964666" datatype="html">
+        <source>Número de identificación</source><target>Identification Number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2759773909798147145" datatype="html">
+        <source>Tipo</source><target>Type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2587240527868724590" datatype="html">
+        <source>CC</source><target>CC</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1338351778527812296" datatype="html">
+        <source>NIT</source><target>NIT</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7006937688274293644" datatype="html">
+        <source>CE</source><target>CE</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7132730488496169673" datatype="html">
+        <source>Contraseña</source><target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4224103193976724893" datatype="html">
+        <source> Debe ingresar una contraseña </source><target>You must enter a password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6944956529647780651" datatype="html">
+        <source> El número de documento debe estar conformado solo de numeros </source><target>The document number must consist of numbers only</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8691245429691303097" datatype="html">
+        <source> El número de documento debe tener maximo 20 caracteres </source><target>The document number must have a maximum of 20 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8964609626364401513" datatype="html">
+        <source> El número de documento debe tener minimo 7 caracteres </source><target>The document number must be at least 7 characters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7256688583635889910" datatype="html">
+        <source> Debe ingresar un número de documento </source><target>You must enter a document number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6594251227089821697" datatype="html">
+        <source> Debe seleccionar un tipo de documento </source><target>You must select a document type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6170786600969796196" datatype="html">
+        <source> Debe seleccionar un tipo de usuario </source><target>You must select an user type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6456742354224153059" datatype="html">
+        <source> Aun no te has registrado? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/registry&quot;&gt;"/>Registrarse<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target> Not registered yet? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/registry&quot;&gt;"/>Sign Up<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">153,155</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8024932591315166082" datatype="html">
+        <source>Iniciar Sesión</source><target>Sign In</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">157,158</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="8447570688439069061" datatype="html">
         <source>Gratuito</source><target>Free</target>
         <context-group purpose="location">

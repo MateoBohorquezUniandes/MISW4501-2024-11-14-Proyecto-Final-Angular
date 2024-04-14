@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Bienvenido a SportApp</h5>
+      <h5 class="card-title" i18n>Bienvenido a SportApp</h5>
       <img
         id="logo_uniandes"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/University_of_Los_Andes_logo.svg/1200px-University_of_Los_Andes_logo.svg.png"
@@ -21,7 +21,7 @@
         "
       >
         <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Tipo Usuario</label>
+          <label class="col-sm-3 col-form-label" i18n>Tipo Usuario</label>
           <div class="col-sm-8">
             <select
               id="selector_tipo_usuario"
@@ -29,15 +29,15 @@
               aria-label="Default select example"
               formControlName="tipo_usuario"
             >
-              <option value="0">Seleccionar</option>
-              <option value="DEPORTISTA">Deportista</option>
-              <option value="SOCIO">Socio de negocio</option>
-              <option value="ORGANIZADOR">Organizador de eventos</option>
+              <option value="0" i18n>Seleccionar</option>
+              <option value="DEPORTISTA" i18n>Deportista</option>
+              <option value="SOCIO" i18n>Socio de negocio</option>
+              <option value="ORGANIZADOR" i18n>Organizador de eventos</option>
             </select>
           </div>
         </div>
         <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label"
+          <label class="col-sm-3 col-form-label" i18n
             >Número de identificación</label
           >
           <div class="col-sm-2">
@@ -47,10 +47,10 @@
               aria-label="Default select example"
               formControlName="tipo_doc"
             >
-              <option value="0">Tipo</option>
-              <option value="CC">CC</option>
-              <option value="NIT">NIT</option>
-              <option value="CE">CE</option>
+              <option value="0" i18n>Tipo</option>
+              <option value="CC" i18n>CC</option>
+              <option value="NIT" i18n>NIT</option>
+              <option value="CE" i18n>CE</option>
             </select>
           </div>
           <div class="col-sm-6">
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="inputPassword" class="col-sm-3 col-form-label"
+          <label for="inputPassword" class="col-sm-3 col-form-label" i18n
             >Contraseña</label
           >
           <div class="col-sm-9">
@@ -93,7 +93,7 @@
                 *ngIf="
                   loginForm.get('contrasena')!.hasError('required') &&
                   loginForm.get('contrasena')!.touched
-                "
+                " i18n
               >
                 Debe ingresar una contraseña
               </p>
@@ -101,7 +101,7 @@
                 *ngIf="
                   loginForm.get('documento')!.hasError('pattern') &&
                   loginForm.get('documento')!.touched
-                "
+                " i18n
               >
                 El número de documento debe estar conformado solo de numeros
               </p>
@@ -109,7 +109,7 @@
                 *ngIf="
                   loginForm.get('documento')!.hasError('maxlength') &&
                   loginForm.get('documento')!.touched
-                "
+                " i18n
               >
                 El número de documento debe tener maximo 20 caracteres
               </p>
@@ -117,7 +117,7 @@
                 *ngIf="
                   loginForm.get('documento')!.hasError('minlength') &&
                   loginForm.get('documento')!.touched
-                "
+                " i18n
               >
                 El número de documento debe tener minimo 7 caracteres
               </p>
@@ -125,7 +125,7 @@
                 *ngIf="
                   loginForm.get('documento')!.hasError('required') &&
                   loginForm.get('documento')!.touched
-                "
+                " i18n
               >
                 Debe ingresar un número de documento
               </p>
@@ -133,7 +133,7 @@
                 *ngIf="
                   loginForm.get('tipo_doc')!.hasError('min') &&
                   loginForm.get('tipo_doc')!.touched
-                "
+                " i18n
               >
                 Debe seleccionar un tipo de documento
               </p>
@@ -141,7 +141,7 @@
                 *ngIf="
                   loginForm.get('tipo_usuario')!.hasError('min') &&
                   loginForm.get('tipo_usuario')!.touched
-                "
+                " i18n
               >
                 Debe seleccionar un tipo de usuario
               </p>
@@ -149,12 +149,12 @@
           </div>
         </div>
         <div class="mb-1 row">
-          <p>
+          <p i18n>
             Aun no te has registrado?
             <a href="/registry">Registrarse</a>
           </p>
         </div>
-        <button type="submit" class="btn btn-primario">Iniciar Sesión</button>
+        <button type="submit" class="btn btn-primario" i18n>Iniciar Sesión</button>
       </form>
     </div>
   </div>
