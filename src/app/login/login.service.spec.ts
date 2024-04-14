@@ -30,6 +30,6 @@ describe('Service: Login', () => {
 
   it('Debe guardar y consultar un Token', inject([LoginService], (service: LoginService) => {
     service.setToken("AFKR834398NUOIJOM")
-    expect(service.getToken() == "AFKR834398NUOIJOM");
+    expect(service.getToken()).toEqual("AFKR834398NUOIJOM");
   }));
 });

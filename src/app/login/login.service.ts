@@ -8,7 +8,7 @@ import { CookieService } from "ngx-cookie-service";
   providedIn: 'root',
 })
 export class LoginService {
-  private apiUrl = environment.baseUrl + 'usuarios/login';
+  private apiUrl = environment.UrlUsuarios + 'usuarios/login';
   constructor(private http:HttpClient, private cookies: CookieService) {}
 
   login(request: any): Observable<any> {

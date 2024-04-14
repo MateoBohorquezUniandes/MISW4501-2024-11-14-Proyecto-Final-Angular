@@ -1,26 +1,80 @@
-<div
-  class="container"
->
-  <div
-    id="login-card"
-    class="card"
-  >
+<div class="container">
+  <div id="login-card" class="card">
     <div class="container-md">
       <h5 i18n class="card-title">Perfiles Deportivos</h5>
     </div>
     <div class="container-md">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a i18n id="nav_demografico" class="nav-link" routerLink="/deportista/perfil-demografico">Demográfico</a>
+          <a
+            i18n
+            id="nav_demografico"
+            class="nav-link"
+            routerLink="/deportista/perfil-demografico"
+            >Demográfico</a
+          >
         </li>
         <li class="nav-item">
-          <a i18n id="nav_deportivo" class="nav-link active" aria-current="page">Deportivo</a>
+          <a i18n id="nav_deportivo" class="nav-link active" aria-current="page"
+            >Deportivo</a
+          >
         </li>
         <li class="nav-item">
-          <a i18n id="nav_alimenticio" class="nav-link" routerLink="/deportista/perfil-alimenticio">Alimenticio</a>
+          <a
+            i18n
+            id="nav_alimenticio"
+            class="nav-link"
+            routerLink="/deportista/perfil-alimenticio"
+            >Alimenticio</a
+          >
         </li>
       </ul>
-      <div class="card-body"></div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 i18n>Habitos</h5>
+            <div id="contenedor_habitos">
+              <ul id="lista_habitos" class="list-group">
+                <li
+                  class="list-group-item list-group-item-action"
+                  *ngFor="let habito of habitos"
+                  (click)="selectHabit($event, habito)"
+                >
+                  <svg class="bi" fill="#5227cc">
+                    <use
+                      xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+                    />
+                  </svg>
+                  {{ habito.titulo }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col">
+            <h5 i18n>Molestias</h5>
+            <div id="contenedor_molestias">
+              <ul id="lista_molestias" class="list-group">
+                <li
+                  class="list-group-item list-group-item-action"
+                  *ngFor="let molestia of molestias"
+                  (click)="selectMolestia($event, molestia)"
+                >
+                  <svg class="bi" fill="#A85E5E">
+                    <use
+                      xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+                    />
+                  </svg>
+                  {{ molestia.titulo }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">3</div>
+          <div class="col">4</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

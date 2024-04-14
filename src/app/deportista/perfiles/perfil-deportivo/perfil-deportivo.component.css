@@ -1,19 +1,10 @@
-h5 {
-  font-family: "Roboto";
-  font-size: 34px;
-  font-weight: bold;
-  margin-top: 30px;
-  display: flex;
-}
-a {
+a, li {
   font-family: "Roboto Condensed";
   font-size: 16px;
   font-weight: bold;
   color: #000000;
 }
-#nav_deportivo {
-  color: #5227cc;
-}
+
 .card-body{
   border-bottom:solid 1px #DEE2E6;
   border-right:solid 1px #DEE2E6;
@@ -21,13 +12,72 @@ a {
   border-bottom-left-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
 }
+
+.card-title {
+  font-family: "Roboto";
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 30px;
+  display: flex;
+}
+
+.container {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
+#contenedor_habitos, #contenedor_molestias{
+  overflow-y:auto;
+  height:210px;
+}
+
+h5 {
+  font-family: "Roboto";
+  font-size: 34px;
+  font-weight: bold;
+}
+
 #login-card {
   height: 864px;
   width: 1316px;
   position: absolute;
 }
-.container {
-  justify-content: center;
-  text-align: center;
-  display: flex;
+
+#nav_deportivo {
+  color: #5227cc;
+}
+
+svg{
+  width:24px;
+  height:24px;
+  pointer-events: none;
+}
+
+ul#lista_molestias > li.active {
+  border-color: #A85E5E;
+  background-color: #A85E5E;
+}
+
+ul#lista_habitos > li.active {
+  border-color: #5227cc;
+  background-color: #5227cc;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black;
 }
