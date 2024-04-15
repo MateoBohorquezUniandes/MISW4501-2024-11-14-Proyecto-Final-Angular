@@ -63,4 +63,6 @@ jobs:
 
       - name: Update Traffic
         run: |-
-          gcloud run services update-traffic angular2 --to-latest
+          gcloud run services update-traffic angular2 \
+            --to-latest
+            --region=us-central1
