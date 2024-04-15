@@ -1,0 +1,18 @@
+version: "3.9"
+
+networks:
+  deportistas_net:
+    driver: bridge
+
+services:
+  web-web:
+    container_name: 'web-app'
+    build:
+      context: ./
+      dockerfile: web.Dockerfile
+    networks:
+      - deportistas_net
+    ports:
+      - 8080:80
+    restart: always
+
