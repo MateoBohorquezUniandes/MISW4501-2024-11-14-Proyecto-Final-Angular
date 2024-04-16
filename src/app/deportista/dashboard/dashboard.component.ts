@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
-  selector: 'app-deportista-home',
-  templateUrl: './deportista-home.component.html',
-  styleUrls: ['./deportista-home.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DeportistaHomeComponent implements OnInit {
 

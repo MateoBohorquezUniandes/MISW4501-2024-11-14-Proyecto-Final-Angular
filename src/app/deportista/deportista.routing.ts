@@ -1,12 +1,33 @@
 import { Routes, RouterModule } from '@angular/router';
-import { DeportistaHomeComponent } from './deportista-home/deportista-home.component';
+import { DeportistaHomeComponent } from './dashboard/dashboard.component';
+import {} from './perfiles/perfil_deportivo';
 
 export const routes: Routes = [
   { path: '', component: DeportistaHomeComponent },
-  //{ path: 'perfil-alimenticio', loadChildren: () => import('./perfiles/perfiles.module').then( m => m.PerfilesModule),},
-  //{ path: 'perfil-demografico', loadChildren: () => import('./perfiles/perfiles.module').then( m => m.PerfilesModule),},
-  //{ path: 'perfil-deportivo', loadChildren: () => import('./perfiles/perfiles.module').then( m => m.PerfilesModule),},
-  { path: 'perfil-alimenticio', loadComponent: () => import('./perfiles/perfil-alimenticio/perfil-alimenticio.component').then( c => c.PerfilAlimenticioComponent),},
-  { path: 'perfil-demografico', loadComponent: () => import('./perfiles/perfil-demografico/perfil-demografico.component').then( c => c.PerfilDemograficoComponent),},
-  { path: 'perfil-deportivo', loadComponent: () => import('./perfiles/perfil-deportivo/perfil-deportivo.component').then( c => c.PerfilDeportivoComponent),},
+  {
+    path: 'perfiles',
+    children: [
+      {
+        path: 'alimenticio',
+        loadComponent: () =>
+          import('./perfiles/alimenticio/alimenticio.component').then(
+            (c) => c.PerfilAlimenticioComponent
+          ),
+      },
+      {
+        path: 'demografico',
+        loadComponent: () =>
+          import('./perfiles/demografico/demografico.component').then(
+            (c) => c.PerfilDemograficoComponent
+          ),
+      },
+      {
+        path: 'deportivo',
+        loadComponent: () =>
+          import('./perfiles/deportivo/deportivo.component').then(
+            (c) => c.PerfilDeportivoComponent
+          ),
+      },
+    ],
+  },
 ];

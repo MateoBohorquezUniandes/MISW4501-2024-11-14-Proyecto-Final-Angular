@@ -1,7 +1,10 @@
-const UrlUsuarios='http://localhost:3011/';
-const UrlPerfiles='http://localhost:3000/'; //Aqui va la url de ingress
+const baseUrl = 'http://localhost';
+
+const UrlUsuarios=`${baseUrl}3011/usuarios`;
+const UrlPerfiles=`${baseUrl}3000/perfiles`;
+
 export const environment = {
-  production: true,
+  production: false,
   UrlUsuarios,
   UrlPerfiles
 };

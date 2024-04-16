@@ -17,6 +17,6 @@ describe('Service: Perfiles', () => {
   }));
 
   it('Debe traer un perfil', inject([PerfilesService], (service: PerfilesService) => {
-    expect(service.getSportProfiles()).toBeTruthy();
+    expect(service.getPerfilDeportivo()).toBeTruthy();
   }));
 });

@@ -3,26 +3,32 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { DeportistaHomeComponent } from './deportista-home.component';
+import { SocioHomeComponent } from './home.component';
 
-describe('DeportistaHomeComponent', () => {
-  let component: DeportistaHomeComponent;
-  let fixture: ComponentFixture<DeportistaHomeComponent>;
+describe('SocioHomeComponent', () => {
+  let component: SocioHomeComponent;
+  let fixture: ComponentFixture<SocioHomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ DeportistaHomeComponent ]
+      declarations: [ SocioHomeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeportistaHomeComponent);
+    fixture = TestBed.createComponent(SocioHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the HTML content', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain('home works!');
   });
 });

@@ -18,8 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'sport-app';
+  title = 'sportapp';
 }

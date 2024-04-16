@@ -7,8 +7,8 @@ import { LoginService } from './login.service';
 describe('Service: Login', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule],
-      providers: [LoginService]
+      imports: [HttpClientTestingModule],
+      providers: [LoginService],
     });
   });
 
@@ -21,15 +21,18 @@ describe('Service: Login', () => {
       contrasena: 'password',
       identificacion: {
         tipo: 'CC',
-        valor: '79418556'
+        valor: '79418556',
       },
       rol: 'DEPORTISTA',
-    }
+    };
     expect(service.login(request)).toBeTruthy();
   }));
 
-  it('Debe guardar y consultar un Token', inject([LoginService], (service: LoginService) => {
-    service.setToken("AFKR834398NUOIJOM")
-    expect(service.getToken()).toEqual("AFKR834398NUOIJOM");
-  }));
+  it('Debe guardar y consultar un Token', inject(
+    [LoginService],
+    (service: LoginService) => {
+      service.setToken('AFKR834398NUOIJOM');
+      expect(service.getToken()).toEqual('AFKR834398NUOIJOM');
+    }
+  ));
 });

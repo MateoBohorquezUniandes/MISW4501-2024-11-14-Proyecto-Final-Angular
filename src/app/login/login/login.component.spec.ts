@@ -12,9 +12,9 @@ import { LoginService } from '../login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
-import { SocioHomeComponent } from '../../socio/socio-home/socio-home.component';
-import { DeportistaHomeComponent } from '../../deportista/deportista-home/deportista-home.component';
-import { OrganizadorHomeComponent } from '../../organizador/organizador-home/organizador-home.component';
+import { SocioHomeComponent } from '../../socio/home/home.component';
+import { DeportistaHomeComponent } from '../../deportista/dashboard/dashboard.component';
+import { OrganizadorHomeComponent } from '../../organizador/home/home.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -23,17 +23,19 @@ describe('LoginComponent', () => {
   let router: Router;
 
   beforeEach(async(() => {
-
-
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes([{ path: 'socios', component: SocioHomeComponent },{ path: 'deportista', component: DeportistaHomeComponent },{ path: 'organizador', component: OrganizadorHomeComponent }]),
+        RouterTestingModule.withRoutes([
+          { path: 'socios', component: SocioHomeComponent },
+          { path: 'deportista', component: DeportistaHomeComponent },
+          { path: 'organizador', component: OrganizadorHomeComponent },
+        ]),
         ReactiveFormsModule,
         ToastrModule.forRoot(),
         HttpClientTestingModule,
-        HttpClientModule
+        HttpClientModule,
       ],
-      providers: [{provide: LoginService, useValue: spy}],
+      providers: [{ provide: LoginService, useValue: spy }],
       declarations: [LoginComponent],
     }).compileComponents();
     router = TestBed.inject(Router);
@@ -80,9 +82,14 @@ describe('LoginComponent', () => {
     documento.setValue('37864172');
     contrasena.setValue('mocos123');
 
-    const data = {token: "fgdsdfgdgdsgs", rol:"SOCIO"};
+    const data = { token: 'fgdsdfgdgdsgs', rol: 'SOCIO' };
     spy.login.and.returnValue(of(data));
-    component.login(tipo_usuario.value, tipo_doc.value, documento.value, contrasena.value);
+    component.login(
+      tipo_usuario.value,
+      tipo_doc.value,
+      documento.value,
+      contrasena.value
+    );
     expect(component.loginForm.valid).toBeTrue();
   });
 
@@ -100,9 +107,14 @@ describe('LoginComponent', () => {
     documento.setValue('37864172');
     contrasena.setValue('mocos123');
 
-    const data = {token: "fgdsdfgdgdsgs", rol:"DEPORTISTA"};
+    const data = { token: 'fgdsdfgdgdsgs', rol: 'DEPORTISTA' };
     spy.login.and.returnValue(of(data));
-    component.login(tipo_usuario.value, tipo_doc.value, documento.value, contrasena.value);
+    component.login(
+      tipo_usuario.value,
+      tipo_doc.value,
+      documento.value,
+      contrasena.value
+    );
     expect(component.loginForm.valid).toBeTrue();
   });
 
@@ -120,9 +132,14 @@ describe('LoginComponent', () => {
     documento.setValue('37864172');
     contrasena.setValue('mocos123');
 
-    const data = {token: "fgdsdfgdgdsgs", rol:"ORGANIZADOR"};
+    const data = { token: 'fgdsdfgdgdsgs', rol: 'ORGANIZADOR' };
     spy.login.and.returnValue(of(data));
-    component.login(tipo_usuario.value, tipo_doc.value, documento.value, contrasena.value);
+    component.login(
+      tipo_usuario.value,
+      tipo_doc.value,
+      documento.value,
+      contrasena.value
+    );
     expect(component.loginForm.valid).toBeTrue();
   });
 

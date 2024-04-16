@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from "ngx-cookie-service";
+import { CookieService } from 'ngx-cookie-service';
 import {
   FormBuilder,
   FormGroup,
@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers:[ CookieService ]
+  styleUrls: ['./login.component.scss'],
+  providers: [CookieService],
 })
 export class LoginComponent implements OnInit {
   usuario: string = '';
@@ -49,33 +49,33 @@ export class LoginComponent implements OnInit {
       contrasena: contrasena,
       identificacion: {
         tipo: tipo_doc,
-        valor: documento
+        valor: documento,
       },
       rol: tipo_usuario,
     };
     this.loginService.login(user).subscribe(
-      data => {
+      (data) => {
         this.loginService.setToken(data.token);
-        console.log(data)
-        switch(data.rol){
-          case "DEPORTISTA":
-            this.router.navigateByUrl("/deportista")
+        console.log(data);
+        switch (data.rol) {
+          case 'DEPORTISTA':
+            this.router.navigateByUrl('/deportista');
             break;
-          case "SOCIO":
-            this.router.navigateByUrl("/socios")
+          case 'SOCIO':
+            this.router.navigateByUrl('/socios');
             break;
-          case "ORGANIZADOR":
-            this.router.navigateByUrl("/organizador")
+          case 'ORGANIZADOR':
+            this.router.navigateByUrl('/organizador');
             break;
           default:
             break;
-        }},
-      error => {
+        }
+      },
+      (error) => {
         console.log(error);
-        this.toastr.error("Error", "Error al iniciar sesión:" + error)
-    });
-
+        this.toastr.error('Error', 'Error al iniciar sesión:' + error);
+      }
+    );
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

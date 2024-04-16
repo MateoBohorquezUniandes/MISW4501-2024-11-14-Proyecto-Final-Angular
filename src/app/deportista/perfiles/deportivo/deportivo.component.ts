@@ -8,9 +8,9 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   standalone: true,
   imports: [RouterLink, CommonModule],
-  selector: 'app-perfil-deportivo',
-  templateUrl: './perfil-deportivo.component.html',
-  styleUrls: ['./perfil-deportivo.component.css'],
+  selector: 'app-deportivo',
+  templateUrl: './deportivo.component.html',
+  styleUrls: ['./deportivo.component.scss'],
 })
 export class PerfilDeportivoComponent implements OnInit {
   perfil!: PerfilDeportivo;
@@ -33,7 +33,7 @@ export class PerfilDeportivoComponent implements OnInit {
   }
 
   getProfile(){
-    this.perfilesService.getSportProfiles().subscribe(
+    this.perfilesService.getPerfilDeportivo().subscribe(
       (perfil) => {
         this.perfil = perfil;
       },

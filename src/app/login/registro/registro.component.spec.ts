@@ -14,7 +14,11 @@ describe('RegistroComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[ToastrModule.forRoot(),HttpClientTestingModule, ReactiveFormsModule],
+      imports: [
+        ToastrModule.forRoot(),
+        HttpClientTestingModule,
+        ReactiveFormsModule,
+      ],
       declarations: [RegistroComponent],
     }).compileComponents();
   }));
@@ -42,7 +46,8 @@ describe('RegistroComponent', () => {
     const peso = component.registroForm.controls['peso'];
     const altura = component.registroForm.controls['altura'];
     const pais_nacimiento = component.registroForm.controls['pais_nacimiento'];
-    const ciudad_nacimiento = component.registroForm.controls['ciudad_nacimiento'];
+    const ciudad_nacimiento =
+      component.registroForm.controls['ciudad_nacimiento'];
     const pais_vivienda = component.registroForm.controls['pais_vivienda'];
     const ciudad_vivienda = component.registroForm.controls['ciudad_vivienda'];
     const tiempo = component.registroForm.controls['tiempo'];
@@ -82,7 +87,8 @@ describe('RegistroComponent', () => {
     const peso = component.registroForm.controls['peso'];
     const altura = component.registroForm.controls['altura'];
     const pais_nacimiento = component.registroForm.controls['pais_nacimiento'];
-    const ciudad_nacimiento = component.registroForm.controls['ciudad_nacimiento'];
+    const ciudad_nacimiento =
+      component.registroForm.controls['ciudad_nacimiento'];
     const pais_vivienda = component.registroForm.controls['pais_vivienda'];
     const ciudad_vivienda = component.registroForm.controls['ciudad_vivienda'];
     const tiempo = component.registroForm.controls['tiempo'];
@@ -116,4 +122,3 @@ describe('RegistroComponent', () => {
     boton.nativeElement.click();
   });
 });
-

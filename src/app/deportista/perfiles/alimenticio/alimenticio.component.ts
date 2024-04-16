@@ -1,20 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-
 @Component({
   standalone: true,
   imports: [RouterLink],
-  selector: 'app-perfil-alimenticio',
-  templateUrl: './perfil-alimenticio.component.html',
-  styleUrls: ['./perfil-alimenticio.component.css']
+  selector: 'app-alimenticio',
+  templateUrl: './alimenticio.component.html',
+  styleUrls: ['./alimenticio.component.scss'],
 })
 export class PerfilAlimenticioComponent implements OnInit {
+  constructor() {}
 
-  constructor(
-  ) { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

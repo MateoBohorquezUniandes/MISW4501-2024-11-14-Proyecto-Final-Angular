@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
@@ -7,7 +12,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registry',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css'],
+  styleUrls: ['./registro.component.scss'],
 })
 export class RegistroComponent implements OnInit {
   registroForm = this.formBuilder.group({
@@ -25,19 +30,11 @@ export class RegistroComponent implements OnInit {
     ],
     contrasena: [
       '',
-      [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(20)
-      ],
+      [Validators.required, Validators.minLength(8), Validators.maxLength(20)],
     ],
     contrasena2: [
       '',
-      [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(20)
-      ],
+      [Validators.required, Validators.minLength(8), Validators.maxLength(20)],
     ],
     genero: [0, [Validators.required, Validators.min(1)]],
     edad: [
@@ -89,14 +86,14 @@ export class RegistroComponent implements OnInit {
     private router: Router
   ) {}
 
-  validarContrasena(){
-      const control = this.registroForm.controls.contrasena;
-      const matchingControl = this.registroForm.controls.contrasena2;
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ confirmedValidator: true });
-      } else {
-        matchingControl.setErrors(null);
-      }
+  validarContrasena() {
+    const control = this.registroForm.controls.contrasena;
+    const matchingControl = this.registroForm.controls.contrasena2;
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ confirmedValidator: true });
+    } else {
+      matchingControl.setErrors(null);
+    }
   }
 
   registrarse(
@@ -116,18 +113,18 @@ export class RegistroComponent implements OnInit {
     tiempo: string | null,
     deporte: number | null
   ) {
-    this.validarContrasena()
-    if(this.registroForm.controls.contrasena2.errors == null){
+    this.validarContrasena();
+    if (this.registroForm.controls.contrasena2.errors == null) {
       const registro = {
-        identificacion:{
+        identificacion: {
           tipo: tipo_doc,
-          valor: documento
+          valor: documento,
         },
         nombre: nombre,
         apellido: apellido,
         rol: 'DEPORTISTA',
         contrasena: contrasena,
-        demografia:{
+        demografia: {
           pais_nacimiento: pais_nacimiento,
           ciudad_nacimiento: ciudad_nacimiento,
           pais_residencia: pais_vivienda,
@@ -138,7 +135,7 @@ export class RegistroComponent implements OnInit {
           peso: peso,
           altura: altura,
         },
-        deportes:[{deporte}]
+        deportes: [{ deporte }],
       };
       this.loginService.registrarse(registro).subscribe(
         (data) => {
@@ -154,7 +151,7 @@ export class RegistroComponent implements OnInit {
     }
   }
 
-  public volver(){
+  public volver() {
     this.router.navigateByUrl('/login');
   }
 

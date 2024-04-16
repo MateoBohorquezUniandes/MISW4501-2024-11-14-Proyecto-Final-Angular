@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-socio-home',
-  templateUrl: './socio-home.component.html',
-  styleUrls: ['./socio-home.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class SocioHomeComponent implements OnInit {
 

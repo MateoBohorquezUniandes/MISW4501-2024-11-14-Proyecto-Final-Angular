@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-plan-list',
-  templateUrl: './plan-list.component.html',
-  styleUrls: ['./plan-list.component.css',
-  '../../../styles.css']
+  selector: 'app-afiliaciones',
+  templateUrl: './afiliaciones.component.html',
+  styleUrls: ['./afiliaciones.component.scss',
+  '../../../styles.scss']
 })
 export class PlanListComponent implements OnInit {
 

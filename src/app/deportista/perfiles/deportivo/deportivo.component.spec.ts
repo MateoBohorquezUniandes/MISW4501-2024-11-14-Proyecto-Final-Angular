@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { PerfilDeportivoComponent } from './perfil-deportivo.component';
+import { PerfilDeportivoComponent } from './deportivo.component';
 import { ToastrModule } from 'ngx-toastr';
 import { Habito, Molestia, PerfilDeportivo } from '../perfil_deportivo';
 import { faker } from '@faker-js/faker';
@@ -15,7 +15,7 @@ describe('PerfilDeportivoComponent', () => {
   let component: PerfilDeportivoComponent;
   let fixture: ComponentFixture<PerfilDeportivoComponent>;
   let debug: DebugElement;
-  let spy = jasmine.createSpyObj('PerfilesService', ['getSportProfiles']);
+  let spy = jasmine.createSpyObj('PerfilesService', ['getPerfilDeportivo']);
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -66,7 +66,7 @@ describe('PerfilDeportivoComponent', () => {
     }
 
     component.perfil = new PerfilDeportivo(molestias,habitos)
-    spy.getSportProfiles.and.returnValue(of(new PerfilDeportivo(molestias,habitos)));
+    spy.getPerfilDeportivo.and.returnValue(of(new PerfilDeportivo(molestias,habitos)));
 
     fixture.detectChanges();
     debug = fixture.debugElement;
@@ -80,7 +80,7 @@ describe('PerfilDeportivoComponent', () => {
     expect(debug.queryAll(By.css('a#nav_alimenticio'))).toHaveSize(1);
     let element = debug.query(By.css('a#nav_alimenticio'));
     expect(element.nativeElement.getAttribute('routerLink')).toEqual(
-      '/deportista/perfil-alimenticio'
+      '/deportista/alimenticio'
     );
   });
 
@@ -88,7 +88,7 @@ describe('PerfilDeportivoComponent', () => {
     expect(debug.queryAll(By.css('a#nav_demografico'))).toHaveSize(1);
     let element = debug.query(By.css('a#nav_demografico'));
     expect(element.nativeElement.getAttribute('routerLink')).toEqual(
-      '/deportista/perfil-demografico'
+      '/deportista/demografico'
     );
   });
 
@@ -130,6 +130,6 @@ describe('PerfilDeportivoComponent', () => {
   });
 
   it('Error servicio', () => {
-    spy.getSportProfiles.and.returnValue(throwError({status: 404}));
+    spy.getPerfilDeportivo.and.returnValue(throwError({status: 404}));
   });
 });

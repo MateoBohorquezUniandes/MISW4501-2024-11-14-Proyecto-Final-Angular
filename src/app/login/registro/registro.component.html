@@ -18,23 +18,26 @@
       <br />
       <form
         [formGroup]="registroForm"
-        (ngSubmit)="!registroForm.invalid && registrarse(
-          registroForm.controls.nombre.value,
-          registroForm.controls.apellido.value,
-          registroForm.controls.tipo_doc.value,
-          registroForm.controls.documento.value,
-          registroForm.controls.contrasena.value,
-          registroForm.controls.genero.value,
-          registroForm.controls.edad.value,
-          registroForm.controls.peso.value,
-          registroForm.controls.altura.value,
-          registroForm.controls.pais_nacimiento.value,
-          registroForm.controls.ciudad_nacimiento.value,
-          registroForm.controls.pais_vivienda.value,
-          registroForm.controls.ciudad_vivienda.value,
-          registroForm.controls.tiempo.value,
-          registroForm.controls.deporte.value
-        )"
+        (ngSubmit)="
+          !registroForm.invalid &&
+            registrarse(
+              registroForm.controls.nombre.value,
+              registroForm.controls.apellido.value,
+              registroForm.controls.tipo_doc.value,
+              registroForm.controls.documento.value,
+              registroForm.controls.contrasena.value,
+              registroForm.controls.genero.value,
+              registroForm.controls.edad.value,
+              registroForm.controls.peso.value,
+              registroForm.controls.altura.value,
+              registroForm.controls.pais_nacimiento.value,
+              registroForm.controls.ciudad_nacimiento.value,
+              registroForm.controls.pais_vivienda.value,
+              registroForm.controls.ciudad_vivienda.value,
+              registroForm.controls.tiempo.value,
+              registroForm.controls.deporte.value
+            )
+        "
       >
         <div class="row">
           <div class="col">
@@ -382,7 +385,9 @@
               </p>
               <p
                 *ngIf="
-                  registroForm.get('contrasena2')!.hasError('confirmedValidator') &&
+                  registroForm
+                    .get('contrasena2')!
+                    .hasError('confirmedValidator') &&
                   registroForm.get('contrasena2')!.touched
                 "
               >
@@ -568,11 +573,15 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
-          </div>
+          <div class="col"></div>
           <div class="col">
             <br />
-            <button type="button" id="boton_volver" class="btn btn-primario" (click)="volver()">
+            <button
+              type="button"
+              id="boton_volver"
+              class="btn btn-primario"
+              (click)="volver()"
+            >
               Volver
             </button>
             <button type="submit" id="boton_registro" class="btn btn-primario">

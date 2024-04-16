@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OrganizadorHomeComponent } from './organizador-home/organizador-home.component';
+import { OrganizadorHomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [

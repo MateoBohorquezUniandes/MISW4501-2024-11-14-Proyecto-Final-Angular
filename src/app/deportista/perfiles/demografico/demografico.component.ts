@@ -4,9 +4,9 @@ import { RouterLink } from '@angular/router';
 @Component({
   standalone: true,
   imports:[RouterLink],
-  selector: 'app-perfil-demografico',
-  templateUrl: './perfil-demografico.component.html',
-  styleUrls: ['./perfil-demografico.component.css']
+  selector: 'app-demografico',
+  templateUrl: './demografico.component.html',
+  styleUrls: ['./demografico.component.scss']
 })
 export class PerfilDemograficoComponent implements OnInit {
 
