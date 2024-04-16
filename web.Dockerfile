@@ -11,5 +11,5 @@ RUN npm run build
 
 FROM nginx:stable
 COPY default.conf /etc/nginx/conf.d
-COPY --from=node-build /app/dist/sport-app/ usr/share/nginx/html
+COPY --from=node-build /app/dist/sportapp/browser/ usr/share/nginx/html
 EXPOSE 80
