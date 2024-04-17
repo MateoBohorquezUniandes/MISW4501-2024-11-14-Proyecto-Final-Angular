@@ -1,25 +1,39 @@
-.main-container {
-  display: flex;
-  height: 100vh;
-
-}
-
+/*.active {
+  background-color: #5227cc;
+}*/
 .content {
   flex: 1;
-}
-
-.side-nav-bar {
-  /* position: fixed; */
-  z-index: 1001;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 280px;
-  background-color: #FFFFFF;
 }
 
 .nav .nav-link {
   color: black;
   font-family: "Roboto";
+}
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-events {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+.mat-drawer-container{
+  background-color: #9f9fed;
+}
+
+a {
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+  font-weight: bold;
+  color:#343A40
+}
+a.dropdown-item{
+  color:#FFFFFF
 }
