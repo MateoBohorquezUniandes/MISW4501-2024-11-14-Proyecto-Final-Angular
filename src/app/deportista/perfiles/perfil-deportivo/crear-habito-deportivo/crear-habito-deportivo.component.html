@@ -1,0 +1,86 @@
+<form [formGroup]="habitoForm" (ngSubmit)="
+                        !habitoForm.invalid && createHabitoDeportivo(habitoForm.value)
+                      ">
+  <div class="row g-3 custom-input">
+    <div class="col-sm-2">
+      <label for="inputTitulo" class="col-form-label">Título</label>
+    </div>
+    <div class="col-sm-8">
+      <input id="inputTitulo" class="form-control" aria-describedby="passwordHelpInline" formControlName="titulo">
+    </div>
+    <div class="col-sm-2">
+      <span class="alert alert-danger alert-dismissible-fade-show" *ngIf="
+        habitoForm.get('titulo')!.hasError('required') &&
+        habitoForm.get('titulo')!.touched
+      ">
+        Requerido
+      </span>
+      <span class="alert alert-danger alert-dismissible-fade-show" *ngIf="
+        habitoForm.get('titulo')!.hasError('minlength') &&
+        habitoForm.get('titulo')!.touched
+      ">
+        mínimo 2 caracteres
+      </span>
+      <span class="alert alert-danger alert-dismissible-fade-show" *ngIf="
+        habitoForm.get('titulo')!.hasError('maxlength') &&
+        habitoForm.get('titulo')!.touched
+      ">
+        máximo
+      </span>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center custom-input">
+    <div class="col-sm-2">
+      <label for="inputFrecuencia" class="col-form-label">Frecuencia</label>
+    </div>
+    <div class="col-sm-8">
+      <select id="selector_frecuencia" class="form-select" aria-label="Default select example"
+        formControlName="frecuencia">
+        <option value="0">Seleccionar</option>
+        <option value="Diario">Diario</option>
+        <option value="Semanal">Semanal</option>
+        <option value="Mensual">Mensual</option>
+        <option value="Anual">Anual</option>
+      </select>
+    </div>
+    <div class="col-sm-2">
+      <span id="passwordHelpInline" class="form-text">
+
+      </span>
+    </div>
+  </div>
+
+
+  <div class="row g-3 custom-input">
+    <div class="col-sm-2 ">
+      <label for="inputDescripcion" class="col-form-label">Descripción</label>
+    </div>
+    <div class="col-sm-8">
+      <textarea type="descripcion" id="inputDescripcion" class="form-control" aria-describedby="descripcionHelpInline"
+        formControlName="descripcion"></textarea>
+    </div>
+    <div class="col-sm-2">
+      <span class="alert alert-danger alert-dismissible-fade-show" *ngIf="
+        habitoForm.get('descripcion')!.hasError('required') &&
+        habitoForm.get('descripcion')!.touched
+      ">
+        Requerido
+      </span>
+      <span class="alert alert-danger alert-dismissible-fade-show" *ngIf="
+        habitoForm.get('descripcion')!.hasError('minlength') &&
+        habitoForm.get('descripcion')!.touched
+      ">
+        mínimo 2 caracteres
+      </span>
+      <span class="alert alert-danger alert-dismissible-fade-show" *ngIf="
+        habitoForm.get('descripcion')!.hasError('maxlength') &&
+        habitoForm.get('descripcion')!.touched
+      ">
+        máximo
+      </span>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primario" [disabled]="!habitoForm.valid">Crear Nuevo Habito </button>
+</form>
