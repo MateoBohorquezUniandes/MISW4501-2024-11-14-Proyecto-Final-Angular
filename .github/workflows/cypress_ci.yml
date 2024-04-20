@@ -1,10 +1,6 @@
 name: Cypress Tests Workflow
 
 on:
-  push:
-    branches:
-      - feat/workflow-deploy
-
   workflow_dispatch:
 
 jobs:

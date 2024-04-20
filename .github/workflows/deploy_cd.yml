@@ -5,7 +5,7 @@ on:
     branches:
       - feat/workflow-deploy
       - chore/cicd**
-      - main
+      - release/**
 
   workflow_dispatch:
 
