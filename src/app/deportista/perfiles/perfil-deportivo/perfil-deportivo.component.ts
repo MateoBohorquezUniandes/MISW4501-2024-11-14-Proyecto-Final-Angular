@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { PerfilDeportivo, Habito, Molestia } from '../perfil_deportivo';
 import { PerfilesService } from '../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
+import { PerfilesModule } from '../perfiles.module';
 
 @Component({
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, PerfilesModule],
   selector: 'app-perfil-deportivo',
   templateUrl: './perfil-deportivo.component.html',
   styleUrls: ['./perfil-deportivo.component.css'],
@@ -27,12 +28,15 @@ export class PerfilDeportivoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getProfile()
-    this.habitos = this.perfil.habitos;
-    this.molestias = this.perfil.molestias;
+    this.getProfile();
+    if (this.perfil != null) {
+      this.habitos = this.perfil.habitos;
+      this.molestias = this.perfil.molestias;
+    }
+
   }
 
-  getProfile(){
+  getProfile() {
     this.perfilesService.getSportProfiles().subscribe(
       (perfil) => {
         this.perfil = perfil;

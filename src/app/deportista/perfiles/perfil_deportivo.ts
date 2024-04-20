@@ -44,3 +44,22 @@ export class PerfilDeportivo {
     }
 
 }
+
+export class CrearHabitoPayloadDTO {
+  titulo: string;
+  frecuencia: string;
+  descripcion: string;
+  constructor(titulo: string, frecuencia: string, descripcion: string) {
+    this.titulo = titulo;
+    this.frecuencia = frecuencia;
+    this.descripcion = descripcion;
+  }
+}
+
+export class CrearHabitoDTO {
+  payload: CrearHabitoPayloadDTO;
+  constructor(titulo: string, frecuencia: string, descripcion: string) {
+    var p = new CrearHabitoPayloadDTO(titulo, frecuencia, descripcion);
+    this.payload = p;
+  }
+}

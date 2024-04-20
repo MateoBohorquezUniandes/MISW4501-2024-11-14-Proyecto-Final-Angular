@@ -1,0 +1,108 @@
+<form [formGroup]="habitoForm" (ngSubmit)="
+                        !habitoForm.invalid && createHabitoDeportivoC(habitoForm.value)
+                      ">
+  <div class="row g-3 custom-input">
+    <div class="col-sm-3">
+      <label for="inputTitulo" class="col-form-label">Título</label>
+    </div>
+    <div class="col-sm-9">
+      <input id="inputTitulo" class="form-control" aria-describedby="passwordHelpInline" formControlName="titulo">
+    </div>
+
+  </div>
+
+  <div class="row g-3 align-items-center custom-input">
+    <div class="col-sm-3">
+      <label for="inputFrecuencia" class="col-form-label">Frecuencia</label>
+    </div>
+    <div class="col-sm-9">
+      <select id="selector_frecuencia" class="form-select" aria-label="Default select example"
+        formControlName="frecuencia">
+        <option value="0">Seleccionar</option>
+        <option value="Diario">Diario</option>
+        <option value="Semanal">Semanal</option>
+        <option value="Mensual">Mensual</option>
+        <option value="Anual">Anual</option>
+      </select>
+    </div>
+
+  </div>
+
+
+  <div class="row g-3 custom-input">
+    <div class="col-sm-3">
+      <label for="inputDescripcion" class="col-form-label">Descripción</label>
+    </div>
+    <div class="col-sm-9">
+      <textarea type="descripcion" id="inputDescripcion" class="form-control" aria-describedby="descripcionHelpInline"
+        formControlName="descripcion"></textarea>
+
+    </div>
+</div>
+<div class="row g-3 align-items-center  custom-input">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-9">
+
+    <div class="alert alert-danger dismissible fade show" *ngIf="
+                habitoForm.get('titulo')!.hasError('required') &&
+                habitoForm.get('titulo')!.touched ||
+                habitoForm.get('titulo')!.hasError('minlength') &&
+                habitoForm.get('titulo')!.touched ||
+                habitoForm.get('titulo')!.hasError('maxlength') &&
+                habitoForm.get('titulo')!.touched ||
+                habitoForm.get('descripcion')!.hasError('required') &&
+                habitoForm.get('descripcion')!.touched ||
+                habitoForm.get('descripcion')!.hasError('minlength') &&
+                habitoForm.get('descripcion')!.touched ||
+                habitoForm.get('descripcion')!.hasError('maxlength') &&
+                habitoForm.get('descripcion')!.touched
+                ">
+      <p *ngIf="
+                habitoForm.get('titulo')!.hasError('required') &&
+                habitoForm.get('titulo')!.touched
+              ">
+        Debe ingresar un título
+      </p>
+      <p *ngIf="
+                habitoForm.get('titulo')!.hasError('minlength') &&
+                habitoForm.get('titulo')!.touched
+              ">
+        mínimo 2 caracteres para el título
+      </p>
+      <p *ngIf="
+                  habitoForm.get('titulo')!.hasError('maxlength') &&
+                  habitoForm.get('titulo')!.touched
+                ">
+        exediste el máximo para el título
+      </p>
+      <p *ngIf="
+                  habitoForm.get('descripcion')!.hasError('required') &&
+                  habitoForm.get('descripcion')!.touched
+                ">
+            Debe ingresar una descripción
+            </p>
+            <p *ngIf="
+                              habitoForm.get('descripcion')!.hasError('minlength') &&
+                              habitoForm.get('descripcion')!.touched
+                            ">
+            mínimo 2 caracteres para la descripción
+            </p>
+            <p *ngIf="
+                              habitoForm.get('descripcion')!.hasError('maxlength') &&
+                              habitoForm.get('descripcion')!.touched
+                            ">
+            exediste el máximo para la descripción
+            </p>
+            
+            </div>
+            
+            
+            
+            
+            
+            </div>
+  </div>
+
+  <button type="submit" class="btn btn-primario" [disabled]="!habitoForm.valid">Crear Nuevo Habito </button>
+</form>

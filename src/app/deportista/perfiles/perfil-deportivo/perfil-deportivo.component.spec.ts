@@ -10,6 +10,7 @@ import { Habito, Molestia, PerfilDeportivo } from '../perfil_deportivo';
 import { faker } from '@faker-js/faker';
 import { PerfilesService } from '../perfiles.service';
 import { of, throwError } from 'rxjs';
+import { PerfilesModule } from '../perfiles.module';
 
 describe('PerfilDeportivoComponent', () => {
   let component: PerfilDeportivoComponent;
@@ -24,11 +25,10 @@ describe('PerfilDeportivoComponent', () => {
         RouterTestingModule,
         HttpClientTestingModule,
         ToastrModule.forRoot(),
+        PerfilesModule,
       ],
-      providers: [{provide: PerfilesService, useValue: spy}],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ],
+      providers: [{ provide: PerfilesService, useValue: spy }],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   }));
 
@@ -36,7 +36,7 @@ describe('PerfilDeportivoComponent', () => {
     fixture = TestBed.createComponent(PerfilDeportivoComponent);
     component = fixture.componentInstance;
 
-    const habitos: Array<Habito> =[];
+    const habitos: Array<Habito> = [];
     habitos.push(
       new Habito(
         faker.lorem.sentence(),
@@ -53,8 +53,8 @@ describe('PerfilDeportivoComponent', () => {
       )
     );
 
-    const molestias: Array<Molestia> =[];
-    for(var i = 1; i <= 7; i++) {
+    const molestias: Array<Molestia> = [];
+    for (var i = 1; i <= 7; i++) {
       molestias.push(
         new Molestia(
           faker.lorem.sentence(),
@@ -65,8 +65,10 @@ describe('PerfilDeportivoComponent', () => {
       );
     }
 
-    component.perfil = new PerfilDeportivo(molestias,habitos)
-    spy.getSportProfiles.and.returnValue(of(new PerfilDeportivo(molestias,habitos)));
+    component.perfil = new PerfilDeportivo(molestias, habitos);
+    spy.getSportProfiles.and.returnValue(
+      of(new PerfilDeportivo(molestias, habitos))
+    );
 
     fixture.detectChanges();
     debug = fixture.debugElement;
@@ -118,7 +120,6 @@ describe('PerfilDeportivoComponent', () => {
     element.nativeElement.click();
     fixture.detectChanges();
     expect(element.classes['active']).toBeTruthy();
-
   });
 
   /*it('Prueba del Scroll', () => {
@@ -130,6 +131,6 @@ describe('PerfilDeportivoComponent', () => {
   });
 
   it('Error servicio', () => {
-    spy.getSportProfiles.and.returnValue(throwError({status: 404}));
+    spy.getSportProfiles.and.returnValue(throwError({ status: 404 }));
   });
 });
