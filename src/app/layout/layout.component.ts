@@ -8,6 +8,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {LoginService } from '../login/login.service';
 import { options } from './options'
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-layout',
@@ -22,9 +23,11 @@ export class LayoutComponent implements OnInit {
   options: Array<any> = [];
   english: boolean = false;
   user: string = '';
+  token: string = '';
 
   constructor( public router: Router,
-               private service: LoginService) {
+               private service: LoginService,
+               private toastr: ToastrService,) {
   }
 
   ngOnInit() {
@@ -40,11 +43,17 @@ export class LayoutComponent implements OnInit {
         this.options = options.optionsOrganizador
         break;
     }
-    //let token = this.service.getToken();
-    const helper = new JwtHelperService();
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMzMxMjYxNCwianRpIjoiMTk2ODc2YWYtNDFhNy00YjI4LThlM2ItYTZmMmViYWE1YjlhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ0aXBvIjoiQ0MiLCJ2YWxvciI6IjEyMzQ1Njc4OSJ9LCJuYmYiOjE3MTMzMTI2MTQsImNzcmYiOiJlZWYxOGEzMC1lMzgyLTRiOTItYjlhOS02ZjJlZjdiYjgzZWMiLCJleHAiOjE3MTMzMzc4MTR9.OAq6ifrIhmXtflYzgEG1wd5r1kiUTfSn-y4DlH_RcDA"
-    let decoded = helper.decodeToken(token);
-    this. user = decoded.sub.valor;
+    //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMzMxMjYxNCwianRpIjoiMTk2ODc2YWYtNDFhNy00YjI4LThlM2ItYTZmMmViYWE1YjlhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ0aXBvIjoiQ0MiLCJ2YWxvciI6IjEyMzQ1Njc4OSJ9LCJuYmYiOjE3MTMzMTI2MTQsImNzcmYiOiJlZWYxOGEzMC1lMzgyLTRiOTItYjlhOS02ZjJlZjdiYjgzZWMiLCJleHAiOjE3MTMzMzc4MTR9.OAq6ifrIhmXtflYzgEG1wd5r1kiUTfSn-y4DlH_RcDA";
+    this.token = this.service.getToken();
+    if(this.token != ''){
+      const helper = new JwtHelperService();
+      let decoded = helper.decodeToken(this.token);
+      this.user = decoded.sub.valor;
+    }
+    else {
+      this.toastr.error("Token is null", "Error token:");
+      this.user = "User";
+    }
   }
   signOut(){
     this.service.deleteToken();
