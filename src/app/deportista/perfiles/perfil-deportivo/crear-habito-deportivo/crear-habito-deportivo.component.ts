@@ -54,7 +54,7 @@ export class CrearHabitoDeportivoComponent implements OnInit {
     });
   }
 
-  createHabitoDeportivo(creahabitodeportivoDto: Habito): void {
+  createHabitoDeportivoC(creahabitodeportivoDto: Habito): void {
     const habitoPayload = new CrearHabitoDTO(
       creahabitodeportivoDto.titulo,
       creahabitodeportivoDto.frecuencia,

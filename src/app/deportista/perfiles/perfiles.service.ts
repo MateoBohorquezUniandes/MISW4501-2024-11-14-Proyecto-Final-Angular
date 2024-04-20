@@ -4,7 +4,6 @@ import { environment } from '../../../environments/environment';
 import { Observable, of } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { CrearHabitoDTO, Habito, PerfilDeportivo } from './perfil_deportivo';
-import { Console } from 'console';
 
 @Injectable({
   providedIn: 'root',
@@ -28,10 +27,10 @@ export class PerfilesService {
     return this.http.get<PerfilDeportivo>(this.apiUrl, { headers: header });
   }
 
-  createHabitoDeportivo(habitoDeportivoDto: CrearHabitoDTO): Observable<Habito> {
+  createHabitoDeportivo(habitoDeportivoDto: any): Observable<any> {
     let header = this.createHeaders();
     console.log(habitoDeportivoDto);
-    return this.http.post<Habito>(
+    return this.http.post<string>(
       this.basePerfilUrl + '/deportivo/habitos',
       habitoDeportivoDto,
       { headers: header }

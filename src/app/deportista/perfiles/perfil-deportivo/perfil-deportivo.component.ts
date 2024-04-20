@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { PerfilDeportivo, Habito, Molestia } from '../perfil_deportivo';
 import { PerfilesService } from '../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
-import { CrearHabitoDeportivoComponent } from './crear-habito-deportivo/crear-habito-deportivo.component';
 import { PerfilesModule } from '../perfiles.module';
 
 @Component({
