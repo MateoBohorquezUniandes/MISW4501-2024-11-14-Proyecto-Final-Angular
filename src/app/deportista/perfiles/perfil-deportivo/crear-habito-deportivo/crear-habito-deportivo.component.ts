@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PerfilesService } from '../../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
-import {
-  CrearHabitoDTO,
-  CrearHabitoPayloadDTO,
-  Habito,
-} from '../../perfil_deportivo';
+import { CrearHabitoDTO, Habito } from '../../perfil_deportivo';
 
 @Component({
   selector: 'app-crear-habito-deportivo',

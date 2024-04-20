@@ -61,22 +61,22 @@ describe('CrearHabitoDeportivoComponent', () => {
     expect(component.habitoForm.valid).toBeTrue();
   });
 
-  // it('Prueba metodo crear habito deportivo', () => {
-  //   fixture = TestBed.createComponent(CrearHabitoDeportivoComponent);
-  //   component = fixture.componentInstance;
-  //   fixture.detectChanges();
+  it('Prueba metodo crear habito deportivo', () => {
+    fixture = TestBed.createComponent(CrearHabitoDeportivoComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
 
-  //   const titulo = component.habitoForm.controls['titulo'];
-  //   const frecuencia = component.habitoForm.controls['frecuencia'];
-  //   const descripcion = component.habitoForm.controls['descripcion'];
-  //   titulo.setValue('saltar la cuerda');
-  //   frecuencia.setValue('Semanal');
-  //   descripcion.setValue('saltar por 30 minutos');
-
-  //   const data = { token: 'blabla', rol: 'DEPORTISTA' };
-  //   spyLogin.setToken.and.returnValue(of(data));
-  //   const habit = new Habito(titulo.value, frecuencia.value, descripcion.value);
-  //   component.createHabitoDeportivoC(habit);
-  //   expect(component.habitoForm.valid).toBeTrue();
-  // });
+    const titulo = component.habitoForm.controls['titulo'];
+    const frecuencia = component.habitoForm.controls['frecuencia'];
+    const descripcion = component.habitoForm.controls['descripcion'];
+    titulo.setValue('saltar la cuerda');
+    frecuencia.setValue(1);
+    descripcion.setValue('saltar por 30 minutos');
+    expect(component.habitoForm.valid).toBeTrue();
+    const data = { token: 'blabla', rol: 'DEPORTISTA' };
+    spyLogin.setToken.and.returnValue(of(data));
+    const habit = new Habito(titulo.value, frecuencia.value, descripcion.value);
+    spy.createHabitoDeportivo.and.returnValue(of(202));
+    component.createHabitoDeportivoC(habit);
+  });
 });

@@ -5,8 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CrearHabitoDeportivoComponent } from './perfil-deportivo/crear-habito-deportivo/crear-habito-deportivo.component';
 
 @NgModule({
-  imports: [CommonModule, PerfilDeportivoComponent, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   declarations: [CrearHabitoDeportivoComponent],
-  exports: [PerfilDeportivoComponent, CrearHabitoDeportivoComponent],
+  exports: [CrearHabitoDeportivoComponent],
 })
 export class PerfilesModule {}

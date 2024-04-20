@@ -29,8 +29,11 @@ export class PerfilDeportivoComponent implements OnInit {
 
   ngOnInit() {
     this.getProfile();
-    this.habitos = this.perfil.habitos;
-    this.molestias = this.perfil.molestias;
+    if (this.perfil != null) {
+      this.habitos = this.perfil.habitos;
+      this.molestias = this.perfil.molestias;
+    }
+
   }
 
   getProfile() {
