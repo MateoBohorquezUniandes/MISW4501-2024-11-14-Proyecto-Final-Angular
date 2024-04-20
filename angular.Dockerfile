@@ -10,5 +10,5 @@ RUN npm install -g @angular/cli@17.2.2
 
 RUN npm install
 
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+CMD ["ng", "serve", "--configuration", "production", "--host", "0.0.0.0"]
 

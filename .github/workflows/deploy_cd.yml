@@ -1,0 +1,68 @@
+name: Build and Deploy to GKE
+
+on:
+  push:
+    branches:
+      - feat/workflow-deploy
+      - chore/cicd**
+      - release/**
+
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  IMAGE_TAG: latest # image tag
+  GAR_ZONE: ${{ secrets.GAR_ZONE }} # artifact registry zone
+  GAR_REPO: ${{ secrets.GAR_REPO }} # artifact registry repository
+
+jobs:
+  setup-build-publish:
+    strategy:
+      matrix:
+        images: [angular]
+    name: Setup, Build and Publish
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Setup gcloud CLI
+      - id: "auth"
+        uses: "google-github-actions/auth@v0"
+        with:
+          credentials_json: "${{ secrets.GKE_SA_KEY }}"
+
+      # Configure Docker to use the gcloud command-line tool as a credential
+      # helper for authentication
+      - name: Docker configuration
+        run: |-
+          gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://$GAR_ZONE-docker.pkg.dev
+
+      # Build the Docker image
+      - name: Build
+        run: |-
+          docker build \
+            -f "${{ matrix.images }}.Dockerfile" \
+            --tag "$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/${{ matrix.images}}:$IMAGE_TAG" \
+            --build-arg GITHUB_SHA="$GITHUB_SHA" \
+            --build-arg GITHUB_REF="$GITHUB_REF" \
+            .
+      # Push the Docker image to Google Container Registry
+      - name: Publish
+        run: |-
+          docker push "$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/${{ matrix.images}}:$IMAGE_TAG"
+
+      - name: Deploy
+        run: |-
+          gcloud run deploy angular2 \
+            --image=us-central1-docker.pkg.dev/proyecto-final-416123/misw450x-registry/angular:latest \
+            --region=us-central1 \
+            --project=proyecto-final-416123 \
+
+      - name: Update Traffic
+        run: |-
+          gcloud run services update-traffic angular2 \
+            --to-latest \
+            --region=us-central1 \
