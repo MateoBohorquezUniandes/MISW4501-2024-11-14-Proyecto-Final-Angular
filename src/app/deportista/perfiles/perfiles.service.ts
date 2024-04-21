@@ -9,8 +9,8 @@ import { CrearHabitoDTO, Habito, PerfilDeportivo } from './perfil_deportivo';
   providedIn: 'root',
 })
 export class PerfilesService {
-  private apiUrl = environment.UrlPerfiles + 'usuarios/login';
-  private basePerfilUrl = environment.UrlPerfiles;
+  private apiUrl = environment.UrlPerfilesCommand + 'usuarios/login';
+  private basePerfilUrl = environment.UrlPerfilesCommand;
   constructor(private http: HttpClient, private cookies: CookieService) {}
 
   createHeaders() {
