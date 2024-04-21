@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: '', redirectTo:'login' , pathMatch:'full'},
   { path: 'login', component: LoginComponent},
   { path: 'registry', component: RegistroComponent },
-  { path: 'plans', component: PlanListComponent},
+
   //{ path: 'deportista', component: DeportistaHomeComponent },
   {
     path: '',
@@ -20,6 +20,7 @@ export const routes: Routes = [
       { path: 'socios', component: SocioHomeComponent },
       { path: 'deportista', loadChildren: () => import('./deportista/deportista.routing').then( r => r.routes) },
       { path: 'organizador', component: OrganizadorHomeComponent},
+      { path: 'planes', component: PlanListComponent},
     ]
   }
 ];

@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         console.log(data)
         switch(data.rol){
           case "DEPORTISTA":
-            this.router.navigateByUrl("/deportista")
+            this.router.navigateByUrl("/deportista",{state:{'rol':'DEPORTISTA', usuario: documento}})
             break;
           case "SOCIO":
             this.router.navigateByUrl("/socios")

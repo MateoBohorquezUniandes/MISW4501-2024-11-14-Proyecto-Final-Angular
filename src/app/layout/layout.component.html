@@ -1,1 +1,40 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    [(opened)]="opened"
+    (opened)="events.push('open!')"
+    (closed)="events.push('close!')"
+  >
+    <div class="side-nav-bar d-flex flex-column flex-shrink-0 p-0">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" style="margin: 20px; padding-bottom: 10px;">
+        <span class="fs-4" style="color:#7c7c7c">SPORTAPP</span>
+      </a>
+      <ul class="nav flex-column mb-auto" style="color: black !important;">
+        <li *ngFor="let option of options" style="border-top: 1px solid; border-bottom: 1px solid;">
+          <a [href]="option.path" class="nav-link">
+            {{option.option}}
+          </a>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false"  style="margin: 20px;">
+          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>{{user}}</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" (click)="signOut()">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button mat-button (click)="sidenav.toggle()">></button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
