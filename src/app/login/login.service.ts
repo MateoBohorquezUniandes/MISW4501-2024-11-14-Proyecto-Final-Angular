@@ -8,11 +8,9 @@ import { CookieService } from "ngx-cookie-service";
   providedIn: 'root',
 })
 export class LoginService {
-  private apiUrl = environment.UrlUsuarios + 'usuarios/commands';
   constructor(private http:HttpClient, private cookies: CookieService) {}
 
   createHeaders() {
-    const token = this.cookies.get('token');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
@@ -24,17 +22,17 @@ export class LoginService {
 
   login(request: any): Observable<any> {
     let header = this.createHeaders();
-    return this.http.post<string>(this.apiUrl + '/login',request,{ headers: header } )
+    return this.http.post<string>(`${environment.UrlUsuarios}/login`,request,{ headers: header } )
   }
   setToken(token: string){
-    this.cookies.set("token", token);
+    this.cookies.set("token", token, undefined,"/", document.location.host, true, 'Strict');
   }
   getToken(){
     return this.cookies.get("token");
   }
   registrarse(request: any): Observable<any>{
     let header = this.createHeaders();
-    return this.http.post<string>(this.apiUrl, request ,{ headers: header });
+    return this.http.post<string>(`${environment.UrlUsuarios}/commands`, request ,{ headers: header });
   }
   deleteToken(){
     this.cookies.delete("token");

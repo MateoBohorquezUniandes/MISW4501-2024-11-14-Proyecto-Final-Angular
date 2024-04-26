@@ -9,8 +9,8 @@ import { CrearHabitoDTO, Habito, PerfilDeportivo } from './perfil_deportivo';
   providedIn: 'root',
 })
 export class PerfilesService {
-  private apiUrl = environment.UrlPerfilesCommand + 'usuarios/login';
-  private basePerfilUrl = environment.UrlPerfilesCommand;
+  private apiUrl = environment.UrlPerfiles + 'perfiles';
+  private basePerfilUrl = environment.UrlPerfiles;
   constructor(private http: HttpClient, private cookies: CookieService) {}
 
   createHeaders() {
@@ -18,20 +18,24 @@ export class PerfilesService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
     });
     return headers;
   }
 
   getSportProfiles(): Observable<PerfilDeportivo> {
     let header = this.createHeaders();
-    return this.http.get<PerfilDeportivo>(this.apiUrl, { headers: header });
+    return this.http.get<PerfilDeportivo>(this.apiUrl + '/queries/deportivos'
+      , { headers: header });
   }
 
   createHabitoDeportivo(habitoDeportivoDto: any): Observable<any> {
     let header = this.createHeaders();
     console.log(habitoDeportivoDto);
     return this.http.post<string>(
-      this.basePerfilUrl + '/deportivo/habitos',
+      this.basePerfilUrl + '/commands/deportivo/habitos',
       habitoDeportivoDto,
       { headers: header }
     );
