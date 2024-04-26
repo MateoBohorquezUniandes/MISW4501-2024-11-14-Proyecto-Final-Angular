@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PerfilesService } from '../../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
-import { CrearHabitoDTO, Habito } from '../../perfil_deportivo';
+import { MolestiaDTO, Molestia } from '../../perfil_deportivo';
 
 @Component({
   selector: 'app-crear-molestia',
@@ -28,14 +28,6 @@ export class CrearMolestiaComponent implements OnInit {
           Validators.maxLength(64),
         ],
       ],
-      frecuencia: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(64),
-        ],
-      ],
       descripcion: [
         '',
         [
@@ -44,17 +36,21 @@ export class CrearMolestiaComponent implements OnInit {
           Validators.maxLength(400),
         ],
       ],
+      fecha: ['', [Validators.required]],
+      tipo: ['', [Validators.required]],
     });
   }
 
-  createHabitoDeportivoC(creahabitodeportivoDto: Habito): void {
-    const habitoPayload = new CrearHabitoDTO(
-      creahabitodeportivoDto.titulo,
-      creahabitodeportivoDto.frecuencia,
-      creahabitodeportivoDto.descripcion
+  createMolestia(crearMolestiaDto: Molestia): void {
+    console.log(crearMolestiaDto);
+    const molestiaPayload = new MolestiaDTO(
+      crearMolestiaDto.titulo,
+      crearMolestiaDto.fecha,
+      crearMolestiaDto.descripcion,
+      crearMolestiaDto.tipo
     );
-    this.perfilesService.createHabitoDeportivo(habitoPayload).subscribe(() => {
-      this.toastr.success('Habito Creado Satisfactoriamente', 'Habito');
+    this.perfilesService.createMolestia(molestiaPayload).subscribe(() => {
+      this.toastr.success('Molestia Creada Satisfactoriamente', 'Molestia');
       this.molestiaForm.reset();
     });
   }

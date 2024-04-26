@@ -36,4 +36,14 @@ export class PerfilesService {
       { headers: header }
     );
   }
+
+  createMolestia(molestiaDto: any): Observable<any> {
+    let header = this.createHeaders();
+    console.log(header);
+    return this.http.post<string>(
+      this.basePerfilUrl + '/deportivo/molestias',
+      molestiaDto,
+      { headers: header }
+    );
+  }
 }

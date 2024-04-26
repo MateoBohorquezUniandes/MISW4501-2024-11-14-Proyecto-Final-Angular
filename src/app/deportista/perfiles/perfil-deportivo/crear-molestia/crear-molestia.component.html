@@ -1,5 +1,5 @@
 <form [formGroup]="molestiaForm" (ngSubmit)="
-                        !molestiaForm.invalid && createHabitoDeportivoC(molestiaForm.value)
+                        !molestiaForm.invalid && createMolestia(molestiaForm.value)
                       ">
   <div class="row g-3 custom-input">
     <div class="col-sm-3">
@@ -65,7 +65,12 @@
                 molestiaForm.get('descripcion')!.hasError('minlength') &&
                 molestiaForm.get('descripcion')!.touched ||
                 molestiaForm.get('descripcion')!.hasError('maxlength') &&
-                molestiaForm.get('descripcion')!.touched
+                molestiaForm.get('descripcion')!.touched ||
+                molestiaForm.get('fecha')!.hasError('maxlength') &&
+                molestiaForm.get('fecha')!.touched ||
+                molestiaForm.get('tipo')!.hasError('maxlength') &&
+                molestiaForm.get('tipo')!.touched
+
                 ">
         <p *ngIf="
                 molestiaForm.get('titulo')!.hasError('required') &&
@@ -103,6 +108,18 @@
                             ">
           exediste el máximo para la descripción
         </p>
+        <p *ngIf="
+                        molestiaForm.get('fecha')!.hasError('required') &&
+                        molestiaForm.get('fecha')!.touched
+                      ">
+          Debe ingresar un fecha
+        </p>
+        <p *ngIf="
+                        molestiaForm.get('tipo')!.hasError('required') &&
+                        molestiaForm.get('tipo')!.touched
+                      ">
+          Debe ingresar un tipo
+        </p>
 
       </div>
 
@@ -113,5 +130,5 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primario" [disabled]="!molestiaForm.valid">Crear Nueva Molestia </button>
+  <button type="submit" class="btn btn-primario" [disabled]="!molestiaForm.valid">Crear Nueva molestia </button>
 </form>
