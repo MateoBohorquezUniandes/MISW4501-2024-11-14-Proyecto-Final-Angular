@@ -22,7 +22,11 @@ export class LoginService {
 
   login(request: any): Observable<any> {
     let header = this.createHeaders();
-    return this.http.post<string>(`${environment.UrlUsuarios}/login`,request,{ headers: header } )
+    return this.http.post<string>(
+      `${environment.UrlUsuarios}/commands/login`,
+      request,
+      { headers: header }
+    );
   }
   setToken(token: string){
     this.cookies.set("token", token, undefined,"/", document.location.host, true, 'Strict');
