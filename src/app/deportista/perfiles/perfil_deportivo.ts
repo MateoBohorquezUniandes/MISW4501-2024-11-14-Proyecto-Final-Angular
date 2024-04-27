@@ -63,3 +63,34 @@ export class CrearHabitoDTO {
     this.payload = p;
   }
 }
+
+export class CrearMolestiaPayloadDTO {
+  titulo: string;
+  fecha: string;
+  tipo: string;
+  descripcion: string;
+  constructor(
+    titulo: string,
+    fecha: string,
+    descripcion: string,
+    tipo: string
+  ) {
+    this.titulo = titulo;
+    this.fecha = fecha;
+    this.descripcion = descripcion;
+    this.tipo = tipo;
+  }
+}
+
+export class MolestiaDTO {
+  payload: CrearMolestiaPayloadDTO;
+  constructor(
+    titulo: string,
+    fecha: string,
+    descripcion: string,
+    tipo: string
+  ) {
+    let p = new CrearMolestiaPayloadDTO(titulo, fecha, descripcion, tipo);
+    this.payload = p;
+  }
+}

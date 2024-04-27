@@ -1,0 +1,139 @@
+<form [formGroup]="molestiaForm" (ngSubmit)="
+                        !molestiaForm.invalid && createMolestia(molestiaForm.value)
+                      ">
+  <div class="row g-3 custom-input">
+    <div class="col-sm-3">
+      <label for="inputTitulo" class="col-form-label">Título</label>
+    </div>
+    <div class="col-sm-9">
+      <input id="inputTitulo" class="form-control" aria-describedby="passwordHelpInline" formControlName="titulo">
+    </div>
+
+  </div>
+
+  <div class="row g-3 custom-input">
+    <div class="col-sm-3">
+      <label for="inputFecha" class="col-form-label">Fecha</label>
+    </div>
+    <mat-form-field class="col-sm-9">
+      <mat-label>Escoge una fecha</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+  </div>
+
+  <div class="row g-3 align-items-center custom-input">
+    <div class="col-sm-3">
+      <label for="inputTipo" class="col-form-label">Tipo</label>
+    </div>
+    <div class="col-sm-9">
+      <select id="selector_tipo" class="form-select" aria-label="Default select example" formControlName="tipo">
+        <option value="0">Seleccionar</option>
+        <option value="Molestia">Molestia</option>
+        <option value="Lesion">Lesión</option>
+        <option value="Incapacidad">Incapacidad
+        <option>
+      </select>
+    </div>
+
+  </div>
+
+
+  <div class="row g-3 custom-input">
+    <div class="col-sm-3">
+      <label for="inputDescripcion" class="col-form-label">Descripción</label>
+    </div>
+    <div class="col-sm-9">
+      <textarea type="descripcion" id="inputDescripcion" class="form-control" aria-describedby="descripcionHelpInline"
+        formControlName="descripcion"></textarea>
+
+    </div>
+  </div>
+  <div class="row g-3 align-items-center">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-9">
+
+      <div class="alert alert-danger dismissible fade show" *ngIf="
+                molestiaForm.get('titulo')!.hasError('required') &&
+                molestiaForm.get('titulo')!.touched ||
+                molestiaForm.get('titulo')!.hasError('minlength') &&
+                molestiaForm.get('titulo')!.touched ||
+                molestiaForm.get('titulo')!.hasError('maxlength') &&
+                molestiaForm.get('titulo')!.touched ||
+                molestiaForm.get('descripcion')!.hasError('required') &&
+                molestiaForm.get('descripcion')!.touched ||
+                molestiaForm.get('descripcion')!.hasError('minlength') &&
+                molestiaForm.get('descripcion')!.touched ||
+                molestiaForm.get('descripcion')!.hasError('maxlength') &&
+                molestiaForm.get('descripcion')!.touched ||
+                molestiaForm.get('fecha')!.hasError('maxlength') &&
+                molestiaForm.get('fecha')!.touched ||
+                molestiaForm.get('tipo')!.hasError('maxlength') &&
+                molestiaForm.get('tipo')!.touched
+
+                ">
+        <p *ngIf="
+                molestiaForm.get('titulo')!.hasError('required') &&
+                molestiaForm.get('titulo')!.touched
+              ">
+          Debe ingresar un título
+        </p>
+        <p *ngIf="
+                molestiaForm.get('titulo')!.hasError('minlength') &&
+                molestiaForm.get('titulo')!.touched
+              ">
+          mínimo 2 caracteres para el título
+        </p>
+        <p *ngIf="
+                  molestiaForm.get('titulo')!.hasError('maxlength') &&
+                  molestiaForm.get('titulo')!.touched
+                ">
+          exediste el máximo para el título
+        </p>
+        <p *ngIf="
+                  molestiaForm.get('descripcion')!.hasError('required') &&
+                  molestiaForm.get('descripcion')!.touched
+                ">
+          Debe ingresar una descripción
+        </p>
+        <p *ngIf="
+                              molestiaForm.get('descripcion')!.hasError('minlength') &&
+                              molestiaForm.get('descripcion')!.touched
+                            ">
+          mínimo 2 caracteres para la descripción
+        </p>
+        <p *ngIf="
+                              molestiaForm.get('descripcion')!.hasError('maxlength') &&
+                              molestiaForm.get('descripcion')!.touched
+                            ">
+          exediste el máximo para la descripción
+        </p>
+        <p *ngIf="
+                        molestiaForm.get('fecha')!.hasError('required') &&
+                        molestiaForm.get('fecha')!.touched
+                      ">
+          Debe ingresar un fecha
+        </p>
+        <p *ngIf="
+                        molestiaForm.get('tipo')!.hasError('required') &&
+                        molestiaForm.get('tipo')!.touched
+                      ">
+          Debe ingresar un tipo
+        </p>
+
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primario" [disabled]="!molestiaForm.valid">Crear Nueva molestia </button>
+
+</form>

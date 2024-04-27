@@ -11,6 +11,7 @@ import { faker } from '@faker-js/faker';
 import { PerfilesService } from '../perfiles.service';
 import { of, throwError } from 'rxjs';
 import { PerfilesModule } from '../perfiles.module';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 describe('PerfilDeportivoComponent', () => {
   let component: PerfilDeportivoComponent;
@@ -27,7 +28,10 @@ describe('PerfilDeportivoComponent', () => {
         ToastrModule.forRoot(),
         PerfilesModule,
       ],
-      providers: [{ provide: PerfilesService, useValue: spy }],
+      providers: [
+        { provide: PerfilesService, useValue: spy },
+        provideAnimations(),
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   }));

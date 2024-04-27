@@ -9,8 +9,8 @@ import { CrearHabitoDTO, Habito, PerfilDeportivo } from './perfil_deportivo';
   providedIn: 'root',
 })
 export class PerfilesService {
-  private apiUrl = environment.UrlPerfiles + 'usuarios/login';
-  private basePerfilUrl = environment.UrlPerfiles;
+  private apiUrl = environment.UrlPerfilesCommand + 'usuarios/login';
+  private basePerfilUrl = environment.UrlPerfilesCommand;
   constructor(private http: HttpClient, private cookies: CookieService) {}
 
   createHeaders() {
@@ -33,6 +33,16 @@ export class PerfilesService {
     return this.http.post<string>(
       this.basePerfilUrl + '/deportivo/habitos',
       habitoDeportivoDto,
+      { headers: header }
+    );
+  }
+
+  createMolestia(molestiaDto: any): Observable<any> {
+    let header = this.createHeaders();
+    console.log(header);
+    return this.http.post<string>(
+      this.basePerfilUrl + '/deportivo/molestias',
+      molestiaDto,
       { headers: header }
     );
   }
