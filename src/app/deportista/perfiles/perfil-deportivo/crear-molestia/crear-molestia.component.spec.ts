@@ -3,19 +3,19 @@
 // import { By } from '@angular/platform-browser';
 // import { DebugElement } from '@angular/core';
 
-// import { CrearHabitoDeportivoComponent } from './crear-molestia.component';
+// import { CrearMolestiaComponent } from './crear-molestia.component';
 // import { ReactiveFormsModule } from '@angular/forms';
 // import { ToastrModule } from 'ngx-toastr';
 // import { HttpClientTestingModule } from '@angular/common/http/testing';
 // import { HttpClientModule } from '@angular/common/http';
 // import { PerfilesService } from '../../perfiles.service';
-// import { Habito } from '../../perfil_deportivo';
+// import { Molestia } from '../../perfil_deportivo';
 // import { of } from 'rxjs';
 // import { LoginService } from '../../../../login/login.service';
 
-// describe('CrearHabitoDeportivoComponent', () => {
-//   let component: CrearHabitoDeportivoComponent;
-//   let fixture: ComponentFixture<CrearHabitoDeportivoComponent>;
+// describe('CrearMolestiaComponent', () => {
+//   let component: CrearMolestiaComponent;
+//   let fixture: ComponentFixture<CrearMolestiaComponent>;
 //   let spy = jasmine.createSpyObj('PerfilesService', ['createHabitoDeportivo']);
 //   let spyLogin = jasmine.createSpyObj('LoginService', ['login', 'setToken']);
 
@@ -32,12 +32,12 @@
 //         { provide: PerfilesService, useValue: spy },
 //         { provide: LoginService, useValue: spyLogin },
 //       ],
-//       declarations: [CrearHabitoDeportivoComponent],
+//       declarations: [CrearMolestiaComponent],
 //     }).compileComponents();
 //   }));
 
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(CrearHabitoDeportivoComponent);
+//     fixture = TestBed.createComponent(CrearMolestiaComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });
@@ -46,37 +46,30 @@
 //     expect(component).toBeTruthy();
 //   });
 
-//   it('Debe ser valido', () => {
-//     fixture = TestBed.createComponent(CrearHabitoDeportivoComponent);
+
+//   it('Prueba metodo crear moelstia', () => {
+//     fixture = TestBed.createComponent(CrearMolestiaComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 
-//     const titulo = component.habitoForm.controls['titulo'];
-//     const frecuencia = component.habitoForm.controls['frecuencia'];
-//     const descripcion = component.habitoForm.controls['descripcion'];
-//     titulo.setValue('saltar la cuerda');
-//     frecuencia.setValue('Semanal');
-//     descripcion.setValue('saltar por 30 minutos');
-
-//     expect(component.habitoForm.valid).toBeTrue();
-//   });
-
-//   it('Prueba metodo crear habito deportivo', () => {
-//     fixture = TestBed.createComponent(CrearHabitoDeportivoComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-
-//     const titulo = component.habitoForm.controls['titulo'];
-//     const frecuencia = component.habitoForm.controls['frecuencia'];
-//     const descripcion = component.habitoForm.controls['descripcion'];
-//     titulo.setValue('saltar la cuerda');
-//     frecuencia.setValue(1);
-//     descripcion.setValue('saltar por 30 minutos');
-//     expect(component.habitoForm.valid).toBeTrue();
+//     const titulo = component.molestiaForm.controls['titulo'];
+//     const fecha = component.molestiaForm.controls['fecha'];
+//     const descripcion = component.molestiaForm.controls['descripcion'];
+//     const tipo = component.molestiaForm.controls['tipo'];
+//     titulo.setValue('molest');
+//     fecha.setValue('2024-04-17');
+//     descripcion.setValue('molestias al andar en bicicle');
+//     tipo.setValue(1);
+//     expect(component.molestiaForm.valid).toBeTrue();
 //     const data = { token: 'blabla', rol: 'DEPORTISTA' };
 //     spyLogin.setToken.and.returnValue(of(data));
-//     const habit = new Habito(titulo.value, frecuencia.value, descripcion.value);
+//     const molestia = new Molestia(
+//       titulo.value,
+//       fecha.value,
+//       tipo.value,
+//       descripcion.value
+//     );
 //     spy.createHabitoDeportivo.and.returnValue(of(202));
-//     component.createHabitoDeportivoC(habit);
+//     component.createMolestia(molestia);
 //   });
 // });
