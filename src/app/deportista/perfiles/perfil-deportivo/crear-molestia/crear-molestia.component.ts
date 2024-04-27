@@ -4,6 +4,8 @@ import { PerfilesService } from '../../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
 import { MolestiaDTO, Molestia } from '../../perfil_deportivo';
 
+import moment from 'moment';
+
 @Component({
   selector: 'app-crear-molestia',
   templateUrl: './crear-molestia.component.html',
@@ -42,13 +44,17 @@ export class CrearMolestiaComponent implements OnInit {
   }
 
   createMolestia(crearMolestiaDto: Molestia): void {
-    console.log(crearMolestiaDto);
     const molestiaPayload = new MolestiaDTO(
       crearMolestiaDto.titulo,
       crearMolestiaDto.fecha,
       crearMolestiaDto.descripcion,
       crearMolestiaDto.tipo
     );
+
+    molestiaPayload.payload.fecha = moment(
+      molestiaPayload.payload.fecha
+    ).format('YYYY-MM-DD');
+
     this.perfilesService.createMolestia(molestiaPayload).subscribe(() => {
       this.toastr.success('Molestia Creada Satisfactoriamente', 'Molestia');
       this.molestiaForm.reset();
