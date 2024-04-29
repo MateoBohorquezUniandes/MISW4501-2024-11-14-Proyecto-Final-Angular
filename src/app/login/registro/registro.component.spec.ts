@@ -51,8 +51,8 @@ describe('RegistroComponent', () => {
     apellido.setValue('Barbosa');
     tipo_doc.setValue(1);
     documento.setValue('37864172');
-    contrasena.setValue('mocos123');
-    contrasena2.setValue('mocos123');
+    contrasena.setValue('mocos12345');
+    contrasena2.setValue('mocos12345');
     genero.setValue(1);
     edad.setValue('36');
     peso.setValue('63');
@@ -91,8 +91,8 @@ describe('RegistroComponent', () => {
     apellido.setValue('Barbosa');
     tipo_doc.setValue(1);
     documento.setValue('37864172');
-    contrasena.setValue('mocos123');
-    contrasena2.setValue('mocos1234');
+    contrasena.setValue('mocos12345');
+    contrasena2.setValue('mocos12346');
     genero.setValue(1);
     edad.setValue('36');
     peso.setValue('63');
