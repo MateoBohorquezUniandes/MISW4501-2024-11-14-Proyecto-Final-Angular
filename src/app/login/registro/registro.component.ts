@@ -27,7 +27,7 @@ export class RegistroComponent implements OnInit {
       '',
       [
         Validators.required,
-        Validators.minLength(8),
+        Validators.minLength(10),
         Validators.maxLength(20)
       ],
     ],
@@ -35,7 +35,7 @@ export class RegistroComponent implements OnInit {
       '',
       [
         Validators.required,
-        Validators.minLength(8),
+        Validators.minLength(10),
         Validators.maxLength(20)
       ],
     ],
@@ -62,9 +62,9 @@ export class RegistroComponent implements OnInit {
       '',
       [
         Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(3),
-        Validators.pattern('^[0-9]*$'),
+        //Validators.minLength(3),
+        //Validators.maxLength(3),
+        //Validators.pattern('^[0-9]*$'),
       ],
     ],
     pais_nacimiento: ['', [Validators.required]],
@@ -132,14 +132,15 @@ export class RegistroComponent implements OnInit {
           ciudad_nacimiento: ciudad_nacimiento,
           pais_residencia: pais_vivienda,
           ciudad_residencia: ciudad_vivienda,
-          tiempo_residencia: tiempo,
+          tiempo_residencia: Number(tiempo),
           genero: genero,
-          edad: edad,
-          peso: peso,
-          altura: altura,
+          edad: Number(edad),
+          peso: Number(peso),
+          altura: Number(altura),
         },
-        deportes:[{deporte}]
+        deportes:[deporte]
       };
+      console.log(registro)
       this.loginService.registrarse(registro).subscribe(
         (data) => {
           this.router.navigateByUrl('/login');

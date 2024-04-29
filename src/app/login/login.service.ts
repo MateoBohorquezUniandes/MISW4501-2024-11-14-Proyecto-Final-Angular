@@ -14,7 +14,7 @@ export class LoginService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE',
       'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
     });
     return headers;
@@ -36,7 +36,7 @@ export class LoginService {
   }
   registrarse(request: any): Observable<any>{
     let header = this.createHeaders();
-    return this.http.post<string>(`${environment.UrlUsuarios}/commands`, request ,{ headers: header });
+    return this.http.post<string>(`${environment.UrlUsuarios}/commands/`, request ,{ headers: header });
   }
   deleteToken(){
     this.cookies.delete("token");

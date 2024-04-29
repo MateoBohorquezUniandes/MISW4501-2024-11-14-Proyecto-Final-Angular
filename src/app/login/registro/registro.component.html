@@ -204,8 +204,8 @@
               formControlName="deporte"
             >
               <option selected value="0">Tipo</option>
-              <option value="ATLETISMO">Atletismo</option>
-              <option value="CICLISMO">Ciclismo</option>
+              <option value="Atletismo">Atletismo</option>
+              <option value="Ciclismo">Ciclismo</option>
             </select>
           </div>
         </div>
@@ -346,7 +346,7 @@
                   registroForm.get('contrasena')!.touched
                 "
               >
-                La contraseña debe tener minimo 8 caracteres
+                La contraseña debe tener minimo 10 caracteres
               </p>
               <p
                 *ngIf="
@@ -370,7 +370,7 @@
                   registroForm.get('contrasena2')!.touched
                 "
               >
-                La confirmación de la contraseña debe tener minimo 8 caracteres
+                La confirmación de la contraseña debe tener minimo 10 caracteres
               </p>
               <p
                 *ngIf="
@@ -460,15 +460,15 @@
               >
                 Debe ingresar un peso
               </p>
-              <p
+              <!--<p
                 *ngIf="
                   registroForm.get('altura')!.hasError('pattern') &&
                   registroForm.get('altura')!.touched
                 "
               >
                 La altura debe estar conformada solo de numeros
-              </p>
-              <p
+              </p>-->
+              <!--<p
                 *ngIf="
                   registroForm.get('altura')!.hasError('maxlength') &&
                   registroForm.get('altura')!.touched
@@ -483,7 +483,7 @@
                 "
               >
                 La altura debe tener minimo 3 caracteres
-              </p>
+              </p>-->
               <p
                 *ngIf="
                   registroForm.get('altura')!.hasError('required') &&
