@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
       },
       rol: tipo_usuario,
     };
+    console.log(user);
     this.loginService.login(user).subscribe(
       data => {
         this.loginService.setToken(data.token);
