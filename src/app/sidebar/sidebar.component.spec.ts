@@ -4,15 +4,15 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { LayoutComponent } from './layout.component';
+import { SidebarComponent } from './sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtHelperService } from '@auth0/angular-jwt'
 import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
 
 describe('LayoutComponent', () => {
-  let component: LayoutComponent;
-  let fixture: ComponentFixture<LayoutComponent>;
+  let component: SidebarComponent;
+  let fixture: ComponentFixture<SidebarComponent>;
   let spy = jasmine.createSpyObj('LoginService', ['login', 'setToken','getToken', 'deleteToken']);
   let spy2 = jasmine.createSpyObj('Router', ['navigateByUrl'],{url: "/deportista"});
   let router: Router;
@@ -21,7 +21,7 @@ describe('LayoutComponent', () => {
       imports: [
         HttpClientTestingModule,
         ToastrModule.forRoot(),
-        LayoutComponent,
+        SidebarComponent,
         BrowserAnimationsModule,
       ],
       providers: [
@@ -33,7 +33,7 @@ describe('LayoutComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LayoutComponent);
+    fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     spy.getToken.and.returnValue('');
     fixture.detectChanges();
@@ -52,7 +52,7 @@ describe('LayoutComponent', () => {
 
   it('test User', () => {
     spy.getToken.and.returnValue('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMzMxMjYxNCwianRpIjoiMTk2ODc2YWYtNDFhNy00YjI4LThlM2ItYTZmMmViYWE1YjlhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ0aXBvIjoiQ0MiLCJ2YWxvciI6IjEyMzQ1Njc4OSJ9LCJuYmYiOjE3MTMzMTI2MTQsImNzcmYiOiJlZWYxOGEzMC1lMzgyLTRiOTItYjlhOS02ZjJlZjdiYjgzZWMiLCJleHAiOjE3MTMzMzc4MTR9.OAq6ifrIhmXtflYzgEG1wd5r1kiUTfSn-y4DlH_RcDA');
-    fixture = TestBed.createComponent(LayoutComponent);
+    fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component.user).toEqual("123456789");

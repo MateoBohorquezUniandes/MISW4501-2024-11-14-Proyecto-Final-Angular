@@ -6,8 +6,8 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   selector: 'app-perfil-alimenticio',
-  templateUrl: './perfil-alimenticio.component.html',
-  styleUrls: ['./perfil-alimenticio.component.css']
+  templateUrl: './alimenticio.component.html',
+  styleUrls: ['./alimenticio.component.css']
 })
 export class PerfilAlimenticioComponent implements OnInit {
 

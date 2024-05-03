@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PerfilesService } from '../../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
 import { CrearHabitoDTO, Habito } from '../../perfil_deportivo';
+import { PerfilDeportivoComponent } from '../deportivo.component';
 
 @Component({
   selector: 'app-crear-habito-deportivo',
@@ -18,7 +19,8 @@ export class CrearHabitoDeportivoComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private perfilesService: PerfilesService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private listado: PerfilDeportivoComponent
   ) {}
 
   ngOnInit() {
@@ -58,6 +60,7 @@ export class CrearHabitoDeportivoComponent implements OnInit {
     );
     this.perfilesService.createHabitoDeportivo(habitoPayload).subscribe(() => {
       this.toastr.success('Habito Creado Satisfactoriamente', 'Habito');
+      this.listado.getProfile();
       this.habitoForm.reset();
     });
   }

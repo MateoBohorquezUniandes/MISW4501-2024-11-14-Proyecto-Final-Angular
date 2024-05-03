@@ -10,8 +10,8 @@ import { PerfilesModule } from '../perfiles.module';
   standalone: true,
   imports: [RouterLink, CommonModule, PerfilesModule],
   selector: 'app-perfil-deportivo',
-  templateUrl: './perfil-deportivo.component.html',
-  styleUrls: ['./perfil-deportivo.component.css'],
+  templateUrl: './deportivo.component.html',
+  styleUrls: ['./deportivo.component.css'],
 })
 export class PerfilDeportivoComponent implements OnInit {
   perfil!: PerfilDeportivo;
@@ -28,18 +28,16 @@ export class PerfilDeportivoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getProfile();
-    if (this.perfil != null) {
-      this.habitos = this.perfil.habitos;
-      this.molestias = this.perfil.molestias;
-    }
-
+    this.getProfile()
   }
 
-  getProfile() {
+  getProfile(){
     this.perfilesService.getSportProfiles().subscribe(
       (perfil) => {
-        this.perfil = perfil;
+        if (perfil != undefined) {
+          this.habitos = perfil.data.habitos;
+          this.molestias = perfil.data.molestias;
+        }
       },
       (error) => {
         this.toastr.error('Error', 'Error al consultar el perfil:' + error);
@@ -47,35 +45,4 @@ export class PerfilDeportivoComponent implements OnInit {
     );
   }
 
-  selectHabit(event: any, habito: any) {
-    let elem = this.el.nativeElement.querySelector(
-      'ul#lista_habitos > li.active'
-    );
-    if (elem != null) {
-      this.renderer.removeClass(elem, 'active');
-      this.renderer.setAttribute(elem.querySelector('svg'), 'fill', '#5227cc');
-    }
-    this.renderer.addClass(event.target, 'active');
-    this.renderer.setAttribute(
-      event.target.querySelector('svg'),
-      'fill',
-      'white'
-    );
-  }
-
-  selectMolestia(event: any, molestia: any) {
-    let elem = this.el.nativeElement.querySelector(
-      'ul#lista_molestias > li.active'
-    );
-    if (elem != null) {
-      this.renderer.removeClass(elem, 'active');
-      this.renderer.setAttribute(elem.querySelector('svg'), 'fill', '#A85E5E');
-    }
-    this.renderer.addClass(event.target, 'active');
-    this.renderer.setAttribute(
-      event.target.querySelector('svg'),
-      'fill',
-      'white'
-    );
-  }
 }

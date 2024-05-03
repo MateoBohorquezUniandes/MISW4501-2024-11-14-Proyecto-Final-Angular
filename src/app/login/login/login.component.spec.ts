@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
 import { SocioHomeComponent } from '../../socio/socio-home/socio-home.component';
-import { DeportistaHomeComponent } from '../../deportista/deportista-home/deportista-home.component';
+import { DashboardComponent } from '../../deportista/dashboard/dashboard.component';
 import { OrganizadorHomeComponent } from '../../organizador/organizador-home/organizador-home.component';
 
 describe('LoginComponent', () => {
@@ -27,7 +27,7 @@ describe('LoginComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes([{ path: 'socios', component: SocioHomeComponent },{ path: 'deportista', component: DeportistaHomeComponent },{ path: 'organizador', component: OrganizadorHomeComponent }]),
+        RouterTestingModule.withRoutes([{ path: 'socios', component: SocioHomeComponent },{ path: 'deportista', component: DashboardComponent },{ path: 'organizador', component: OrganizadorHomeComponent }]),
         ReactiveFormsModule,
         ToastrModule.forRoot(),
         HttpClientTestingModule,

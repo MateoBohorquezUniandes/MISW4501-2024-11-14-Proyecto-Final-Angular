@@ -11,13 +11,13 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-layout',
+  selector: 'app-sidebar',
   standalone: true,
   imports: [RouterOutlet, MatSidenavModule, MatCheckboxModule, FormsModule, MatButtonModule, CommonModule],
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css']
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class LayoutComponent implements OnInit {
+export class SidebarComponent implements OnInit {
   events: string[] = [];
   opened: boolean = false;
   options: Array<any> = [];

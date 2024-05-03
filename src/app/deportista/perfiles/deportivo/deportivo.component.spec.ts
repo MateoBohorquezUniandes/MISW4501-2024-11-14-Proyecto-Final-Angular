@@ -4,9 +4,9 @@ import { By } from '@angular/platform-browser';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { PerfilDeportivoComponent } from './perfil-deportivo.component';
+import { PerfilDeportivoComponent } from './deportivo.component';
 import { ToastrModule } from 'ngx-toastr';
-import { Habito, Molestia, PerfilDeportivo } from '../perfil_deportivo';
+import { Habito, Molestia, PerfilDeportivo, PerfilDeportivoData } from '../perfil_deportivo';
 import { faker } from '@faker-js/faker';
 import { PerfilesService } from '../perfiles.service';
 import { of, throwError } from 'rxjs';
@@ -68,10 +68,11 @@ describe('PerfilDeportivoComponent', () => {
         )
       );
     }
+    const data: PerfilDeportivoData = new PerfilDeportivoData("","",molestias,habitos)
 
-    component.perfil = new PerfilDeportivo(molestias, habitos);
+    component.perfil = new PerfilDeportivo(data,"");
     spy.getSportProfiles.and.returnValue(
-      of(new PerfilDeportivo(molestias, habitos))
+      of(new PerfilDeportivo(data,""))
     );
 
     fixture.detectChanges();
@@ -86,7 +87,7 @@ describe('PerfilDeportivoComponent', () => {
     expect(debug.queryAll(By.css('a#nav_alimenticio'))).toHaveSize(1);
     let element = debug.query(By.css('a#nav_alimenticio'));
     expect(element.nativeElement.getAttribute('routerLink')).toEqual(
-      '/deportista/perfil-alimenticio'
+      '/deportista/perfiles/alimenticio'
     );
   });
 
@@ -94,7 +95,7 @@ describe('PerfilDeportivoComponent', () => {
     expect(debug.queryAll(By.css('a#nav_demografico'))).toHaveSize(1);
     let element = debug.query(By.css('a#nav_demografico'));
     expect(element.nativeElement.getAttribute('routerLink')).toEqual(
-      '/deportista/perfil-demografico'
+      '/deportista/perfiles/demografico'
     );
   });
 
@@ -107,23 +108,33 @@ describe('PerfilDeportivoComponent', () => {
   });
 
   it('Cambio color item lista habitos', () => {
-    let element = debug.query(By.css('ul#lista_habitos > li'));
+    let element = debug.queryAll(By.css('ul#lista_habitos > li'))[0];
     let children = element.query(By.css('svg'));
     expect(children.attributes['fill']).toEqual('#5227cc');
     expect(element.classes['active']).toBeFalsy();
     element.nativeElement.click();
     fixture.detectChanges();
     expect(element.classes['active']).toBeTruthy();
+    let element2 = debug.queryAll(By.css('ul#lista_habitos > li'))[1];
+    expect(element2.classes['active']).toBeFalsy();
+    element2.nativeElement.click();
+    expect(element.classes['active']).toBeFalsy();
+    expect(element2.classes['active']).toBeTruthy();
   });
 
   it('Cambio color item lista molestias', () => {
-    let element = debug.query(By.css('ul#lista_molestias > li'));
+    let element = debug.queryAll(By.css('ul#lista_molestias > li'))[0];
     let children = element.query(By.css('svg'));
     expect(children.attributes['fill']).toEqual('#A85E5E');
     expect(element.classes['active']).toBeFalsy();
     element.nativeElement.click();
     fixture.detectChanges();
     expect(element.classes['active']).toBeTruthy();
+    let element2 = debug.queryAll(By.css('ul#lista_molestias > li'))[1];
+    expect(element2.classes['active']).toBeFalsy();
+    element2.nativeElement.click();
+    expect(element.classes['active']).toBeFalsy();
+    expect(element2.classes['active']).toBeTruthy();
   });
 
   /*it('Prueba del Scroll', () => {

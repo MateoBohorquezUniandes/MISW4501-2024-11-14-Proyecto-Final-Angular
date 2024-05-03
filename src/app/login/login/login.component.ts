@@ -53,11 +53,9 @@ export class LoginComponent implements OnInit {
       },
       rol: tipo_usuario,
     };
-    console.log(user);
     this.loginService.login(user).subscribe(
       data => {
         this.loginService.setToken(data.token);
-        console.log(data)
         switch(data.rol){
           case "DEPORTISTA":
             this.router.navigateByUrl("/deportista",{state:{'rol':'DEPORTISTA', usuario: documento}})
@@ -72,7 +70,6 @@ export class LoginComponent implements OnInit {
             break;
         }},
       error => {
-        console.log(error);
         this.toastr.error("Error", "Error al iniciar sesión:" + error)
     });
 

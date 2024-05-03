@@ -10,7 +10,7 @@ export const options:any = {
       },
       {
         option: "Perfiles Deportivos",
-        path: "/deportista/perfil-demografico"
+        path: "/deportista/perfiles/demografico"
       },
       {
         option: "Calendario",

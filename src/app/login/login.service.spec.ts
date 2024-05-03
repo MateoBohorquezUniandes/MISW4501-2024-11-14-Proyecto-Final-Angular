@@ -30,8 +30,13 @@ describe('Service: Login', () => {
     expect(service.login(request)).toBeTruthy();
   }));
 
-  /*it('Debe guardar y consultar un Token', inject([LoginService], (service: LoginService) => {
+  it('Debe obtener un token nulo', inject([LoginService], (service: LoginService) => {
+    service.deleteToken()
+    expect(service.getToken()).toEqual("");
+  }));
+
+  it('Debe guardar y consultar un Token', inject([LoginService], (service: LoginService) => {
     service.setToken("AFKR834398NUOIJOM")
     expect(service.getToken()).toEqual("AFKR834398NUOIJOM");
-  }));*/
+  }));
 });
