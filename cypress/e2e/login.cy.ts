@@ -15,9 +15,6 @@ describe('Login', () => {
     loginPage.setDocumento(validUser.documento);
     loginPage.setContraseña(validUser.contrasena);
     loginPage.clickSignInButton();
-    cy.get('p').should(
-      'contain.text ',
-      'Esta vista corresponde al tablero de control'
-    );
+    cy.url().should('include', 'deportista');
   });
 });
