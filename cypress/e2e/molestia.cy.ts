@@ -1,7 +1,7 @@
 import { MolestiaAleatorio } from '../fixtures/validMolestia';
-import { CrearMolestiaPage } from '../pages/crear_molestia.page';
+import { CrearMolestiaPage } from '../pages/molestia.page';
 
-describe('Login', () => {
+describe('Molestias', () => {
   let molestiaPage: CrearMolestiaPage;
   let molestia: MolestiaAleatorio;
   beforeEach(() => {
@@ -13,7 +13,7 @@ describe('Login', () => {
     molestia = new MolestiaAleatorio();
   });
 
-  it('should registar molestia', () => {
+  it('should registar molestia y mostrar en listado', () => {
     let titulo = molestia.getTitulo();
     molestiaPage.setTitulo(titulo);
     molestiaPage.setFecha(molestia.getFecha());
