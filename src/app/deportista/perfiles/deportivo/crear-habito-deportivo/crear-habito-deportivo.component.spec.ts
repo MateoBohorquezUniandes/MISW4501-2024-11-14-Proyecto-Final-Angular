@@ -2,21 +2,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { faker } from '@faker-js/faker';
 import { CrearHabitoDeportivoComponent } from './crear-habito-deportivo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilesService } from '../../perfiles.service';
-import { Habito } from '../../perfil_deportivo';
+import { Habito, Molestia, PerfilDeportivo, PerfilDeportivoData } from '../../perfil_deportivo';
 import { of } from 'rxjs';
 import { LoginService } from '../../../../login/login.service';
+import { PerfilDeportivoComponent } from '../deportivo.component';
 
 describe('CrearHabitoDeportivoComponent', () => {
   let component: CrearHabitoDeportivoComponent;
   let fixture: ComponentFixture<CrearHabitoDeportivoComponent>;
-  let spy = jasmine.createSpyObj('PerfilesService', ['createHabitoDeportivo']);
+  let spy = jasmine.createSpyObj('PerfilesService', ['createHabitoDeportivo', 'getSportProfiles']);
   let spyLogin = jasmine.createSpyObj('LoginService', ['login', 'setToken']);
 
   beforeEach(async(() => {
@@ -29,6 +30,7 @@ describe('CrearHabitoDeportivoComponent', () => {
         HttpClientModule,
       ],
       providers: [
+        { provide: PerfilDeportivoComponent},
         { provide: PerfilesService, useValue: spy },
         { provide: LoginService, useValue: spyLogin },
       ],
@@ -62,6 +64,27 @@ describe('CrearHabitoDeportivoComponent', () => {
   });
 
   it('Prueba metodo crear habito deportivo', () => {
+
+    const habitos: Array<Habito> = [];
+    habitos.push(
+      new Habito(
+        faker.lorem.sentence(),
+        faker.lorem.sentence(),
+        faker.lorem.sentence()
+      )
+    );
+
+    const molestias: Array<Molestia> = [];
+      molestias.push(
+        new Molestia(
+          faker.lorem.sentence(),
+          faker.lorem.sentence(),
+          faker.lorem.sentence(),
+          faker.lorem.sentence()
+        )
+      );
+    const data2: PerfilDeportivoData = new PerfilDeportivoData("","",molestias,habitos)
+
     fixture = TestBed.createComponent(CrearHabitoDeportivoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -77,6 +100,9 @@ describe('CrearHabitoDeportivoComponent', () => {
     spyLogin.setToken.and.returnValue(of(data));
     const habit = new Habito(titulo.value, frecuencia.value, descripcion.value);
     spy.createHabitoDeportivo.and.returnValue(of(202));
+    spy.getSportProfiles.and.returnValue(
+      of(new PerfilDeportivo(data2,""))
+    );
     component.createHabitoDeportivoC(habit);
   });
 });

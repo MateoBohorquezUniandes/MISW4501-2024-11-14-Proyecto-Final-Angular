@@ -140,7 +140,6 @@ export class RegistroComponent implements OnInit {
         },
         deportes:[deporte]
       };
-      console.log(registro)
       this.loginService.registrarse(registro).subscribe(
         (data) => {
           this.router.navigateByUrl('/login');

@@ -1,0 +1,17 @@
+<h5 i18n>Molestias</h5>
+<div id="contenedor_molestias">
+  <ul id="lista_molestias" class="list-group">
+    <li
+      class="list-group-item list-group-item-action"
+      *ngFor="let molestia of molestias"
+      (click)="selectMolestia($event, molestia)"
+    >
+      <svg class="bi" fill="#A85E5E">
+        <use
+          xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+        />
+      </svg>
+      {{ molestia.titulo }}
+    </li>
+  </ul>
+</div>

@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { environment } from '../../../environments/environment';
 import { Observable, of } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
@@ -11,10 +12,10 @@ import { CrearHabitoDTO, Habito, PerfilDeportivo } from './perfil_deportivo';
 export class PerfilesService {
   private apiUrl = environment.UrlPerfiles;
   private basePerfilUrl = environment.UrlPerfiles;
-  constructor(private http: HttpClient, private cookies: CookieService) {}
-
+  constructor(private http: HttpClient, private cookies: CookieService) {
+  }
   createHeaders() {
-    const token = this.cookies.get('token');
+    const token = window.sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
@@ -27,14 +28,13 @@ export class PerfilesService {
 
   getSportProfiles(): Observable<PerfilDeportivo> {
     let header = this.createHeaders();
-    return this.http.get<PerfilDeportivo>(this.apiUrl + '/queries/deportivos', {
+    return this.http.get<PerfilDeportivo>(this.apiUrl + '/queries/deportivo', {
       headers: header,
     });
   }
 
   createHabitoDeportivo(habitoDeportivoDto: any): Observable<any> {
     let header = this.createHeaders();
-    console.log(habitoDeportivoDto);
     return this.http.post<string>(
       this.basePerfilUrl + '/commands/deportivo/habitos',
       habitoDeportivoDto,
@@ -44,7 +44,6 @@ export class PerfilesService {
 
   createMolestia(molestiaDto: any): Observable<any> {
     let header = this.createHeaders();
-    console.log(header);
     return this.http.post<string>(
       this.basePerfilUrl + '/commands/deportivo/molestias',
       molestiaDto,

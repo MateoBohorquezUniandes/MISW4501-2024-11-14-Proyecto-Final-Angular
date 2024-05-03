@@ -30,17 +30,35 @@ export class Molestia {
     this.descripcion = descripcion;
   }
 }
-
-export class PerfilDeportivo {
+export class PerfilDeportivoData {
+  identificacion:string;
+  tipo_identificacion:string;
   molestias:Array<Molestia> = [];
   habitos:Array<Habito> = [];
 
   constructor(
+    identificacion:string,
+    tipo_identificacion:string,
     molestias:Array<Molestia>,
     habitos:Array<Habito>
+  ){
+    this.identificacion = identificacion;
+    this.tipo_identificacion = tipo_identificacion;
+    this.molestias = molestias;
+    this.habitos = habitos;
+  }
+}
+
+export class PerfilDeportivo {
+  data:PerfilDeportivoData;
+  checksum:string;
+
+  constructor(
+    data:PerfilDeportivoData,
+    checksum:string
     ){
-      this.habitos = habitos;
-      this.molestias = molestias;
+      this.data = data;
+      this.checksum = checksum;
     }
 
 }

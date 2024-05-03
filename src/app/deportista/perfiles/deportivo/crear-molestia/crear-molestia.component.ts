@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PerfilesService } from '../../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
 import { MolestiaDTO, Molestia } from '../../perfil_deportivo';
+import { PerfilDeportivoComponent } from '../deportivo.component';
 
 import moment from 'moment';
 
@@ -17,7 +18,8 @@ export class CrearMolestiaComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private perfilesService: PerfilesService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private listado: PerfilDeportivoComponent
   ) {}
 
   ngOnInit() {
@@ -57,6 +59,7 @@ export class CrearMolestiaComponent implements OnInit {
 
     this.perfilesService.createMolestia(molestiaPayload).subscribe(() => {
       this.toastr.success('Molestia Creada Satisfactoriamente', 'Molestia');
+      this.listado.getProfile();
       this.molestiaForm.reset();
     });
   }

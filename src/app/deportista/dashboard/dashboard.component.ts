@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   standalone: true,
   selector: 'app-deportista-home',
-  templateUrl: './deportista-home.component.html',
-  styleUrls: ['./deportista-home.component.css']
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class DeportistaHomeComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
   constructor() { }
 

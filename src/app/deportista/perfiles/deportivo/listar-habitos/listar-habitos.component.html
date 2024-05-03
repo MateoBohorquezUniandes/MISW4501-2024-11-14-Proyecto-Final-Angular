@@ -1,0 +1,17 @@
+<h5 i18n>Hábitos</h5>
+<div id="contenedor_habitos">
+  <ul id="lista_habitos" class="list-group">
+    <li
+      class="list-group-item list-group-item-action"
+      *ngFor="let habito of habitos"
+      (click)="selectHabit($event, habito)"
+    >
+      <svg class="bi" fill="#5227cc">
+        <use
+          xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+        />
+      </svg>
+      {{ habito.titulo }}
+    </li>
+  </ul>
+</div>
