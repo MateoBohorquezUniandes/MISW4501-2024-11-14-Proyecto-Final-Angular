@@ -33,6 +33,13 @@ export class PerfilesService {
     });
   }
 
+  getDemographicProfiles(): Observable<PerfilDeportivo> {
+    let header = this.createHeaders();
+    return this.http.get<PerfilDeportivo>(this.apiUrl + '/queries/demografico', {
+      headers: header,
+    });
+  }
+
   createHabitoDeportivo(habitoDeportivoDto: any): Observable<any> {
     let header = this.createHeaders();
     return this.http.post<string>(

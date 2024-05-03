@@ -20,7 +20,79 @@
           <a i18n id="nav_alimenticio" class="nav-link active" aria-current="page">Alimenticio</a>
         </li>
       </ul>
-      <div class="card-body"></div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <h4>Registrar Alimentos</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <select
+                id="selector_tipo_usuario"
+                class="form-select campo_n"
+                aria-label="Default select example"
+                formControlName="tipo_usuario"
+              >
+                <option value="0" i18n>Seleccionar</option>
+                <option value="DEPORTISTA" i18n>Deportista</option>
+                <option value="SOCIO" i18n>Socio de negocio</option>
+                <option value="ORGANIZADOR" i18n>Organizador de eventos</option>
+              </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <select
+                  id="selector_tipo_usuario"
+                  class="form-select campo_p"
+                  aria-label="Default select example"
+                  formControlName="tipo_usuario"
+                >
+                  <option value="0" i18n>Seleccionar</option>
+                  <option value="DEPORTISTA" i18n>Deportista</option>
+                  <option value="SOCIO" i18n>Socio de negocio</option>
+                  <option value="ORGANIZADOR" i18n>Organizador de eventos</option>
+                </select>
+                <button type="submit" class="btn btn-primario" i18n>Agregar</button>
+              </div>
+            </div>
+            <br>
+            <h4>Tipo Alimentación</h4>
+            <select
+              id="selector_tipo_usuario"
+              class="form-select campo_p"
+              aria-label="Default select example"
+              formControlName="tipo_usuario"
+            >
+              <option value="0" i18n>Seleccionar</option>
+              <option value="DEPORTISTA" i18n>Deportista</option>
+              <option value="SOCIO" i18n>Socio de negocio</option>
+              <option value="ORGANIZADOR" i18n>Organizador de eventos</option>
+            </select>
+            <button type="submit" class="btn btn-primario" i18n>Guardar</button>
+          </div>
+          <div class="col">
+            <ul id="lista_alimentos" class="list-group">
+              <li
+                class="list-group-item list-group-item-action"
+                *ngFor="let alimento of alimentos"
+                (click)="selectHabit($event, alimento)"
+              >
+                <svg class="bi" fill="#5227cc">
+                  <use
+                    xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+                  />
+                </svg>
+                {{ alimento.titulo }}
+              </li>
+            </ul>
+            <p *ngIf="alimentos.length == 0">No se encontraron alimentos registrados</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

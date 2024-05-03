@@ -5,7 +5,7 @@ h5 {
   margin-top: 30px;
   display: flex;
 }
-a {
+a, p, label, input{
   font-family: "Roboto Condensed";
   font-size: 16px;
   font-weight: bold;
@@ -30,4 +30,15 @@ a {
   justify-content: center;
   text-align: center;
   display: flex;
+}
+p.izquierda{
+  text-align: initial
+}
+
+p.blanco {
+  color: #FFFFFF;
+}
+
+label.blanco{
+  color: #FFFFFF;
 }
