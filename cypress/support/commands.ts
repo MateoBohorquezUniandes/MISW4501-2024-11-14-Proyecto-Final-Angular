@@ -49,7 +49,7 @@ Cypress.Commands.add('login', () => {
       rol: 'DEPORTISTA',
     },
   }).then((resp) => {
-    cy.setCookie('token', resp.body.token);
+    window.sessionStorage.setItem('token', resp.body.token);
   });
 });
 

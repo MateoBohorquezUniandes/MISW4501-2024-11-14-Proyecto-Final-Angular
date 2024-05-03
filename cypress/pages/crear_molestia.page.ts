@@ -33,7 +33,7 @@ export class CrearMolestiaPage {
   }
 
   public visit(): void {
-    cy.visit('/deportista/perfil-deportivo');
+    cy.visit('/deportista/perfiles/deportivo');
   }
 
   public clickRegistrarMolestia(): void {
