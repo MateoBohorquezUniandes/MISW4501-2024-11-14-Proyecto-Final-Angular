@@ -14,10 +14,13 @@ describe('Login', () => {
   });
 
   it('should registar molestia', () => {
-    molestiaPage.setTitulo(molestia.getTitulo());
+    let titulo = molestia.getTitulo();
+    molestiaPage.setTitulo(titulo);
     molestiaPage.setFecha(molestia.getFecha());
     molestiaPage.setTipo(molestia.getTipo());
     molestiaPage.setDescripcion(molestia.getDescripcion());
     molestiaPage.clickRegistrarMolestia();
+    cy.wait(2000);
+    cy.get(molestiaPage.ultimaMolestia).contains(titulo);
   });
 });

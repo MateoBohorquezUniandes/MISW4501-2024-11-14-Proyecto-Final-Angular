@@ -16,6 +16,10 @@ export class CrearMolestiaPage {
     return 'button#registrarMolestia';
   }
 
+  get ultimaMolestia() {
+    return 'ul#lista_molestias > li:nth-last-child(1)';
+  }
+
   public setTitulo(titulo): void {
     cy.get(this.titulo).type(titulo);
   }
