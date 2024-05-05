@@ -35,3 +35,26 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('login', () => {
+  cy.request({
+    method: 'POST',
+    url: 'http://localhost:3011/usuarios/commands/login',
+    body: {
+      contrasena: 'SaveP4assword123',
+      identificacion: {
+        tipo: 'CC',
+        valor: '123456789',
+      },
+      rol: 'DEPORTISTA',
+    },
+  }).then((resp) => {
+    window.sessionStorage.setItem('token', resp.body.token);
+  });
+});
+
+declare namespace Cypress {
+  interface Chainable {
+    login(): void;
+  }
+}

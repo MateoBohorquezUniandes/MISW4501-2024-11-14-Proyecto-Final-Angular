@@ -6,17 +6,17 @@
       <label for="inputTitulo" class="col-form-label">Título</label>
     </div>
     <div class="col-sm-9">
-      <input id="inputTitulo" class="form-control" aria-describedby="passwordHelpInline" formControlName="titulo">
+      <input id="inputTituloHabito" class="form-control" aria-describedby="passwordHelpInline" formControlName="titulo">
     </div>
 
   </div>
 
   <div class="row g-3 align-items-center custom-input">
     <div class="col-sm-3">
-      <label for="inputFrecuencia" class="col-form-label">Frecuencia</label>
+      <label for="inputFrecuenciaHabito" class="col-form-label">Frecuencia</label>
     </div>
     <div class="col-sm-9">
-      <select id="selector_frecuencia" class="form-select" aria-label="Default select example"
+      <select id="frecuenciaHabito" class="form-select" aria-label="Default select example"
         formControlName="frecuencia">
         <option value="0">Seleccionar</option>
         <option value="Diario">Diario</option>
@@ -34,7 +34,7 @@
       <label for="inputDescripcion" class="col-form-label">Descripción</label>
     </div>
     <div class="col-sm-9">
-      <textarea type="descripcion" id="inputDescripcion" class="form-control" aria-describedby="descripcionHelpInline"
+      <textarea type="descripcion" id="inputDescripcionHabito" class="form-control" aria-describedby="descripcionHelpInline"
         formControlName="descripcion"></textarea>
 
     </div>
@@ -94,15 +94,13 @@
                             ">
             exediste el máximo para la descripción
             </p>
-            
+
             </div>
-            
-            
-            
-            
-            
+
+
             </div>
   </div>
 
-  <button type="submit" class="btn btn-primario" [disabled]="!habitoForm.valid">Crear Nuevo Habito </button>
+  <button type="submit" id="registrarHabito" class="btn btn-primario" [disabled]="!habitoForm.valid">Crear Nuevo Habito
+  </button>
 </form>
