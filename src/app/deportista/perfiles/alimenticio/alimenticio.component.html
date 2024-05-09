@@ -25,71 +25,111 @@
           <div class="col">
             <div class="row">
               <div class="col">
-                <h4>Registrar Alimentos</h4>
+                <h4 i18n>Registrar Alimentos</h4>
               </div>
             </div>
-            <div class="row">
-              <div class="col">
-                <select
-                id="selector_tipo_usuario"
-                class="form-select campo_n"
-                aria-label="Default select example"
-                formControlName="tipo_usuario"
-              >
-                <option value="0" i18n>Seleccionar</option>
-                <option value="DEPORTISTA" i18n>Deportista</option>
-                <option value="SOCIO" i18n>Socio de negocio</option>
-                <option value="ORGANIZADOR" i18n>Organizador de eventos</option>
-              </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <select
-                  id="selector_tipo_usuario"
-                  class="form-select campo_p"
-                  aria-label="Default select example"
-                  formControlName="tipo_usuario"
-                >
-                  <option value="0" i18n>Seleccionar</option>
-                  <option value="DEPORTISTA" i18n>Deportista</option>
-                  <option value="SOCIO" i18n>Socio de negocio</option>
-                  <option value="ORGANIZADOR" i18n>Organizador de eventos</option>
-                </select>
-                <button type="submit" class="btn btn-primario" i18n>Agregar</button>
-              </div>
-            </div>
+            <form
+              [formGroup]="alimentoForm"
+              (ngSubmit)="!alimentoForm.invalid && registrarAlimento(
+                alimentoForm.controls.tipo.value
+              )">
+                <div class="row">
+                  <div class="col">
+                    <div class="btn-group">
+                      <button type="button" class="form-select campo_n" data-bs-toggle="dropdown" aria-expanded="false" (click)="toque=true">
+                        {{ selectedAlimento.nombre }}
+                      </button>
+                      <div class="dropdown-menu">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" (keyup)="searchAlimentos($event)">
+                        <a class="dropdown-item" *ngFor="let alimento of alimentos" (click)="selectAlimento($event, alimento)">{{alimento.nombre}}</a>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="alert alert-danger dismissible fade show"
+                    *ngIf="toque && selectedAlimento.nombre=='Seleccionar'">
+                    <p i18n>Debe seleccionar un alimento</p>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col">
+                    <select
+                      class="form-select campo_p"
+                      formControlName="tipo"
+                      aria-label="Default select example"
+                    >
+                      <option value="0" i18n>Seleccionar</option>
+                      <option value="Preferencia" i18n>Preferencia</option>
+                      <option value="Alergia" i18n>Alergia</option>
+                      <option value="Intolerancia" i18n>Intolerancia</option>
+                    </select>
+                    <button id="submit-alimento" type="submit" class="btn btn-primario" i18n>Agregar</button>
+                    <br>
+                    <div class="alert alert-danger dismissible fade show"
+                    *ngIf="alimentoForm.get('tipo')!.hasError('min') &&
+                    alimentoForm.get('tipo')!.touched">
+                    <p i18n>Debe seleccionar un tipo</p>
+                    </div>
+                  </div>
+                </div>
+            </form>
             <br>
-            <h4>Tipo Alimentación</h4>
-            <select
+            <h4 i18n>Tipo Alimentación</h4>
+            <form [formGroup]="preferenciaForm"
+              (ngSubmit)="!preferenciaForm.invalid && registrarTipoAlimentacion(
+              preferenciaForm.controls.tipo.value)">
+              <select
               id="selector_tipo_usuario"
               class="form-select campo_p"
               aria-label="Default select example"
-              formControlName="tipo_usuario"
-            >
-              <option value="0" i18n>Seleccionar</option>
-              <option value="DEPORTISTA" i18n>Deportista</option>
-              <option value="SOCIO" i18n>Socio de negocio</option>
-              <option value="ORGANIZADOR" i18n>Organizador de eventos</option>
-            </select>
-            <button type="submit" class="btn btn-primario" i18n>Guardar</button>
+              formControlName="tipo"
+              >
+                <option value="0" i18n>Seleccionar</option>
+                <option value="Carnivoro" i18n>Carnivoro</option>
+                <option value="Omnivoro" i18n>Omnivoro</option>
+                <option value="Vegetariano" i18n>Vegetariano</option>
+                <option value="Vegano" i18n>Vegano</option>
+              </select>
+              <button id="submit-tipo" type="submit" class="btn btn-primario" i18n>Guardar</button>
+              <br>
+              <div class="alert alert-danger dismissible fade show"
+              *ngIf="preferenciaForm.get('tipo')!.hasError('min') &&
+              preferenciaForm.get('tipo')!.touched">
+              <p i18n>Debe seleccionar un tipo</p>
+              </div>
+            </form>
           </div>
           <div class="col">
             <ul id="lista_alimentos" class="list-group">
               <li
                 class="list-group-item list-group-item-action"
-                *ngFor="let alimento of alimentos"
-                (click)="selectHabit($event, alimento)"
+                *ngFor="let alimento of alimentos_usuario"
               >
-                <svg class="bi" fill="#5227cc">
-                  <use
-                    xlink:href="assets/img/bootstrap-icons.svg#calendar3"
-                  />
-                </svg>
-                {{ alimento.titulo }}
+                <div class="row">
+                  <div class="col-sm-1">
+                    <svg class="bi" *ngIf="alimento.tipo!='Preferencia'" fill="#A85E5E">
+                      <use
+                        xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+                      />
+                    </svg>
+                    <svg class="bi" *ngIf="alimento.tipo=='Preferencia'" fill="#8CC7A1">
+                      <use
+                        xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+                      />
+                    </svg>
+                  </div>
+                  <div id="contenedor_lista" class="col-sm-3">
+                    <p class="titulo_lista">{{ alimento.nombre }}</p>
+                    <p class="preferencia" *ngIf="alimento.tipo=='Preferencia'">{{ alimento.tipo }}</p>
+                    <p class="intolerancia" *ngIf="alimento.tipo!='Preferencia'">{{ alimento.tipo }}</p>
+                  </div>
+                </div>
               </li>
             </ul>
-            <p *ngIf="alimentos.length == 0">No se encontraron alimentos registrados</p>
+            <p i18n *ngIf="alimentos_usuario?.length == 0">No se encontraron alimentos registrados</p>
+            <p i18n class="tipo_alimentacion">Tipo Alimentación: {{ tipo_alimentacion }}</p>
+            <a class="dropdown-item"></a>
           </div>
         </div>
       </div>

@@ -23,35 +23,43 @@
       <div class="card-body">
         <div class="row">
           <div class="col">
-            <div class="card" style="height: 390px; width:312px; background-color: #F2DFD7">
+            <div class="card" id="card_datos_generales">
               <div class="card-body">
                 <p i18n class="card-text">Datos generales</p>
-                <p i18n class="card-text izquierda">Nombre:</p>
-                <p i18n class="card-text izquierda">Apellido:</p>
-                <p i18n class="card-text izquierda">Edad:</p>
-                <p i18n class="card-text izquierda">Peso:</p>
-                <p i18n class="card-text izquierda">Estatura:</p>
-                <p i18n class="card-text izquierda">Indice de masa corporal:</p>
+                <p *ngIf="fisiologia.edad==0" i18n class="card-text izquierda">Edad: Error</p>
+                <p *ngIf="fisiologia.edad!=0" i18n class="card-text izquierda">Edad: {{ fisiologia.edad }} Años</p>
+                <p *ngIf="fisiologia.genero==''" i18n class="card-text izquierda">Genero: Error</p>
+                <p *ngIf="fisiologia.genero!=''" i18n class="card-text izquierda">Genero: {{ fisiologia.genero }}</p>
+                <p *ngIf="fisiologia.peso==0" i18n class="card-text izquierda">Peso: Error</p>
+                <p *ngIf="fisiologia.peso!=0" i18n class="card-text izquierda">Peso: {{ fisiologia.peso }} Kg</p>
+                <p *ngIf="fisiologia.altura==0" i18n class="card-text izquierda">Estatura: Error</p>
+                <p *ngIf="fisiologia.altura!=0" i18n class="card-text izquierda">Estatura: {{ fisiologia.altura }} Metros</p>
+                <p *ngIf="demografia.ciudad==''" i18n class="card-text izquierda">Ciudad: Error</p>
+                <p *ngIf="demografia.ciudad!=''" i18n class="card-text izquierda">Ciudad: {{demografia.ciudad }}</p>
+                <p *ngIf="demografia.pais==''" i18n class="card-text izquierda">Pais: Error</p>
+                <p *ngIf="demografia.pais!=''" i18n class="card-text izquierda">Pais: {{ demografia.pais }}</p>
+                <p *ngIf="imc.valor==0"i18n class="card-text izquierda">Indice de masa corporal: Error</p>
+                <p *ngIf="imc.valor!=0"i18n class="card-text izquierda">Indice de masa corporal: {{ imc.valor }}</p>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card" style="height: 390px; width:312px; background-color: #9F9FED">
+            <div class="card" id="card_datos_quimica">
               <div class="card-body">
                 <p i18n class="card-text blanco">Datos de química sanguinea</p>
-                <p i18n class="card-text izquierda blanco">Glucosa:</p>
-                <p i18n class="card-text izquierda blanco">Acido úrico:</p>
-                <p i18n class="card-text izquierda blanco">Colesterol:</p>
-                <p i18n class="card-text izquierda blanco">Urea:</p>
-                <p i18n class="card-text izquierda blanco">Trigliceridos:</p>
-                <div *ngIf="!centro" class="card" style="height: 109px; width:263px; background-color: #A85E5E;">
-                  <div class="card-body" style="padding-top:0px;">
-                    <p i18n class="card-text blanco" style="margin-bottom: 0;">Atención</p>
+                <p i18n class="card-text izquierda blanco">Glucosa: N/A</p>
+                <p i18n class="card-text izquierda blanco">Acido úrico: N/A</p>
+                <p i18n class="card-text izquierda blanco">Colesterol: N/A</p>
+                <p i18n class="card-text izquierda blanco">Urea: N/A</p>
+                <p i18n class="card-text izquierda blanco">Trigliceridos: N/A</p>
+                <div *ngIf="!centro" class="card" id="card_datos_error">
+                  <div class="card-body" id="card_datos_error_body">
+                    <p i18n class="card-text blanco" id="titulo_error">Atención</p>
                     <p i18n class="card-text izquierda blanco">No se encontró ningun laboratorio en su ubicación capacitado para hacer estas pruebas</p>
                   </div>
                 </div>
                 <div *ngIf="centro" class="mb-3">
-                  <label for="formFileSm" class="form-label blanco">Cargue porfavor un archivo del centro medico</label>
+                  <label i18n for="formFileSm" class="form-label blanco">Cargue porfavor un archivo del centro medico</label>
                   <input class="form-control form-control-sm" id="formFileSm" type="file">
                 </div>
               </div>

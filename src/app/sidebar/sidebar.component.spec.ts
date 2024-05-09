@@ -16,6 +16,14 @@ describe('LayoutComponent', () => {
   let spy = jasmine.createSpyObj('LoginService', ['login', 'setToken','getToken', 'deleteToken']);
   let spy2 = jasmine.createSpyObj('Router', ['navigateByUrl'],{url: "/deportista"});
   let router: Router;
+
+  function spyPropertyGetter<T, K extends keyof T>(
+    spyObj: jasmine.SpyObj<T>,
+    propName: K
+  ): jasmine.Spy<() => T[K]> {
+    return Object.getOwnPropertyDescriptor(spyObj, propName)?.get as jasmine.Spy<() => T[K]>;
+  }
+
   beforeEach(async (() => {
     TestBed.configureTestingModule({
       imports: [
@@ -29,7 +37,7 @@ describe('LayoutComponent', () => {
         {provide: Router, useValue: spy2}
       ]
     }).compileComponents();
-    router = TestBed.inject(Router);
+    //router = TestBed.inject(Router);
   }));
 
   beforeEach(() => {
@@ -58,11 +66,21 @@ describe('LayoutComponent', () => {
     expect(component.user).toEqual("123456789");
   });
 
-  /*it('router socio', () => {
-    spyOnProperty(spy2, "url", "get").and.returnValue("/socio");
+  it('router socio', () => {
+    spyPropertyGetter(spy2, 'url').and.returnValue("/socio")
+    fixture.detectChanges();
     spy.getToken.and.returnValue('');
-    fixture = TestBed.createComponent(LayoutComponent);
+    fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });*/
+  });
+
+  it('router organizador', () => {
+    spyPropertyGetter(spy2, 'url').and.returnValue("/organizador")
+    fixture.detectChanges();
+    spy.getToken.and.returnValue('');
+    fixture = TestBed.createComponent(SidebarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 });

@@ -54,8 +54,8 @@
               "outputPath": "dist/sport-app-en/",
               "i18nMissingTranslation": "error",
               "fileReplacements": [{
-                "replace": "src/app/layout/options.ts",
-                "with": "src/environments/options.en.ts"
+                "replace": "src/app/sidebar/options.ts",
+                "with": "src/app/sidebar/options.en.ts"
               }]
             },
             "production": {

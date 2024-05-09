@@ -10,7 +10,7 @@ import { DebugElement } from '@angular/core';
 import { LoginComponent } from './login.component';
 import { LoginService } from '../login.service';
 import { HttpClientModule } from '@angular/common/http';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { SocioHomeComponent } from '../../socio/socio-home/socio-home.component';
 import { DashboardComponent } from '../../deportista/dashboard/dashboard.component';
@@ -126,6 +126,26 @@ describe('LoginComponent', () => {
     expect(component.loginForm.valid).toBeTrue();
   });
 
+  it('Prueba metodo login, ingreso default', () => {
+    fixture = TestBed.createComponent(LoginComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const tipo_usuario = component.loginForm.controls['tipo_usuario'];
+    const tipo_doc = component.loginForm.controls['tipo_doc'];
+    const documento = component.loginForm.controls['documento'];
+    const contrasena = component.loginForm.controls['contrasena'];
+    tipo_usuario.setValue(1);
+    tipo_doc.setValue(1);
+    documento.setValue('37864172');
+    contrasena.setValue('mocos123');
+
+    const data = {token: "fgdsdfgdgdsgs", rol:""};
+    spy.login.and.returnValue(of(data));
+    component.login(tipo_usuario.value, tipo_doc.value, documento.value, contrasena.value);
+    expect(component.loginForm.valid).toBeTrue();
+  });
+
   it('Debe ser invalido el login, ya que el tipo de usuario es Seleccionar', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
@@ -225,5 +245,24 @@ describe('LoginComponent', () => {
     documento.setValue('37864172');
 
     expect(component.loginForm.invalid).toBeTrue();
+  });
+
+  it('Error servicio', () => {
+    fixture = TestBed.createComponent(LoginComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+    const tipo_usuario = component.loginForm.controls['tipo_usuario'];
+    const tipo_doc = component.loginForm.controls['tipo_doc'];
+    const documento = component.loginForm.controls['documento'];
+    const contrasena = component.loginForm.controls['contrasena'];
+    tipo_usuario.setValue(1);
+    tipo_doc.setValue(1);
+    documento.setValue('37864172');
+    contrasena.setValue('mocos123');
+
+    const data = {token: "fgdsdfgdgdsgs", rol:"ORGANIZADOR"};
+    spy.login.and.returnValue(throwError(() => new Error("")));
+    component.login(tipo_usuario.value, tipo_doc.value, documento.value, contrasena.value);
   });
 });

@@ -11,6 +11,11 @@ label {
   color: #000000;
 }
 
+.alert{
+  max-width: 265px;
+  display:inline-block;
+}
+
 .btn-primario {
   background-color: #5227cc;
   color: white;
@@ -33,6 +38,7 @@ label {
   height: 37px;
   display: inline-block;
   margin-left: 3px;
+  margin-right: 8px;
   font-family: 'Roboto Condensed';
   font-size: 16px;
   font-weight: bold;
@@ -59,6 +65,10 @@ label {
   display: flex;
 }
 
+.contenedor_lista{
+  text-align: start;
+}
+
 #contenedor_habitos, #contenedor_molestias{
   overflow-y:auto;
   height:210px;
@@ -77,20 +87,43 @@ h4 {
   color:#5227CC
 }
 
+#lista_alimentos{
+  overflow-y:auto;
+  height:330px;
+}
+
 #login-card {
   height: 864px;
   width: 1316px;
   position: absolute;
 }
 
-#nav_deportivo {
+#nav_alimenticio {
   color: #5227cc;
+}
+
+.preferencia{
+  color:#8CC7A1;
+  margin-bottom: 0px;
+}
+
+.intolerancia{
+  color:#A85E5E;
+  margin-bottom: 0px;
 }
 
 svg{
   width:24px;
   height:24px;
   pointer-events: none;
+}
+
+.titulo_lista{
+  margin-bottom: 0px;
+}
+
+.tipo_alimentacion{
+  margin-top:16px
 }
 
 ul#lista_molestias > li.active {

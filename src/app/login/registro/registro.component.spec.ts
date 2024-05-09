@@ -6,15 +6,20 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginService } from '../login.service';
+import { of, throwError } from 'rxjs';
 
 describe('RegistroComponent', () => {
   let component: RegistroComponent;
   let fixture: ComponentFixture<RegistroComponent>;
   let debug: DebugElement;
+  let spy = jasmine.createSpyObj('LoginService', ['registrarse']);
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[ToastrModule.forRoot(),HttpClientTestingModule, ReactiveFormsModule],
+      imports:[ToastrModule.forRoot(),HttpClientTestingModule, ReactiveFormsModule, BrowserAnimationsModule],
+      providers: [{provide: LoginService, useValue: spy}],
       declarations: [RegistroComponent],
     }).compileComponents();
   }));
@@ -67,6 +72,8 @@ describe('RegistroComponent', () => {
     expect(component.registroForm.valid).toBeTrue();
 
     let boton = debug.query(By.css('#boton_registro'));
+    const data = {};
+    spy.registrarse.and.returnValue(of(data));
     boton.nativeElement.click();
   });
 
@@ -113,6 +120,47 @@ describe('RegistroComponent', () => {
   it('Debe poder volver a login', () => {
     expect(debug.query(By.css('#boton_volver'))).toHaveSize(1);
     let boton = debug.query(By.css('#boton_volver'));
+    boton.nativeElement.click();
+  });
+
+  it('Error Service', () => {
+    const nombre = component.registroForm.controls['nombre'];
+    const apellido = component.registroForm.controls['apellido'];
+    const tipo_doc = component.registroForm.controls['tipo_doc'];
+    const documento = component.registroForm.controls['documento'];
+    const contrasena = component.registroForm.controls['contrasena'];
+    const contrasena2 = component.registroForm.controls['contrasena2'];
+    const genero = component.registroForm.controls['genero'];
+    const edad = component.registroForm.controls['edad'];
+    const peso = component.registroForm.controls['peso'];
+    const altura = component.registroForm.controls['altura'];
+    const pais_nacimiento = component.registroForm.controls['pais_nacimiento'];
+    const ciudad_nacimiento = component.registroForm.controls['ciudad_nacimiento'];
+    const pais_vivienda = component.registroForm.controls['pais_vivienda'];
+    const ciudad_vivienda = component.registroForm.controls['ciudad_vivienda'];
+    const tiempo = component.registroForm.controls['tiempo'];
+    const deporte = component.registroForm.controls['deporte'];
+    nombre.setValue('Gustavo');
+    apellido.setValue('Barbosa');
+    tipo_doc.setValue(1);
+    documento.setValue('37864172');
+    contrasena.setValue('mocos12345');
+    contrasena2.setValue('mocos12345');
+    genero.setValue(1);
+    edad.setValue('36');
+    peso.setValue('63');
+    altura.setValue('180');
+    pais_nacimiento.setValue('Brasil');
+    ciudad_nacimiento.setValue('Sao Pablo');
+    pais_vivienda.setValue('Colombia');
+    ciudad_vivienda.setValue('Medellin');
+    tiempo.setValue('9');
+    deporte.setValue(1);
+
+    expect(component.registroForm.valid).toBeTrue();
+
+    let boton = debug.query(By.css('#boton_registro'));
+    spy.registrarse.and.returnValue(throwError(() => new Error("")));
     boton.nativeElement.click();
   });
 });
