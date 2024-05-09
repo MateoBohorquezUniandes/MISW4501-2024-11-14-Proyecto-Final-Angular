@@ -31,6 +31,9 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
+    if($localize.locale == 'en-US') {
+      this.english = true;
+    }
     let url = this.router.url.split('/')
     switch(url[1]){
       case 'deportista':
