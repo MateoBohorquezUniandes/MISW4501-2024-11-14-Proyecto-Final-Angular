@@ -74,7 +74,6 @@ describe('PerfilDeportivoComponent', () => {
     spy.getSportProfiles.and.returnValue(
       of(new PerfilDeportivo(data,""))
     );
-
     fixture.detectChanges();
     debug = fixture.debugElement;
   });
@@ -146,6 +145,7 @@ describe('PerfilDeportivoComponent', () => {
   });
 
   it('Error servicio', () => {
-    spy.getSportProfiles.and.returnValue(throwError({ status: 404 }));
+    spy.getSportProfiles.and.returnValue(throwError(() => new Error("")));
+    component.getProfile()
   });
 });

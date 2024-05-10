@@ -30,6 +30,18 @@ describe('Service: Login', () => {
     expect(service.login(request)).toBeTruthy();
   }));
 
+  it('Deberia registrarse', inject([LoginService], (service: LoginService) => {
+    let request = {
+      contrasena: 'password',
+      identificacion: {
+        tipo: 'CC',
+        valor: '79418556'
+      },
+      rol: 'DEPORTISTA',
+    }
+    expect(service.registrarse(request)).toBeTruthy();
+  }));
+
   it('Debe obtener un token nulo', inject([LoginService], (service: LoginService) => {
     service.deleteToken()
     expect(service.getToken()).toEqual("");

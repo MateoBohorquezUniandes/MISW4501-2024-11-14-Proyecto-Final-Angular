@@ -5,61 +5,367 @@
       <trans-unit id="1410782973708947200" datatype="html">
         <source>Perfiles Deportivos</source><target>Sports Profiles</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-alimenticio/perfil-alimenticio.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
           <context context-type="linenumber">9,10</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-demografico/perfil-demografico.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
           <context context-type="linenumber">9,10</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-deportivo/perfil-deportivo.component.html</context>
-          <context context-type="linenumber">9,10</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/deportivo.component.html</context>
+          <context context-type="linenumber">4,5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3437598332238870455" datatype="html">
         <source>Demográfico</source><target>Demographic</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-alimenticio/perfil-alimenticio.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
           <context context-type="linenumber">14,15</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-demografico/perfil-demografico.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
           <context context-type="linenumber">14,15</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-deportivo/perfil-deportivo.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/deportivo.component.html</context>
           <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3462953515856455808" datatype="html">
         <source>Deportivo</source><target>Sport</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-alimenticio/perfil-alimenticio.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
           <context context-type="linenumber">17,18</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-demografico/perfil-demografico.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
           <context context-type="linenumber">17,18</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-deportivo/perfil-deportivo.component.html</context>
-          <context context-type="linenumber">17,18</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/deportivo.component.html</context>
+          <context context-type="linenumber">19,20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8254510965534769566" datatype="html">
         <source>Alimenticio</source><target>Nutritional</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-alimenticio/perfil-alimenticio.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
           <context context-type="linenumber">20,21</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-demografico/perfil-demografico.component.html</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
           <context context-type="linenumber">20,21</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/deportista/perfiles/perfil-deportivo/perfil-deportivo.component.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/deportivo.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8512134974682087661" datatype="html">
+        <source>Registrar Alimentos</source><target>Register Food</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7536851948946308380" datatype="html">
+        <source>Debe seleccionar un alimento</source><target>You must select a food</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2229594745304510307" datatype="html">
+        <source>Seleccionar</source><target>Select</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">62,63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">88,89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56247236435127317" datatype="html">
+        <source>Preferencia</source><target>Preference</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7690895089822838851" datatype="html">
+        <source>Alergia</source><target>Allergy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">64,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2847994724611099525" datatype="html">
+        <source>Intolerancia</source><target>Intolerance</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8524201838416230611" datatype="html">
+        <source>Agregar</source><target>Add</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1925048545615513299" datatype="html">
+        <source>Debe seleccionar un tipo</source><target>You must select a type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">99,100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="321389735264881666" datatype="html">
+        <source>Tipo Alimentación</source><target>Type Food</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">78,79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="332810145543929581" datatype="html">
+        <source>Carnivoro</source><target>Carnivore</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">89,90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5289410706411087040" datatype="html">
+        <source>Omnivoro</source><target>Omnivore</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">90,91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1148686469936704773" datatype="html">
+        <source>Vegetariano</source><target>Vegetarian</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">91,92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7918781523864282424" datatype="html">
+        <source>Vegano</source><target>Vegan</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">92,93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1372173599787735409" datatype="html">
+        <source>Guardar</source><target>Save</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8955653060582264367" datatype="html">
+        <source>No se encontraron alimentos registrados</source><target>No registered foods were found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">130,131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2132671091044692626" datatype="html">
+        <source>Tipo Alimentación: <x id="INTERPOLATION" equiv-text="{{ tipo_alimentacion }}"/></source><target>Type Food: <x id="INTERPOLATION" equiv-text="{{ tipo_alimentacion }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
+          <context context-type="linenumber">131,132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2856568769375199455" datatype="html">
+        <source>Datos generales</source><target>General information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5866255819246160813" datatype="html">
+        <source>Edad: Error</source><target>Age: Error</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2356972021337429328" datatype="html">
+        <source>Edad: <x id="INTERPOLATION" equiv-text="{{ fisiologia.edad }}"/> Años</source><target>Age: <x id="INTERPOLATION" equiv-text="{{ fisiologia.edad }}"/> Years</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8833195481008119975" datatype="html">
+        <source>Genero: Error</source><target>Gender: Error</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4113367153618756253" datatype="html">
+        <source>Genero: <x id="INTERPOLATION" equiv-text="{{ fisiologia.genero }}"/></source><target>Gender: <x id="INTERPOLATION" equiv-text="{{ fisiologia.genero }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5700971271624945775" datatype="html">
+        <source>Peso: Error</source><target>Weight: Error</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7933813171105170663" datatype="html">
+        <source>Peso: <x id="INTERPOLATION" equiv-text="{{ fisiologia.peso }}"/> Kg</source><target>Weight: <x id="INTERPOLATION" equiv-text="{{ fisiologia.peso }}"/> Kg</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1975622421218095682" datatype="html">
+        <source>Estatura: Error</source><target>Height: Error</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1023746252507674406" datatype="html">
+        <source>Estatura: <x id="INTERPOLATION" equiv-text="{{ fisiologia.altura }}"/> Metros</source><target>Height: <x id="INTERPOLATION" equiv-text="{{ fisiologia.altura }}"/> Meters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">36,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6921532979417933008" datatype="html">
+        <source>Ciudad: Error</source><target>City: Error</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1390820279943628345" datatype="html">
+        <source>Ciudad: <x id="INTERPOLATION" equiv-text="{{demografia.ciudad }}"/></source><target>City: <x id="INTERPOLATION" equiv-text="{{demografia.ciudad }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7471580516730924527" datatype="html">
+        <source>Pais: Error</source><target>Country: Error</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1552148015289948367" datatype="html">
+        <source>Pais: <x id="INTERPOLATION" equiv-text="{{ demografia.pais }}"/></source><target>Country: <x id="INTERPOLATION" equiv-text="{{ demografia.pais }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4775999547673085722" datatype="html">
+        <source>Indice de masa corporal: Error</source><target>Body mass index: Error</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="164761532264729834" datatype="html">
+        <source>Indice de masa corporal: <x id="INTERPOLATION" equiv-text="{{ imc.valor }}"/></source><target>Body mass index: <x id="INTERPOLATION" equiv-text="{{ imc.valor }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1306006652737359401" datatype="html">
+        <source>Datos de química sanguinea</source><target>Blood chemistry information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6823607833476325846" datatype="html">
+        <source>Glucosa: N/A</source><target>Glucose: N/A</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6333842128145651378" datatype="html">
+        <source>Acido úrico: N/A</source><target>Uric acid: N/A</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="373286202067327211" datatype="html">
+        <source>Colesterol: N/A</source><target>Cholesterol: N/A</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6132718634406313914" datatype="html">
+        <source>Urea: N/A</source><target>Urea: N/A</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9004567781618952357" datatype="html">
+        <source>Trigliceridos: N/A</source><target>Triglycerides: N/A</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8716922088984718831" datatype="html">
+        <source>Atención</source><target>Attention</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7032929158697860561" datatype="html">
+        <source>No se encontró ningun laboratorio en su ubicación capacitado para hacer estas pruebas</source><target>We couldn't found a laboratory in your location capable of performing these tests.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4972394304943027790" datatype="html">
+        <source>Cargue porfavor un archivo del centro medico</source><target>Please upload a file of the medical center</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">62,63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8488842661651268842" datatype="html">
+        <source>Hábitos</source><target>Habits</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/listar-habitos/listar-habitos.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3969039970469649802" datatype="html">
+        <source>Molestias</source><target>Discomfort</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/listar-molestias/listar-molestias.component.html</context>
+          <context context-type="linenumber">1,2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8781722962959743892" datatype="html">
@@ -74,13 +380,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login/login.component.html</context>
           <context context-type="linenumber">24,25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2229594745304510307" datatype="html">
-        <source>Seleccionar</source><target>Select</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/login/login/login.component.html</context>
-          <context context-type="linenumber">32,33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3652222630724651775" datatype="html">
@@ -195,9 +494,8 @@
           <context context-type="linenumber">146</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6456742354224153059" datatype="html">
-        <source> Aun no te has registrado? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/registry&quot;&gt;"/>Registrarse<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
-        <target> Not registered yet? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/registry&quot;&gt;"/>Sign Up<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+      <trans-unit id="3132022192657436472" datatype="html">
+        <source> Aun no te has registradA? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/registry&quot;&gt;"/>Registrarse<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source><target> Not registered yet? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/registry&quot;&gt;"/>Sign Up<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login/login.component.html</context>
           <context context-type="linenumber">153,155</context>

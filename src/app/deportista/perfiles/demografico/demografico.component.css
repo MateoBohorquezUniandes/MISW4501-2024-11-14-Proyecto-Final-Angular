@@ -5,7 +5,7 @@ h5 {
   margin-top: 30px;
   display: flex;
 }
-a {
+a, p, label, input{
   font-family: "Roboto Condensed";
   font-size: 16px;
   font-weight: bold;
@@ -21,6 +21,29 @@ a {
   border-bottom-left-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
 }
+
+#card_datos_generales{
+  height: 390px;
+  width:312px;
+  background-color: #F2DFD7
+}
+
+#card_datos_quimica{
+  height: 390px;
+  width:312px;
+  background-color: #9F9FED
+}
+
+#card_datos_error{
+  height: 109px;
+  width:263px;
+  background-color: #A85E5E;
+}
+
+#card_datos_error_body{
+  padding-top:0px;
+}
+
 #login-card {
   height: 864px;
   width: 1316px;
@@ -30,4 +53,19 @@ a {
   justify-content: center;
   text-align: center;
   display: flex;
+}
+p.izquierda{
+  text-align: initial
+}
+
+p.blanco {
+  color: #FFFFFF;
+}
+
+label.blanco{
+  color: #FFFFFF;
+}
+
+#titulo_error{
+  margin-bottom: 0;
 }
