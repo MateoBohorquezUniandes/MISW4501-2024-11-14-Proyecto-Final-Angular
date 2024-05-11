@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { IndicadorService } from '../indicador.service';
 import { ToastrService } from 'ngx-toastr';
+import { Formula } from '../indicador';
 
 export interface ParametroInput {
   nombre: string;
@@ -63,6 +64,8 @@ const COLUMNS_SCHEMA = [
   ],
 })
 export class CrearIndicadorComponent implements OnInit {
+  formulas: Array<Formula> = [];
+
   indicadorForm = this.formBuilder.group({
     nombre: [
       '',
@@ -84,10 +87,20 @@ export class CrearIndicadorComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private indicadorService: IndicadorService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private renderer: Renderer2,
+    private el: ElementRef
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getFormulas();
+  }
+
+  getFormulas(): void {
+    this.indicadorService.getFormulas().subscribe((formulas) => {
+      this.formulas = formulas;
+    });
+  }
 
   createIndicador(
     nombre: string | null,

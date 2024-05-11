@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Formula } from './indicador';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +29,16 @@ export class IndicadorService {
       `${environment.UrlIndicador}/commands/formula`,
       request,
       { headers: header }
+    );
+  }
+
+  getFormulas(): Observable<Formula[]> {
+    let header = this.createHeaders();
+    return this.http.get<Formula[]>(
+      `${environment.UrlIndicador}/queries/formula`,
+      {
+        headers: header,
+      }
     );
   }
 }

@@ -16,10 +16,18 @@ export class Formula {
   nombre: string;
   descripcion: string;
   formula: string;
-  constructor(id: string, nombre: string, simbolo: string, funcion: string) {
+  parametros: Parametro[];
+  constructor(
+    id: string,
+    nombre: string,
+    simbolo: string,
+    funcion: string,
+    parametros: Parametro[]
+  ) {
     this.id = id;
     this.nombre = nombre;
     this.formula = funcion;
     this.descripcion = simbolo;
+    this.parametros = parametros;
   }
 }

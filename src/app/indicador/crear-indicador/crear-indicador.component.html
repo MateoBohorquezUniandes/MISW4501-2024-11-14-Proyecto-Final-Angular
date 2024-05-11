@@ -173,7 +173,24 @@
           </form>
         </div>
         <div class="col-sm">
-          listar
+          <div id="contenedor_formulas">
+            <ul id="lista_formulas" class="list-group">
+              <li class="list-group-item list-group-item-action" *ngFor="let formula of formulas">
+                <div class="col-sm-3" style="float: left;">
+                  <svg class="bi" fill="#5227cc">
+                    <use xlink:href="assets/img/bootstrap-icons.svg#calendar3" />
+                  </svg>
+                </div>
+                <div class="col-sm-9">
+                  <div style="font-weight: bold;">{{ formula.nombre}}</div>
+                  <div>{{ formula.formula }}</div>
+                </div>
+          
+          
+          
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

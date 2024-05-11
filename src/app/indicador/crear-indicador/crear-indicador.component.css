@@ -22,3 +22,8 @@ label {
 .custom-input {
   padding-bottom: 43px;
 }
+svg {
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
