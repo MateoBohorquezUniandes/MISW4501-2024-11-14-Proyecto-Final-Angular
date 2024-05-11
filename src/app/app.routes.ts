@@ -6,10 +6,11 @@ import { SocioHomeComponent } from './socio/socio-home/socio-home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './deportista/dashboard/dashboard.component';
 import { OrganizadorHomeComponent } from './organizador/organizador-home/organizador-home.component';
+import { CrearIndicadorComponent } from './indicador/crear-indicador/crear-indicador.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo:'login' , pathMatch:'full'},
-  { path: 'login', component: LoginComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'registry', component: RegistroComponent },
 
   //{ path: 'deportista', component: DeportistaHomeComponent },
@@ -18,9 +19,14 @@ export const routes: Routes = [
     component: SidebarComponent,
     children: [
       { path: 'socios', component: SocioHomeComponent },
-      { path: 'deportista', loadChildren: () => import('./deportista/deportista.routing').then( r => r.routes) },
-      { path: 'organizador', component: OrganizadorHomeComponent},
-      { path: 'planes', component: PlanListComponent},
-    ]
-  }
+      {
+        path: 'deportista',
+        loadChildren: () =>
+          import('./deportista/deportista.routing').then((r) => r.routes),
+      },
+      { path: 'organizador', component: OrganizadorHomeComponent },
+      { path: 'planes', component: PlanListComponent },
+      { path: 'indicadores', component: CrearIndicadorComponent },
+    ],
+  },
 ];
