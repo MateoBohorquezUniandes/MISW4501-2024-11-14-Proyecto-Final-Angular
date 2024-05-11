@@ -10,7 +10,6 @@ import { options } from './options'
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../environments/environment';
-import { Console } from 'console';
 
 @Component({
   selector: 'app-sidebar',
