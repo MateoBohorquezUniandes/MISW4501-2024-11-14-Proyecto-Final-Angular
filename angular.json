@@ -79,6 +79,31 @@
 
               ]
             },
+            "production-en":{
+              "localize": ["en"],
+              "outputPath": "dist/sport-app-en/",
+              "i18nMissingTranslation": "error",
+              "fileReplacements": [{
+                "replace": "src/app/sidebar/options.ts",
+                "with": "src/app/sidebar/options.en.ts"
+              },{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -95,6 +120,9 @@
             },
             "production": {
               "buildTarget": "sport-app:build:production"
+            },
+            "production-en": {
+              "buildTarget": "sport-app:build:production-en"
             },
             "development": {
               "buildTarget": "sport-app:build:development"

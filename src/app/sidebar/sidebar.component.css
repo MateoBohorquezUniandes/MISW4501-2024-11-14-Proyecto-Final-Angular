@@ -38,3 +38,7 @@ a {
 a.dropdown-item{
   color:#FFFFFF
 }
+
+a.language-active{
+  color: #5227cc;
+}

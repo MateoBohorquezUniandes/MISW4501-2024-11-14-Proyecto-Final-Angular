@@ -34,8 +34,10 @@
           </div>
         </div>
         <div class="col" style="margin-top:20px;padding-right:0px;">
-          <a>ES</a>
-          <a style="padding-left:5px;">EN</a>
+          <a class="language-active" *ngIf="!english">ES</a>
+          <a *ngIf="english" (click)="changeLanguage()">ES</a>
+          <a *ngIf="!english" (click)="changeLanguage()" style="padding-left:5px;">EN</a>
+          <a class="language-active" *ngIf="english" style="padding-left:5px;">EN</a>
         </div>
       </div>
 
