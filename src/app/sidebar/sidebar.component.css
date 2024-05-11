@@ -34,6 +34,11 @@ a {
   font-weight: bold;
   color:#343A40
 }
+
 a.dropdown-item{
   color:#FFFFFF
+}
+
+a.language-active{
+  color: #5227cc;
 }

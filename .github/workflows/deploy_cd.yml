@@ -19,7 +19,7 @@ jobs:
   setup-build-publish:
     strategy:
       matrix:
-        images: [angular]
+        images: [angular,en-angular]
     name: Setup, Build and Publish
     runs-on: ubuntu-latest
     environment: production
@@ -64,5 +64,18 @@ jobs:
       - name: Update Traffic
         run: |-
           gcloud run services update-traffic angular2 \
+            --to-latest \
+            --region=us-central1 \
+
+      - name: Deploy-English
+        run: |-
+          gcloud run deploy angular3 \
+            --image=us-central1-docker.pkg.dev/proyecto-final-416123/misw450x-registry/en-angular:latest \
+            --region=us-central1 \
+            --project=proyecto-final-416123 \
+
+      - name: Update Traffic-English
+        run: |-
+          gcloud run services update-traffic angular3 \
             --to-latest \
             --region=us-central1 \
