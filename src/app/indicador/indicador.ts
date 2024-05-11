@@ -1,21 +1,25 @@
 export class Parametro {
+  funcion: string;
+  id: string;
   nombre: string;
   simbolo: string;
-  funcion: string;
-  constructor(nombre: string, simbolo: string, funcion: string) {
-    this.nombre = nombre;
+  constructor(id: string, funcion: string, nombre: string, simbolo: string) {
+    this.id = id;
     this.funcion = funcion;
+    this.nombre = nombre;
     this.simbolo = simbolo;
   }
 }
 
-export class CrearFormulaDTO {
+export class Formula {
+  id: string;
   nombre: string;
   descripcion: string;
   formula: string;
-  constructor(nombre: string, descripcion: string, formula: string) {
+  constructor(id: string, nombre: string, simbolo: string, funcion: string) {
+    this.id = id;
     this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.formula = formula;
+    this.formula = funcion;
+    this.descripcion = simbolo;
   }
 }

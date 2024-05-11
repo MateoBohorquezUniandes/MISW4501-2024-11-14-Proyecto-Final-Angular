@@ -10,6 +10,8 @@ import {
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { IndicadorService } from '../indicador.service';
+import { ToastrService } from 'ngx-toastr';
 
 export interface ParametroInput {
   nombre: string;
@@ -76,11 +78,14 @@ export class CrearIndicadorComponent implements OnInit {
     ],
   });
   displayedColumns: string[] = COLUMNS_SCHEMA.map((col) => col.key);
-  //dataSource = new MatTableDataSource<Parametro>();
   dataSource: ParametroInput[] = [];
   columnsSchema: any = COLUMNS_SCHEMA;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private indicadorService: IndicadorService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {}
 
@@ -88,7 +93,38 @@ export class CrearIndicadorComponent implements OnInit {
     nombre: string | null,
     descripcion: string | null,
     formula: string | null
-  ): void {}
+  ): void {
+    console.log('CREAR UIndicador');
+    let formulaPayload = {
+      nombre: nombre,
+      descripcion: descripcion,
+      formula: formula,
+      parametros: {},
+    };
+
+    let parametros: { [key: string]: any } = {};
+    this.dataSource.forEach((element) => {
+      parametros[element.simbolo] = {
+        simbolo: element['nombre_parametro'],
+        funcion: element.funcion,
+      };
+    });
+
+    formulaPayload.parametros = parametros;
+
+    console.log(JSON.stringify(formulaPayload));
+
+    this.indicadorService.crearFormula(formulaPayload).subscribe(
+      (data) => {
+        this.toastr.success('Formula Creada Satisfactoriamente', 'Formula');
+        this.indicadorForm.reset();
+        this.dataSource = [];
+      },
+      (error) => {
+        this.toastr.error('Error', 'Error creando la formula:' + error.message);
+      }
+    );
+  }
 
   addRow() {
     const newRow = {
@@ -105,31 +141,11 @@ export class CrearIndicadorComponent implements OnInit {
     this.dataSource = this.dataSource.filter((u) => u.id !== id);
   }
 
-  editRow(row: any) {
-    console.log('row' + JSON.stringify(row));
-    if (row.id === 0) {
-      row.id = Date.now();
-      row.isEdit = false;
-      console.log(row);
-      this.dataSource.push(row);
-    } else {
-      //this.userService.updateUser(row).subscribe(() => (row.isEdit = false))
-    }
-  }
-
   inputHandler(e: any, idToFind: number, key: string) {
     const result = this.dataSource.find(({ id }) => id == idToFind);
     if (result !== undefined) {
       const inputValue = (e.target as HTMLInputElement).value;
-      console.log('Input value:', inputValue);
       result[key] = inputValue;
     }
-
-    console.log(JSON.stringify(this.dataSource));
-  }
-
-  handleInputChange(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    console.log('Input value:', inputValue);
   }
 }

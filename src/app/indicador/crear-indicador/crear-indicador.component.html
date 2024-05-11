@@ -39,7 +39,7 @@
             </div>
 
             <article class="table-header">
-              <button class="btn btn-secondary" mat-button (click)="addRow()">Añadir Parametros</button>
+              <button type="button" class="btn btn-secondary" mat-button (click)="addRow()">Añadir Parametros</button>
             </article>
             <table mat-table [dataSource]="dataSource">
               <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
