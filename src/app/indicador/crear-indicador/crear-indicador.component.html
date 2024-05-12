@@ -1,0 +1,198 @@
+<div class="container">
+  <div id="indicador-card" class="card" style="height: 864px; width: 1316px; position: absolute">
+    <div class="row justify-content-md-center">
+      <h4>Indicadores</h4>
+    </div>
+    <div class="card-body">
+      <div class="row justify-content-md-center">
+        <div class="col-sm">
+          <form [formGroup]="indicadorForm" (ngSubmit)="
+          !indicadorForm.invalid && createIndicador(indicadorForm.controls.nombre.value, indicadorForm.controls.descripcion.value, indicadorForm.controls.formula.value)
+          ">
+            <div class="row g-3 custom-input">
+              <div class="col-sm-3">
+                <label for="inputNombre" class="col-form-label">Nombre</label>
+              </div>
+              <div class="col-sm-9">
+                <input id="nombre" class="form-control" formControlName="nombre">
+              </div>
+
+            </div>
+
+            <div class="row g-3 custom-input">
+              <div class="col-sm-3">
+                <label for="inputDescripcion" class="col-form-label">Descripción</label>
+              </div>
+              <div class="col-sm-9">
+                <textarea type="descripcion" id="inputDescripcionHabito" class="form-control"
+                  aria-describedby="descripcionHelpInline" formControlName="descripcion"></textarea>
+              </div>
+            </div>
+            <div class="row g-3 custom-input">
+              <div class="col-sm-3">
+                <label for="inputFormula" class="col-form-label">Formula</label>
+              </div>
+              <div class="col-sm-9">
+                <input id="inputFormula" class="form-control" formControlName="formula">
+              </div>
+
+            </div>
+
+            <article class="table-header">
+              <button type="button" class="btn btn-secondary" mat-button (click)="addRow()">Añadir Parametros</button>
+            </article>
+            <table mat-table [dataSource]="dataSource">
+              <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
+                <th mat-header-cell *matHeaderCellDef>
+                  {{ col.label }}
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
+                    <div class="btn-edit" *ngSwitchCase="'isEdit'">
+                      <!-- <button mat-button (click)="element.isEdit = !element.isEdit">
+                        Edit
+                      </button> -->
+                      <button mat-button class="btn btn-danger" (click)="removeRow(element.id)">
+                        Eliminar
+                      </button>
+                    </div>
+                    <span *ngSwitchDefault id="{{element.id}}">
+                      {{ element[col.key] }}
+                    </span>
+                  </div>
+                  <div [ngSwitch]="col.type" *ngIf="element.isEdit">
+                    <div class="btn-edit" *ngSwitchCase="'isEdit'">
+                      <button mat-button (click)="element.isEdit = !element.isEdit"
+                        class="btn btn-success">Listo</button>
+                    </div>
+                    <mat-form-field *ngSwitchDefault>
+                      <input [type]="col.type" matInput formControlName="{{col.key}}"
+                        (change)="inputHandler($event, element.id, col.key)" />
+                    </mat-form-field>
+                  </div>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+
+
+            <!-- validaciones -->
+            <div class="row g-3 align-items-center  custom-input">
+              <div class="col-sm-3">
+              </div>
+              <div class="col-sm-9">
+
+                <div class="alert alert-danger dismissible fade show" *ngIf="
+                          indicadorForm.get('nombre')!.hasError('required') &&
+                          indicadorForm.get('nombre')!.touched ||
+                          indicadorForm.get('nombre')!.hasError('minlength') &&
+                          indicadorForm.get('nombre')!.touched ||
+                          indicadorForm.get('nombre')!.hasError('maxlength') &&
+                          indicadorForm.get('nombre')!.touched ||
+                          indicadorForm.get('descripcion')!.hasError('required') &&
+                          indicadorForm.get('descripcion')!.touched ||
+                          indicadorForm.get('descripcion')!.hasError('minlength') &&
+                          indicadorForm.get('descripcion')!.touched ||
+                          indicadorForm.get('descripcion')!.hasError('maxlength') &&
+                          indicadorForm.get('descripcion')!.touched ||
+                          indicadorForm.get('formula')!.hasError('required') &&
+                          indicadorForm.get('formula')!.touched ||
+                          indicadorForm.get('formula')!.hasError('minlength') &&
+                          indicadorForm.get('formula')!.touched ||
+                          indicadorForm.get('formula')!.hasError('maxlength') &&
+                          indicadorForm.get('formula')!.touched
+                          ">
+                  <p *ngIf="
+                          indicadorForm.get('nombre')!.hasError('required') &&
+                          indicadorForm.get('nombre')!.touched
+                        ">
+                    Debe ingresar un nombre
+                  </p>
+                  <p *ngIf="
+                          indicadorForm.get('nombre')!.hasError('minlength') &&
+                          indicadorForm.get('nombre')!.touched
+                        ">
+                    mínimo 2 caracteres para el nombre
+                  </p>
+                  <p *ngIf="
+                            indicadorForm.get('nombre')!.hasError('maxlength') &&
+                            indicadorForm.get('nombre')!.touched
+                          ">
+                    exediste el máximo para el nombre
+                  </p>
+                  <p *ngIf="
+                            indicadorForm.get('descripcion')!.hasError('required') &&
+                            indicadorForm.get('descripcion')!.touched
+                          ">
+                    Debe ingresar una descripción
+                  </p>
+                  <p *ngIf="
+                                        indicadorForm.get('descripcion')!.hasError('minlength') &&
+                                        indicadorForm.get('descripcion')!.touched
+                                      ">
+                    mínimo 2 caracteres para la descripción
+                  </p>
+                  <p *ngIf="
+                                        indicadorForm.get('descripcion')!.hasError('maxlength') &&
+                                        indicadorForm.get('descripcion')!.touched
+                                      ">
+                    exediste el máximo para la descripción
+                  </p>
+
+                  <p *ngIf="
+                  indicadorForm.get('formula')!.hasError('required') &&
+                  indicadorForm.get('formula')!.touched
+                ">
+                    Debe ingresar una formula
+                  </p>
+                  <p *ngIf="
+                  indicadorForm.get('formula')!.hasError('minlength') &&
+                  indicadorForm.get('formula')!.touched
+                ">
+                    mínimo 2 caracteres para la formula
+                  </p>
+                  <p *ngIf="
+                    indicadorForm.get('formula')!.hasError('maxlength') &&
+                    indicadorForm.get('formula')!.touched
+                  ">
+                    exediste el máximo para la formula
+                  </p>
+
+                </div>
+
+
+              </div>
+            </div>
+
+            <button type="submit" id="registrarIndicador" class="btn btn-primario"
+              [disabled]="!indicadorForm.valid">Crear
+              Nuevo
+              Indicador
+            </button>
+          </form>
+        </div>
+        <div class="col-sm">
+          <div id="contenedor_formulas">
+            <ul id="lista_formulas" class="list-group">
+              <li class="list-group-item list-group-item-action" *ngFor="let formula of formulas">
+                <div class="col-sm-3" style="float: left;">
+                  <svg class="bi" fill="#5227cc">
+                    <use xlink:href="assets/img/bootstrap-icons.svg#calendar3" />
+                  </svg>
+                </div>
+                <div class="col-sm-9">
+                  <div style="font-weight: bold;">{{ formula.nombre}}</div>
+                  <div>{{ formula.formula }}</div>
+                </div>
+          
+          
+          
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
