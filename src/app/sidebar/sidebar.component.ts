@@ -9,6 +9,7 @@ import {LoginService } from '../login/login.service';
 import { options } from './options'
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-sidebar',
@@ -31,6 +32,9 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
+    if($localize.locale == 'en') {
+      this.english = true;
+    }
     let url = this.router.url.split('/')
     switch(url[1]){
       case 'deportista':
@@ -43,7 +47,23 @@ export class SidebarComponent implements OnInit {
         this.options = options.optionsOrganizador
         break;
     }
-    //let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMzMxMjYxNCwianRpIjoiMTk2ODc2YWYtNDFhNy00YjI4LThlM2ItYTZmMmViYWE1YjlhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ0aXBvIjoiQ0MiLCJ2YWxvciI6IjEyMzQ1Njc4OSJ9LCJuYmYiOjE3MTMzMTI2MTQsImNzcmYiOiJlZWYxOGEzMC1lMzgyLTRiOTItYjlhOS02ZjJlZjdiYjgzZWMiLCJleHAiOjE3MTMzMzc4MTR9.OAq6ifrIhmXtflYzgEG1wd5r1kiUTfSn-y4DlH_RcDA";
+    if(this.router.url.includes('?token=')){
+      let urltoken = this.router.url.split('?token=')
+      this.service.setToken(urltoken[1])
+      let url = this.router.url.split('/')
+      url = url[1].split('?')
+      switch(url[0]){
+        case 'deportista':
+          this.options = options.optionsDeportista
+          break;
+        case 'socio':
+          this.options = options.optionsSocio
+          break;
+        case 'organizador':
+          this.options = options.optionsOrganizador
+          break;
+      }
+    }
     this.token = this.service.getToken();
     if(this.token != ''){
       const helper = new JwtHelperService();
@@ -55,8 +75,32 @@ export class SidebarComponent implements OnInit {
       this.user = "User";
     }
   }
+
   signOut(){
     this.service.deleteToken();
     this.router.navigateByUrl("/login")
+  }
+
+  changeLanguage(){
+    if($localize.locale == 'en') {
+      if(!this.router.url.includes('?token=')){
+        let url = environment.UrlES + this.router.url + "?token=" + this.token;
+        window.location.href = url
+      }
+      else{
+        let url = environment.UrlES + this.router.url
+        window.location.href = url
+      }
+    }
+    else{
+      if(!this.router.url.includes('?token=')){
+        let url = environment.UrlEN + this.router.url + "?token=" + this.token;
+        window.location.href = url
+      }
+      else{
+        let url = environment.UrlEN + this.router.url
+        window.location.href = url
+      }
+    }
   }
 }

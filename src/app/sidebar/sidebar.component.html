@@ -6,7 +6,7 @@
     (opened)="events.push('open!')"
     (closed)="events.push('close!')"
   >
-    <div class="side-nav-bar d-flex flex-column flex-shrink-0 p-0">
+    <div class="side-nav-bar d-flex flex-column flex-shrink-0 p-0" style="width:250px">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" style="margin: 20px; padding-bottom: 10px;">
         <span class="fs-4" style="color:#7c7c7c">SPORTAPP</span>
       </a>
@@ -17,19 +17,30 @@
           </a>
         </li>
       </ul>
-      <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-          aria-expanded="false"  style="margin: 20px;">
-          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong>{{user}}</strong>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" (click)="signOut()">Cerrar Sesión</a></li>
-        </ul>
+      <div class="row">
+        <div class="col" style="padding-right:0px;">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false"  style="margin: 20px;">
+              <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong>{{user}}</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" (click)="signOut()">Cerrar Sesión</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col" style="margin-top:20px;padding-right:0px;">
+          <a class="language-active" *ngIf="!english">ES</a>
+          <a *ngIf="english" (click)="changeLanguage()">ES</a>
+          <a *ngIf="!english" (click)="changeLanguage()" style="padding-left:5px;">EN</a>
+          <a class="language-active" *ngIf="english" style="padding-left:5px;">EN</a>
+        </div>
       </div>
+
     </div>
   </mat-sidenav>
 
