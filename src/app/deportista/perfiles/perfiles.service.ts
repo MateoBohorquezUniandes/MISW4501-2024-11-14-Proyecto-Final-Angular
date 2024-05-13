@@ -91,4 +91,13 @@ export class PerfilesService {
       { headers: header }
     );
   }
+
+  updateGeneralData(request:any){
+    let header = this.createHeaders();
+    return this.http.patch<string>(
+      this.basePerfilUrl + '/commands/demografico/update',
+      request,
+      { headers: header }
+    );
+  }
 }

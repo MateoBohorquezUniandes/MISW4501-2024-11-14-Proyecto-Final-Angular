@@ -13,14 +13,17 @@ export class PerfilDemograficoData {
   clasificacion_riesgo: ClasificacionRiesgo;
   fisiologia: Fisiologia;
   demografia: Demografia;
+  reportes_sanguineo: Array<ReporteQuimico> = [];
   constructor(
     clasificacion_riesgo: ClasificacionRiesgo,
     fisiologia: Fisiologia,
-    demografia: Demografia
+    demografia: Demografia,
+    reportes_sanguineo: Array<ReporteQuimico> = []
   ){
     this.clasificacion_riesgo = clasificacion_riesgo;
     this.fisiologia = fisiologia;
     this.demografia = demografia;
+    this.reportes_sanguineo = reportes_sanguineo;
   }
 }
 
@@ -70,5 +73,20 @@ export class Demografia {
   ){
     this.ciudad = ciudad;
     this.pais = pais;
+  }
+}
+
+export class ReporteQuimico {
+  tipo: string;
+  valor: number;
+  unidad: string;
+  constructor(
+    tipo: string,
+    valor: number,
+    unidad: string
+  ){
+    this.tipo = tipo;
+    this.valor = valor;
+    this.unidad = unidad;
   }
 }
