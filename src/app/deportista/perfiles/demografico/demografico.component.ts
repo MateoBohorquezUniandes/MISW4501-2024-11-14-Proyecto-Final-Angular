@@ -110,7 +110,7 @@ export class PerfilDemograficoComponent implements OnInit {
     valor_examen:string | null,
     unidad_examen:string | null){
       const request = {}
-      this.perfilesService.updateGeneralData(request).subscribe(
+      this.perfilesService.addChemicalReport(request).subscribe(
         (response) => {
           this.toastr.success('Se ha actualizado su perfil', 'Success');
         },
