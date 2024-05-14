@@ -2,6 +2,13 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="es-CO" datatype="plaintext" original="ng2.template" target-language="en">
     <body>
+      <trans-unit id="2123418512580585027" datatype="html">
+        <source>Perfil Deportivo</source><target>Sport Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1410782973708947200" datatype="html">
         <source>Perfiles Deportivos</source><target>Sports Profiles</target>
         <context-group purpose="location">
@@ -556,11 +563,25 @@
           <context context-type="linenumber">1,2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="261988146944372742" datatype="html">
+        <source>No se encontraron habitos registrados</source><target>No recorded habits were found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/listar-habitos/listar-habitos.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="3969039970469649802" datatype="html">
         <source>Molestias</source><target>Discomfort</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/listar-molestias/listar-molestias.component.html</context>
           <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="637690192817028059" datatype="html">
+        <source>No se encontraron molestias registradas</source><target>No recorded discomfort was found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/deportivo/listar-molestias/listar-molestias.component.html</context>
+          <context context-type="linenumber">17,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8781722962959743892" datatype="html">

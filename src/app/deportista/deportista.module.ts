@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DeportistaHomeComponent } from './deportista-home/deportista-home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { PerfilesModule } from './perfiles/perfiles.module';
 
@@ -9,9 +9,9 @@ import { PerfilesModule } from './perfiles/perfiles.module';
     CommonModule,
     RouterModule,
     PerfilesModule,
-    DeportistaHomeComponent
+    DashboardComponent
   ],
-  //declarations: [DeportistaHomeComponent],
+  declarations: [],
   exports: [PerfilesModule]
 })
 export class DeportistaModule { }
