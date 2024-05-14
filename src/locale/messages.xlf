@@ -171,6 +171,14 @@
           <context context-type="sourcefile">src/app/deportista/perfiles/alimenticio/alimenticio.component.html</context>
           <context context-type="linenumber">94,95</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">99,100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">258,259</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="8955653060582264367" datatype="html">
         <source>No se encontraron alimentos registrados</source>
@@ -190,168 +198,355 @@
         <source>Datos generales</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">28,29</context>
+          <context context-type="linenumber">37,38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5866255819246160813" datatype="html">
         <source>Edad: Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">29,30</context>
+          <context context-type="linenumber">38,39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2356972021337429328" datatype="html">
         <source>Edad: <x id="INTERPOLATION" equiv-text="{{ fisiologia.edad }}"/> Años</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">30,31</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4427342360565217462" datatype="html">
+        <source>Edad: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input
+                  type=&quot;text&quot;
+                  class=&quot;form-control campo_p&quot;
+                  placeholder=&quot;Ej: 32&quot;
+                  formControlName=&quot;edad&quot;
+                  id=&quot;input_edad&quot;
+                /&gt;"/> Años</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">40,47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8833195481008119975" datatype="html">
         <source>Genero: Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">31,32</context>
+          <context context-type="linenumber">47,48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4113367153618756253" datatype="html">
         <source>Genero: <x id="INTERPOLATION" equiv-text="{{ fisiologia.genero }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">32,33</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1637728119729294849" datatype="html">
+        <source>Genero: <x id="START_TAG_SELECT" ctype="x-select" equiv-text="&lt;select
+                  class=&quot;form-select campo_p&quot;
+                  aria-label=&quot;Default select example&quot;
+                  formControlName=&quot;genero&quot;
+                  id=&quot;input_genero&quot;
+                &gt;"/><x id="START_TAG_OPTION" ctype="x-option" equiv-text="&lt;option selected value=&quot;0&quot;&gt;"/>Seleccionar<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option_1" equiv-text="&lt;option value=&quot;F&quot;&gt;"/>Femenino<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_2" ctype="x-option_2" equiv-text="&lt;option value=&quot;M&quot;&gt;"/>Masculino<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_3" ctype="x-option_3" equiv-text="&lt;option value=&quot;O&quot;&gt;"/>Prefiero no especificar<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="CLOSE_TAG_SELECT" ctype="x-select" equiv-text="&lt;/select&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">49,60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5700971271624945775" datatype="html">
         <source>Peso: Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">33,34</context>
+          <context context-type="linenumber">60,61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7933813171105170663" datatype="html">
         <source>Peso: <x id="INTERPOLATION" equiv-text="{{ fisiologia.peso }}"/> Kg</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">34,35</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2873372880283699523" datatype="html">
+        <source>Peso: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input
+                  type=&quot;text&quot;
+                  class=&quot;form-control campo_n&quot;
+                  placeholder=&quot;Ej: 82&quot;
+                  formControlName=&quot;peso&quot;
+                  id=&quot;input_peso&quot;
+                /&gt;"/> Kg</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">62,69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1975622421218095682" datatype="html">
         <source>Estatura: Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">35,36</context>
+          <context context-type="linenumber">69,70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1023746252507674406" datatype="html">
         <source>Estatura: <x id="INTERPOLATION" equiv-text="{{ fisiologia.altura }}"/> Metros</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">36,37</context>
+          <context context-type="linenumber">70,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3361986655735434466" datatype="html">
+        <source>Estatura: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input
+                  type=&quot;text&quot;
+                  class=&quot;form-control campo_p&quot;
+                  placeholder=&quot;Ej: 1.82&quot;
+                  formControlName=&quot;altura&quot;
+                  id=&quot;input_altura&quot;
+                /&gt;"/> Metros</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">71,78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6921532979417933008" datatype="html">
         <source>Ciudad: Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">37,38</context>
+          <context context-type="linenumber">78,79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1390820279943628345" datatype="html">
         <source>Ciudad: <x id="INTERPOLATION" equiv-text="{{demografia.ciudad }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">38,39</context>
+          <context context-type="linenumber">79,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6309932366451821033" datatype="html">
+        <source>Ciudad: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input
+                  type=&quot;text&quot;
+                  class=&quot;form-control campo_n&quot;
+                  placeholder=&quot;Ej: Tokio&quot;
+                  formControlName=&quot;ciudad_vivienda&quot;
+                  id=&quot;input_ciudad_vivienda&quot;
+                /&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">80,87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7471580516730924527" datatype="html">
         <source>Pais: Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">39,40</context>
+          <context context-type="linenumber">87,88</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1552148015289948367" datatype="html">
         <source>Pais: <x id="INTERPOLATION" equiv-text="{{ demografia.pais }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">88,89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1778215665227288368" datatype="html">
+        <source>Pais: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input
+                  type=&quot;text&quot;
+                  class=&quot;form-control campo_n&quot;
+                  formControlName=&quot;pais_vivienda&quot;
+                  placeholder=&quot;Ej: Japon&quot;
+                  id=&quot;input_pais_vivienda&quot;
+                /&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">89,96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4775999547673085722" datatype="html">
         <source>Indice de masa corporal: Error</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">41,42</context>
+          <context context-type="linenumber">96,97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="164761532264729834" datatype="html">
         <source>Indice de masa corporal: <x id="INTERPOLATION" equiv-text="{{ imc.valor }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">42,43</context>
+          <context context-type="linenumber">97,98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9122803562493912376" datatype="html">
+        <source>Actualizar datos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">98,99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1306006652737359401" datatype="html">
         <source>Datos de química sanguinea</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">49,50</context>
+          <context context-type="linenumber">222,223</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6823607833476325846" datatype="html">
-        <source>Glucosa: N/A</source>
+      <trans-unit id="2944184157542465147" datatype="html">
+        <source>No se encontraron datos de quimica sanguinea</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">223,224</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6333842128145651378" datatype="html">
-        <source>Acido úrico: N/A</source>
+      <trans-unit id="8546095350778825250" datatype="html">
+        <source>Agregar Reporte</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">51,52</context>
+          <context context-type="linenumber">230,231</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="373286202067327211" datatype="html">
-        <source>Colesterol: N/A</source>
+      <trans-unit id="3404114454043610552" datatype="html">
+        <source>Tipo de examen: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input type=&quot;text&quot;
+                    class=&quot;form-control campo_p&quot;
+                    formControlName=&quot;tipo_examen&quot;
+                    placeholder=&quot;Ej: Glucosa&quot;
+                    id=&quot;input_tipo_examen&quot;/&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">52,53</context>
+          <context context-type="linenumber">238,245</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6132718634406313914" datatype="html">
-        <source>Urea: N/A</source>
+      <trans-unit id="3259012059792926042" datatype="html">
+        <source>Valor: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input type=&quot;text&quot;
+                    class=&quot;form-control campo_p&quot;
+                    formControlName=&quot;valor_examen&quot;
+                    placeholder=&quot;Ej: 82&quot;
+                    id=&quot;input_valor_examen&quot;/&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">53,54</context>
+          <context context-type="linenumber">246,252</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9004567781618952357" datatype="html">
-        <source>Trigliceridos: N/A</source>
+      <trans-unit id="4459949397753205640" datatype="html">
+        <source>Unidad de Medida: <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input type=&quot;text&quot;
+                    class=&quot;form-control campo_p&quot;
+                    formControlName=&quot;unidad_examen&quot;
+                    placeholder=&quot;Ej: Unidades&quot;
+                    id=&quot;input_unidad_examen&quot;/&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">54,55</context>
+          <context context-type="linenumber">252,258</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8716922088984718831" datatype="html">
-        <source>Atención</source>
+      <trans-unit id="3201776282283092595" datatype="html">
+        <source> El valor debe estar conformada solo de números </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">57,58</context>
+          <context context-type="linenumber">281</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7032929158697860561" datatype="html">
-        <source>No se encontró ningun laboratorio en su ubicación capacitado para hacer estas pruebas</source>
+      <trans-unit id="2384485245388385554" datatype="html">
+        <source> Debe ingresar un valor </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">58,59</context>
+          <context context-type="linenumber">289</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4972394304943027790" datatype="html">
-        <source>Cargue porfavor un archivo del centro medico</source>
+      <trans-unit id="6025805064870402306" datatype="html">
+        <source> Debe ingresar un tipo de examen </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
-          <context context-type="linenumber">62,63</context>
+          <context context-type="linenumber">297</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8809486163637310262" datatype="html">
+        <source> Debe ingresar una unidad de examen </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">305</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4016502677282390569" datatype="html">
+        <source> Debe seleccionar un genero </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">332</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5200402466491325129" datatype="html">
+        <source> La edad debe estar conformada solo de numeros </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">340</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8881929937102306075" datatype="html">
+        <source> La edad debe tener maximo 3 caracteres </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">348</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1663364355307318583" datatype="html">
+        <source> La edad debe tener minimo 1 caracteres </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">356</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="654193310147460459" datatype="html">
+        <source> Debe ingresar una edad </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">364</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4963704958942924104" datatype="html">
+        <source> El peso debe estar conformado solo de numeros </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">372</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="214412930749824561" datatype="html">
+        <source> El peso debe tener maximo 3 caracteres </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">380</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7235412077001068492" datatype="html">
+        <source> El peso debe tener minimo 2 caracteres </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">388</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8918791411850016486" datatype="html">
+        <source> Debe ingresar un peso </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">396</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5744264949449693986" datatype="html">
+        <source> Debe ingresar una altura </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">404</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="133510264028505482" datatype="html">
+        <source> Debe ingresar un pais donde este viviendo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">412</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="995859307631243927" datatype="html">
+        <source> Debe ingresar una ciudad donde este viviendo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/perfiles/demografico/demografico.component.html</context>
+          <context context-type="linenumber">420</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8488842661651268842" datatype="html">

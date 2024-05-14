@@ -1,3 +1,34 @@
+.btn-primario {
+  background-color: #5227cc;
+  color: white;
+  vertical-align: middle;
+  width: 150px;
+  height: 30px;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.campo_n {
+  width: 265px;
+  height: 37px;
+  display: inline-block;
+  margin-left: 3px;
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.campo_p {
+  width: 179px;
+  height: 37px;
+  display: inline-block;
+  margin-left: 3px;
+  font-family: 'Roboto Condensed';
+  font-size: 16px;
+  font-weight: bold;
+}
+
 h5 {
   font-family: "Roboto";
   font-size: 34px;
@@ -23,14 +54,14 @@ a, p, label, input{
 }
 
 #card_datos_generales{
-  height: 390px;
-  width:312px;
+  height: 475px;
+  width:390px;
   background-color: #F2DFD7
 }
 
 #card_datos_quimica{
-  height: 390px;
-  width:312px;
+  height: 475px;
+  width:390px;
   background-color: #9F9FED
 }
 

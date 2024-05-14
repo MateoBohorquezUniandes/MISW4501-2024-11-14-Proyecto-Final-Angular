@@ -23,46 +23,402 @@
       <div class="card-body">
         <div class="row">
           <div class="col">
+            <form  [formGroup]="generalForm"
+            (ngSubmit)="!generalForm.invalid && save_general(
+              generalForm.controls.genero.value,
+              generalForm.controls.edad.value,
+              generalForm.controls.peso.value,
+              generalForm.controls.altura.value,
+              generalForm.controls.pais_vivienda.value,
+              generalForm.controls.ciudad_vivienda.value
+            )">
             <div class="card" id="card_datos_generales">
               <div class="card-body">
                 <p i18n class="card-text">Datos generales</p>
                 <p *ngIf="fisiologia.edad==0" i18n class="card-text izquierda">Edad: Error</p>
-                <p *ngIf="fisiologia.edad!=0" i18n class="card-text izquierda">Edad: {{ fisiologia.edad }} Años</p>
+                <p *ngIf="fisiologia.edad!=0 && !actualizar_datos" i18n class="card-text izquierda">Edad: {{ fisiologia.edad }} Años</p>
+                <p *ngIf="actualizar_datos" i18n class="card-text izquierda">Edad: <input
+                  type="text"
+                  class="form-control campo_p"
+                  placeholder="Ej: 32"
+                  formControlName="edad"
+                  id="input_edad"
+                />  Años</p>
                 <p *ngIf="fisiologia.genero==''" i18n class="card-text izquierda">Genero: Error</p>
-                <p *ngIf="fisiologia.genero!=''" i18n class="card-text izquierda">Genero: {{ fisiologia.genero }}</p>
+                <p *ngIf="fisiologia.genero!=''&& !actualizar_datos" i18n class="card-text izquierda">Genero: {{ fisiologia.genero }}</p>
+                <p *ngIf="actualizar_datos" i18n class="card-text izquierda">Genero: <select
+                  class="form-select campo_p"
+                  aria-label="Default select example"
+                  formControlName="genero"
+                  id="input_genero"
+                >
+                  <option selected value="0">Seleccionar</option>
+                  <option value="F">Femenino</option>
+                  <option value="M">Masculino</option>
+                  <option value="O">Prefiero no especificar</option>
+                </select></p>
                 <p *ngIf="fisiologia.peso==0" i18n class="card-text izquierda">Peso: Error</p>
-                <p *ngIf="fisiologia.peso!=0" i18n class="card-text izquierda">Peso: {{ fisiologia.peso }} Kg</p>
+                <p *ngIf="fisiologia.peso!=0 && !actualizar_datos" i18n class="card-text izquierda">Peso: {{ fisiologia.peso }} Kg</p>
+                <p *ngIf="actualizar_datos" i18n class="card-text izquierda">Peso: <input
+                  type="text"
+                  class="form-control campo_n"
+                  placeholder="Ej: 82"
+                  formControlName="peso"
+                  id="input_peso"
+                /> Kg</p>
                 <p *ngIf="fisiologia.altura==0" i18n class="card-text izquierda">Estatura: Error</p>
-                <p *ngIf="fisiologia.altura!=0" i18n class="card-text izquierda">Estatura: {{ fisiologia.altura }} Metros</p>
+                <p *ngIf="fisiologia.altura!=0 && !actualizar_datos" i18n class="card-text izquierda">Estatura: {{ fisiologia.altura }} Metros</p>
+                <p *ngIf="actualizar_datos" i18n class="card-text izquierda">Estatura: <input
+                  type="text"
+                  class="form-control campo_p"
+                  placeholder="Ej: 1.82"
+                  formControlName="altura"
+                  id="input_altura"
+                />  Metros</p>
                 <p *ngIf="demografia.ciudad==''" i18n class="card-text izquierda">Ciudad: Error</p>
-                <p *ngIf="demografia.ciudad!=''" i18n class="card-text izquierda">Ciudad: {{demografia.ciudad }}</p>
+                <p *ngIf="demografia.ciudad!=''&& !actualizar_datos" i18n class="card-text izquierda">Ciudad: {{demografia.ciudad }}</p>
+                <p *ngIf="actualizar_datos" i18n class="card-text izquierda">Ciudad: <input
+                  type="text"
+                  class="form-control campo_n"
+                  placeholder="Ej: Tokio"
+                  formControlName="ciudad_vivienda"
+                  id="input_ciudad_vivienda"
+                /></p>
                 <p *ngIf="demografia.pais==''" i18n class="card-text izquierda">Pais: Error</p>
-                <p *ngIf="demografia.pais!=''" i18n class="card-text izquierda">Pais: {{ demografia.pais }}</p>
+                <p *ngIf="demografia.pais!=''&& !actualizar_datos" i18n class="card-text izquierda">Pais: {{ demografia.pais }}</p>
+                <p *ngIf="actualizar_datos" i18n class="card-text izquierda">Pais: <input
+                  type="text"
+                  class="form-control campo_n"
+                  formControlName="pais_vivienda"
+                  placeholder="Ej: Japon"
+                  id="input_pais_vivienda"
+                /></p>
                 <p *ngIf="imc.valor==0"i18n class="card-text izquierda">Indice de masa corporal: Error</p>
                 <p *ngIf="imc.valor!=0"i18n class="card-text izquierda">Indice de masa corporal: {{ imc.valor }}</p>
+                <button i18n *ngIf="!actualizar_datos" type="button" class="btn btn-primario" i18n (click)="form_actualizar()">Actualizar datos</button>
+                <button i18n *ngIf="actualizar_datos" type="submit" class="btn btn-primario" i18n>Guardar</button>
               </div>
+            </div>
+            </form>
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 390px"
+              *ngIf="
+                (generalForm.get('genero')!.touched &&
+                generalForm.get('genero')!.errors) ||
+                (generalForm.get('edad')!.touched &&
+                generalForm.get('edad')!.errors) ||
+                (generalForm.get('peso')!.touched &&
+                generalForm.get('peso')!.errors) ||
+                (generalForm.get('altura')!.touched &&
+                generalForm.get('altura')!.errors) ||
+                (generalForm.get('pais_vivienda')!.touched &&
+                generalForm.get('pais_vivienda')!.errors) ||
+                (generalForm.get('ciudad_vivienda')!.touched &&
+                generalForm.get('ciudad_vivienda')!.errors)
+              "
+            >
+              <p
+                *ngIf="
+                  generalForm.get('genero')!.hasError('min') &&
+                  generalForm.get('genero')!.touched
+                "
+              >
+                Debe seleccionar un genero
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('edad')!.hasError('pattern') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                La edad debe estar conformada solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('edad')!.hasError('maxlength') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                La edad debe tener maximo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('edad')!.hasError('minlength') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                La edad debe tener minimo 1 caracteres
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('edad')!.hasError('required') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                Debe ingresar una edad
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('peso')!.hasError('pattern') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                El peso debe estar conformado solo de numeros
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('peso')!.hasError('maxlength') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                El peso debe tener maximo 3 caracteres
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('peso')!.hasError('minlength') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                El peso debe tener minimo 2 caracteres
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('peso')!.hasError('required') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                Debe ingresar un peso
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('altura')!.hasError('required') &&
+                  generalForm.get('altura')!.touched
+                "
+              >
+                Debe ingresar una altura
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('pais_vivienda')!.hasError('required') &&
+                  generalForm.get('pais_vivienda')!.touched
+                "
+              >
+                Debe ingresar un pais donde este viviendo
+              </p>
+              <p
+                *ngIf="
+                  generalForm.get('ciudad_vivienda')!.hasError('required') &&
+                  generalForm.get('ciudad_vivienda')!.touched
+                "
+              >
+                Debe ingresar una ciudad donde este viviendo
+              </p>
             </div>
           </div>
           <div class="col">
             <div class="card" id="card_datos_quimica">
               <div class="card-body">
                 <p i18n class="card-text blanco">Datos de química sanguinea</p>
-                <p i18n class="card-text izquierda blanco">Glucosa: N/A</p>
-                <p i18n class="card-text izquierda blanco">Acido úrico: N/A</p>
-                <p i18n class="card-text izquierda blanco">Colesterol: N/A</p>
-                <p i18n class="card-text izquierda blanco">Urea: N/A</p>
-                <p i18n class="card-text izquierda blanco">Trigliceridos: N/A</p>
-                <div *ngIf="!centro" class="card" id="card_datos_error">
-                  <div class="card-body" id="card_datos_error_body">
-                    <p i18n class="card-text blanco" id="titulo_error">Atención</p>
-                    <p i18n class="card-text izquierda blanco">No se encontró ningun laboratorio en su ubicación capacitado para hacer estas pruebas</p>
-                  </div>
-                </div>
-                <div *ngIf="centro" class="mb-3">
-                  <label i18n for="formFileSm" class="form-label blanco">Cargue porfavor un archivo del centro medico</label>
-                  <input class="form-control form-control-sm" id="formFileSm" type="file">
+                <p *ngIf="reportes_sanguineos?.length == 0" i18n class="card-text blanco">No se encontraron datos de quimica sanguinea</p>
+                <ul id="lista_alimentos" class="list-group">
+                  <li
+                    class="list-group-item list-group-item-action"
+                    *ngFor="let reporte of reportes_sanguineos"
+                  >{{reporte.tipo}}</li>
+                </ul>
+                <button *ngIf="!agregar_reporte" type="button" class="btn btn-primario" i18n (click)="form_reporte()">Agregar Reporte</button>
+                <div *ngIf="agregar_reporte">
+                  <form [formGroup]="reportesForm"
+                  (ngSubmit)="!reportesForm.invalid && save_chemical(
+                    reportesForm.controls.tipo_examen.value,
+                    reportesForm.controls.valor_examen.value,
+                    reportesForm.controls.unidad_examen.value
+                  )">
+                    <p i18n>Tipo de examen:
+                    <input type="text"
+                    class="form-control campo_p"
+                    formControlName="tipo_examen"
+                    placeholder="Ej: Glucosa"
+                    id="input_tipo_examen"/></p>
+
+                    <p i18n>Valor:
+                    <input type="text"
+                    class="form-control campo_p"
+                    formControlName="valor_examen"
+                    placeholder="Ej: 82"
+                    id="input_valor_examen"/></p>
+
+                    <p i18n>Unidad de Medida:
+                    <input type="text"
+                    class="form-control campo_p"
+                    formControlName="unidad_examen"
+                    placeholder="Ej: Unidades"
+                    id="input_unidad_examen"/></p>
+                    <button type="submit" class="btn btn-primario" i18n>Guardar</button>
+                  </form>
                 </div>
               </div>
+            </div>
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 390px"
+              *ngIf="
+                (reportesForm.get('tipo_examen')!.touched &&
+                reportesForm.get('tipo_examen')!.errors) ||
+                (reportesForm.get('valor_examen')!.touched &&
+                reportesForm.get('valor_examen')!.errors) ||
+                (reportesForm.get('unidad_examen')!.touched &&
+                reportesForm.get('unidad_examen')!.errors)
+              "
+            >
+              <p i18n
+                *ngIf="
+                  reportesForm.get('valor_examen')!.hasError('pattern') &&
+                  reportesForm.get('valor_examen')!.touched
+                "
+              >
+                El valor debe estar conformada solo de números
+              </p>
+              <p i18n
+                *ngIf="
+                  reportesForm.get('valor_examen')!.hasError('required') &&
+                  reportesForm.get('valor_examen')!.touched
+                "
+              >
+                Debe ingresar un valor
+              </p>
+              <p i18n
+                *ngIf="
+                  reportesForm.get('tipo_examen')!.hasError('required') &&
+                  reportesForm.get('tipo_examen')!.touched
+                "
+              >
+                Debe ingresar un tipo de examen
+              </p>
+              <p i18n
+                *ngIf="
+                  reportesForm.get('unidad_examen')!.hasError('required') &&
+                  reportesForm.get('unidad_examen')!.touched
+                "
+              >
+                Debe ingresar una unidad de examen
+              </p>
+            </div>
+            <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 390px"
+              *ngIf="
+                (generalForm.get('genero')!.touched &&
+                generalForm.get('genero')!.errors) ||
+                (generalForm.get('edad')!.touched &&
+                generalForm.get('edad')!.errors) ||
+                (generalForm.get('peso')!.touched &&
+                generalForm.get('peso')!.errors) ||
+                (generalForm.get('altura')!.touched &&
+                generalForm.get('altura')!.errors) ||
+                (generalForm.get('pais_vivienda')!.touched &&
+                generalForm.get('pais_vivienda')!.errors) ||
+                (generalForm.get('ciudad_vivienda')!.touched &&
+                generalForm.get('ciudad_vivienda')!.errors)
+              "
+            >
+              <p i18n
+                *ngIf="
+                  generalForm.get('genero')!.hasError('min') &&
+                  generalForm.get('genero')!.touched
+                "
+              >
+                Debe seleccionar un genero
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('edad')!.hasError('pattern') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                La edad debe estar conformada solo de numeros
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('edad')!.hasError('maxlength') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                La edad debe tener maximo 3 caracteres
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('edad')!.hasError('minlength') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                La edad debe tener minimo 1 caracteres
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('edad')!.hasError('required') &&
+                  generalForm.get('edad')!.touched
+                "
+              >
+                Debe ingresar una edad
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('peso')!.hasError('pattern') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                El peso debe estar conformado solo de numeros
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('peso')!.hasError('maxlength') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                El peso debe tener maximo 3 caracteres
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('peso')!.hasError('minlength') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                El peso debe tener minimo 2 caracteres
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('peso')!.hasError('required') &&
+                  generalForm.get('peso')!.touched
+                "
+              >
+                Debe ingresar un peso
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('altura')!.hasError('required') &&
+                  generalForm.get('altura')!.touched
+                "
+              >
+                Debe ingresar una altura
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('pais_vivienda')!.hasError('required') &&
+                  generalForm.get('pais_vivienda')!.touched
+                "
+              >
+                Debe ingresar un pais donde este viviendo
+              </p>
+              <p i18n
+                *ngIf="
+                  generalForm.get('ciudad_vivienda')!.hasError('required') &&
+                  generalForm.get('ciudad_vivienda')!.touched
+                "
+              >
+                Debe ingresar una ciudad donde este viviendo
+              </p>
             </div>
           </div>
         </div>
