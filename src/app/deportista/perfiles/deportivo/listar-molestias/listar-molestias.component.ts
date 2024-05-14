@@ -1,7 +1,10 @@
 import { Component, OnInit, Renderer2, ElementRef, Input } from '@angular/core';
 import { Molestia } from '../../perfil_deportivo';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports:[ CommonModule],
   selector: 'app-listar-molestias',
   templateUrl: './listar-molestias.component.html',
   styleUrls: ['./listar-molestias.component.css']

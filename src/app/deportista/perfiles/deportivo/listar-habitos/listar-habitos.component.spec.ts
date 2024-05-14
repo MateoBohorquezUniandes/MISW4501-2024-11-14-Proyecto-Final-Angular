@@ -11,7 +11,7 @@ describe('ListarHabitosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListarHabitosComponent ]
+      imports: [ ListarHabitosComponent ]
     })
     .compileComponents();
   }));

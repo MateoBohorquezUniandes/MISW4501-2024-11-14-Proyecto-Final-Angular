@@ -18,8 +18,10 @@ import { ListarHabitosComponent } from './deportivo/listar-habitos/listar-habito
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    ListarHabitosComponent,
+    ListarMolestiasComponent
   ],
-  declarations: [CrearHabitoDeportivoComponent, CrearMolestiaComponent, ListarMolestiasComponent, ListarHabitosComponent],
+  declarations: [CrearHabitoDeportivoComponent, CrearMolestiaComponent],
   exports: [CrearHabitoDeportivoComponent, CrearMolestiaComponent, ListarMolestiasComponent, ListarHabitosComponent],
 })
 export class PerfilesModule {}

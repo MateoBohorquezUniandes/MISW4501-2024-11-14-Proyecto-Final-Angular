@@ -11,7 +11,7 @@ describe('ListarMolestiasComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListarMolestiasComponent ]
+      imports: [ ListarMolestiasComponent ]
     })
     .compileComponents();
   }));
