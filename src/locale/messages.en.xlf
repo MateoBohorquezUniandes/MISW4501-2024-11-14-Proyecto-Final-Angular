@@ -2,10 +2,24 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="es-CO" datatype="plaintext" original="ng2.template" target-language="en">
     <body>
+      <trans-unit id="5688378098245444522" datatype="html">
+        <source>Historial Eventos</source><target>Events History</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2123418512580585027" datatype="html">
         <source>Perfil Deportivo</source><target>Sport Profile</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3114122435343270166" datatype="html">
+        <source>No se encontraron eventos registrados</source><target>No registered events were found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/dashboard/listar-eventos/listar-eventos.component.html</context>
           <context context-type="linenumber">19,20</context>
         </context-group>
       </trans-unit>

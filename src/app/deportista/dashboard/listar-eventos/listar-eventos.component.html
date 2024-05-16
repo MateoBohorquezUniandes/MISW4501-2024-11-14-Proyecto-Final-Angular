@@ -1,0 +1,20 @@
+<div id="contenedor_eventos">
+  <ul id="lista_eventos" class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let evento of eventos">
+      <div class="row">
+        <div class="col-sm-1">
+          <svg class="bi" fill="#5227cc">
+            <use
+              xlink:href="assets/img/bootstrap-icons.svg#calendar3"
+            />
+          </svg>
+        </div>
+        <div id="contenedor_lista" class="col-sm-6">
+          <p class="titulo_lista">{{ evento.nombre }}</p>
+          <p class="verde">{{ evento.tipo }} | {{ evento.fecha}}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <p i18n *ngIf="eventos?.length == 0">No se encontraron eventos registrados</p>
+</div>
