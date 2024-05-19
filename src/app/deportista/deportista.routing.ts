@@ -1,10 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
+import {} from './perfiles/perfil_deportivo';
+import { CalendarComponent } from './calendar/calendar.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'perfiles' , redirectTo:'perfiles/demografico' , pathMatch:'full'},
+  { path: 'perfiles', redirectTo: 'perfiles/demografico', pathMatch: 'full' },
   {
     path: 'perfiles',
     children: [
@@ -31,5 +33,6 @@ export const routes: Routes = [
       },
     ],
   },
-  {path: 'suscripcion', component: SuscripcionComponent}
+  {path: 'suscripcion', component: SuscripcionComponent},
+  { path: 'calendario', component: CalendarComponent },
 ];
