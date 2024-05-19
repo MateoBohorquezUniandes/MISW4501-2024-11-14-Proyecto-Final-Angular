@@ -7,6 +7,7 @@ describe('Login', () => {
     cy.viewport(1366, 768);
     loginPage = new LoginPage();
     loginPage.visit();
+    cy.wait(3000);
   });
 
   it('should login the user', () => {

@@ -3,7 +3,7 @@
                       ">
   <div class="row g-3 custom-input">
     <div class="col-sm-3">
-      <label for="inputTitulo" class="col-form-label">Título</label>
+      <label for="inputTitulo" class="col-form-label" i18n>Título</label>
     </div>
     <div class="col-sm-9">
       <input id="inputTituloMolestia" class="form-control" aria-describedby="passwordHelpInline" formControlName="titulo">
@@ -13,10 +13,10 @@
 
   <div class="row g-3 custom-input">
     <div class="col-sm-3">
-      <label for="inputFecha" class="col-form-label">Fecha</label>
+      <label for="inputFecha" class="col-form-label" i18n>Fecha</label>
     </div>
     <mat-form-field class="col-sm-9">
-      <mat-label>Escoge una fecha</mat-label>
+      <mat-label i18n>Escoge una fecha</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="fecha" id="inputFechaMolestia">
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -27,10 +27,10 @@
 
   <div class="row g-3 align-items-center custom-input">
     <div class="col-sm-3">
-      <label for="inputTipo" class="col-form-label">Tipo</label>
+      <label for="inputTipo" class="col-form-label" i18n>Tipo</label>
     </div>
     <div class="col-sm-9">
-      <select id="tipoMolestia" class="form-select" aria-label="Default select example" formControlName="tipo">
+      <select i18n id="tipoMolestia" class="form-select" aria-label="Default select example" formControlName="tipo">
         <option value="0">Seleccionar</option>
         <option value="Molestia">Molestia</option>
         <option value="Lesion">Lesión</option>
@@ -44,7 +44,7 @@
 
   <div class="row g-3 custom-input">
     <div class="col-sm-3">
-      <label for="inputDescripcion" class="col-form-label">Descripción</label>
+      <label for="inputDescripcion" class="col-form-label" i18n>Descripción</label>
     </div>
     <div class="col-sm-9">
       <textarea type="descripcion" id="inputDescripcionMolestia" class="form-control" aria-describedby="descripcionHelpInline"
@@ -79,19 +79,19 @@
         <p *ngIf="
                 molestiaForm.get('titulo')!.hasError('required') &&
                 molestiaForm.get('titulo')!.touched
-              ">
+              " i18n>
           Debe ingresar un título
         </p>
         <p *ngIf="
                 molestiaForm.get('titulo')!.hasError('minlength') &&
                 molestiaForm.get('titulo')!.touched
-              ">
+              " i18n>
           mínimo 2 caracteres para el título
         </p>
         <p *ngIf="
                   molestiaForm.get('titulo')!.hasError('maxlength') &&
                   molestiaForm.get('titulo')!.touched
-                ">
+                " i18n>
           exediste el máximo para el título
         </p>
         <p *ngIf="
@@ -103,25 +103,25 @@
         <p *ngIf="
                               molestiaForm.get('descripcion')!.hasError('minlength') &&
                               molestiaForm.get('descripcion')!.touched
-                            ">
+                            " i18n>
           mínimo 2 caracteres para la descripción
         </p>
         <p *ngIf="
                               molestiaForm.get('descripcion')!.hasError('maxlength') &&
                               molestiaForm.get('descripcion')!.touched
-                            ">
+                            " i18n>
           exediste el máximo para la descripción
         </p>
         <p *ngIf="
                         molestiaForm.get('fecha')!.hasError('required') &&
                         molestiaForm.get('fecha')!.touched
-                      ">
+                      " i18n>
           Debe ingresar un fecha
         </p>
         <p *ngIf="
                         molestiaForm.get('tipo')!.hasError('required') &&
                         molestiaForm.get('tipo')!.touched
-                      ">
+                      " i18n>
           Debe ingresar un tipo
         </p>
 
@@ -134,7 +134,7 @@
     </div>
   </div>
 
-  <button type="submit" id="registrarMolestia" class="btn btn-primario" [disabled]="!molestiaForm.valid">Crear Nueva
+  <button type="submit" id="registrarMolestia" class="btn btn-primario" [disabled]="!molestiaForm.valid" i18n>Crear Nueva
     molestia </button>
 
 </form>

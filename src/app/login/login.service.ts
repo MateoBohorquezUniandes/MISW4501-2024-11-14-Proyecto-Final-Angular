@@ -23,6 +23,17 @@ export class LoginService {
     });
     return headers;
   }
+  createHeadersToken() {
+    const token = window.sessionStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+    });
+    return headers;
+  }
 
   login(request: any): Observable<any> {
     let header = this.createHeaders();
@@ -53,8 +64,8 @@ export class LoginService {
   }
 
   getUser():Observable<Usuario>{
-    let header = this.createHeaders();
-    return this.http.get<Usuario>(this.apiUrl + '/queries', {
+    let header = this.createHeadersToken();
+    return this.http.get<Usuario>(`${environment.UrlUsuarios}/queries/`, {
       headers: header,
     });
   }
