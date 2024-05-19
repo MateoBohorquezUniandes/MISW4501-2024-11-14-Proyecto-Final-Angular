@@ -14,7 +14,7 @@ export const options: any = {
     },
     {
       option: 'Calendario',
-      path: '/',
+      path: '/deportista/calendario',
     },
     {
       option: 'Indicadores',
