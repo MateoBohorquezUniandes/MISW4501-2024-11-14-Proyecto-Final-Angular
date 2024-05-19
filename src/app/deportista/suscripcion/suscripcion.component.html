@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row justify-content-md-center">
-    <div style="max-width: 416px;" *ngIf="subscripcion=='' || subscripcion=='free'">
+    <div style="max-width: 416px;" *ngIf="subscripcion=='' || subscripcion=='GRATUITO'">
       <app-free></app-free>
     </div>
-    <div style="max-width: 416px;" *ngIf="subscripcion=='intermedium'">
+    <div style="max-width: 416px;" *ngIf="subscripcion=='INTERMEDIO'">
       <app-intermedium></app-intermedium>
     </div>
-    <div style="max-width: 416px;" *ngIf="subscripcion=='premium'">
+    <div style="max-width: 416px;" *ngIf="subscripcion=='PREMIUM'">
       <app-premium></app-premium>
     </div>
   </div>
