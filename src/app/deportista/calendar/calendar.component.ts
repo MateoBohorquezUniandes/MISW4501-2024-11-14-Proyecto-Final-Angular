@@ -7,6 +7,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions, EventApi } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { EventosService } from './eventos.service';
+import esLocale from '@fullcalendar/core/locales/es';
 
 @Component({
   selector: 'app-calendar',
@@ -36,6 +37,7 @@ export class CalendarComponent implements OnInit {
       plugins: [dayGridPlugin],
       initialView: 'dayGridWeek',
       weekends: true,
+      locales: [esLocale],
     };
   }
 
