@@ -9,10 +9,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Evento } from '../calendar/evento';
 import { EventosService } from '../calendar/eventos.service';
+import { LoginService } from '../../login/login.service';
+import { Usuario } from '../../login/usuario';
 
 @Component({
   standalone: true,
-  imports: [ListarHabitosComponent, ListarMolestiasComponent, ListarEventosComponent],
+  imports: [ListarHabitosComponent, ListarMolestiasComponent, ListarEventosComponent, CommonModule],
   selector: 'app-deportista-home',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
@@ -21,20 +23,12 @@ export class DashboardComponent implements OnInit {
   perfil!: PerfilDeportivo;
   habitos = Array<Habito>();
   molestias = Array<Molestia>();
-  /*eventos : Array<Evento> = [
-    {
-      distancia : 14,
-      fecha: '2024-04-05',
-      id: '6e44b228-ff8d-4d68-9ad8-85154ede4223',
-      lugar: 'Bogota',
-      nivel: 'Principiante',
-      nombre: 'Carrera',
-      tipo: 'Ciclismo'
-    }
-  ];*/
+  usuario!: Usuario;
+  subscripcion:string = '';
   eventos = Array<Evento>();
   constructor(
     private perfilesService: PerfilesService,
+    private loginService: LoginService,
     private eventosService: EventosService,
     private toastr: ToastrService
   ) {}
@@ -42,6 +36,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.getProfile();
     this.getEventos();
+    this.getUser();
   }
 
   getProfile(){
@@ -65,6 +60,18 @@ export class DashboardComponent implements OnInit {
       },
       (error) => {
         this.toastr.error('Error', 'Error al consultar el perfil:' + error);
+      }
+    );
+  }
+
+  getUser(){
+    this.loginService.getUser().subscribe(
+      (usuario) => {
+        this.usuario = usuario;
+        this.subscripcion = usuario.plan_afiliacion;
+      },
+      (error) => {
+        this.toastr.error('Error al consultar la información del usuario' + error.message,'Error');
       }
     );
   }

@@ -7,6 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './deportista/dashboard/dashboard.component';
 import { OrganizadorHomeComponent } from './organizador/organizador-home/organizador-home.component';
 import { CrearIndicadorComponent } from './indicador/crear-indicador/crear-indicador.component';
+import { PlanSuscriberComponent } from './plan/plan-suscriber/plan-suscriber.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,8 +26,9 @@ export const routes: Routes = [
           import('./deportista/deportista.routing').then((r) => r.routes),
       },
       { path: 'organizador', component: OrganizadorHomeComponent },
-      { path: 'planes', component: PlanListComponent },
       { path: 'indicadores', component: CrearIndicadorComponent },
     ],
   },
+  { path: 'planes', component: PlanListComponent },
+  { path: 'subscribe', component: PlanSuscriberComponent},
 ];

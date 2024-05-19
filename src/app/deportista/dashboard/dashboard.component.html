@@ -10,7 +10,50 @@
       <br>
       <div class="card" style="width: 597px; height: 352px;">
         <div class="card-body">
-
+          <div class="row" style="justify-content: center;">
+            <div class="col" style="text-align: center;">
+              <div id="icon" class="rounded-circle me-3">
+                <svg class="bi " fill="#000000" width="175" height="175">
+                  <use
+                    xlink:href="assets/img/bootstrap-icons.svg#person"
+                  />
+                </svg>
+              </div>
+              <br>
+              <br>
+              <a i18n class="link" href="/deportista/perfiles">Ver Perfil Usuario</a>
+            </div>
+            <div class="col">
+              <h5 *ngIf="usuario != null">{{usuario.nombre}} {{usuario.apellido}}</h5>
+              <h5 *ngIf="usuario == null">Error</h5>
+              <p *ngIf="usuario != null">{{usuario.demografia.ciudad_residencia}}, {{usuario.demografia.edad}} años</p>
+              <p *ngIf="usuario == null">Error</p>
+              <div *ngIf="subscripcion == '' || subscripcion=='GRATUITO'" class="card" style="background-color: #9f9fed;">
+                <div class="card-body">
+                  <h5>Gratuito</h5>
+                  <button type="button" class="btn btn-secundario btn-continue"i18n>
+                    <a class="deportistalink" style="color:#000000" href="/deportista/suscripcion"> Ver mas </a>
+                  </button>
+                </div>
+              </div>
+              <div *ngIf="subscripcion=='INTERMEDIO'" class="card" style="background-color: #f2dfd7;">
+                <div class="card-body">
+                  <h5>Intermedio</h5>
+                  <button type="button" class="btn btn-primario btn-continue"i18n>
+                    <a class="deportistalink"  href="/deportista/suscripcion"> Ver mas </a>
+                  </button>
+                </div>
+              </div>
+              <div *ngIf="subscripcion=='PREMIUM'" class="card" style="background-color: #fef9ff;">
+                <div class="card-body">
+                  <h5>Premium</h5>
+                  <button type="button" class="btn btn-primario btn-continue"i18n>
+                    <a class="deportistalink" href="/deportista/suscripcion"> Ver mas </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -3,11 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { CookieService } from "ngx-cookie-service";
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
+  private apiUrl = environment.UrlUsuarios;
   constructor(private http:HttpClient, private cookies: CookieService
   ) {
   }
@@ -48,5 +50,12 @@ export class LoginService {
   }
   deleteToken(){
     window.sessionStorage.removeItem("token");
+  }
+
+  getUser():Observable<Usuario>{
+    let header = this.createHeaders();
+    return this.http.get<Usuario>(this.apiUrl + '/queries', {
+      headers: header,
+    });
   }
 }

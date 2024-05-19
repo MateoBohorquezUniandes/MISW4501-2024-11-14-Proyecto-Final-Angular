@@ -3,3 +3,54 @@ h2 {
   font-size: 36px;
   font-weight: bold;
 }
+
+#icon{
+  background-color: #9f9fed;
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  border: solid black 2px;
+}
+
+h5 {
+  font-family: "Roboto";
+  font-size: 34px;
+  font-weight: bold;
+}
+
+p{
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.btn-primario {
+  background-color: #5227cc;
+  color: white;
+}
+
+.btn-secundario {
+  background-color: #f2dfd7;
+  color: black;
+}
+
+.link{
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+  font-weight: bold;
+  color:#9f9fed;
+}
+
+.deportistalink {
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none; /* no underline */
+}
+
+

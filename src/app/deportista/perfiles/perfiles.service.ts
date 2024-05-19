@@ -94,8 +94,8 @@ export class PerfilesService {
 
   updateGeneralData(request:any){
     let header = this.createHeaders();
-    return this.http.patch<string>(
-      this.basePerfilUrl + '/commands/demografico/update',
+    return this.http.put<string>(
+      this.basePerfilUrl + '/commands/demografico',
       request,
       { headers: header }
     );
@@ -103,8 +103,8 @@ export class PerfilesService {
 
   addChemicalReport(request:any){
     let header = this.createHeaders();
-    return this.http.patch<string>(
-      this.basePerfilUrl + '/commands/demografico/update',
+    return this.http.post<string>(
+      this.basePerfilUrl + '/commands/demografico/reporte-sanguineo',
       request,
       { headers: header }
     );

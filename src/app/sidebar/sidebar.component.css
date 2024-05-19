@@ -42,3 +42,17 @@ a.dropdown-item{
 a.language-active{
   color: #5227cc;
 }
+
+#icon {
+  background-color: #9f9fed;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  border: solid black 2px;
+}
+
+#open {
+  background-color: #FFFFFF;
+}

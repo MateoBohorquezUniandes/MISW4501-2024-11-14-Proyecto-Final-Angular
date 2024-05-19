@@ -6,7 +6,7 @@ export const options:any = {
     },
     {
       option: "Subscription",
-      path: "/"
+      path: "/deportista/suscripcion"
     },
     {
       option: "Sports Profiles",

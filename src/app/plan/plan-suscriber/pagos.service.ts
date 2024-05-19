@@ -1,21 +1,19 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs';
-import { Evento } from './evento';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EventosService {
-private apiUrl = environment.UrlEventos;
-constructor(private http: HttpClient) { }
+export class PagosService {
+private baseUsuarioUrl = environment.UrlUsuarios;
+constructor(private http:HttpClient) { }
 
   createHeaders() {
     const token = window.sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
@@ -23,13 +21,12 @@ constructor(private http: HttpClient) { }
     return headers;
   }
 
-  getAsociatedEvents(programado:number): Observable<Array<Evento>> {
+  changePlan(request:any){
     let header = this.createHeaders();
-    /*const params = {
-      'programado': programado
-    };*/
-    return this.http.get<Array<Evento>>(this.apiUrl + '/queries/asociados?programado=' + programado, {
-      headers: header
-    });
+    return this.http.patch<string>(
+      this.baseUsuarioUrl + '/commands/afiliacion',
+      request,
+      { headers: header }
+    );
   }
 }
