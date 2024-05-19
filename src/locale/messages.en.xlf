@@ -16,6 +16,21 @@
           <context context-type="linenumber">24,25</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="8447570688439069061" datatype="html">
+        <source>Gratuito</source><target>Free</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/cards/free/free.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7022873425174535603" datatype="html">
         <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;deportistalink&quot; style=&quot;color:#000000&quot; href=&quot;/deportista/suscripcion&quot;&gt;"/> Ver mas <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source><target><x id="START_LINK" ctype="x-a" equiv-text="&lt;a class=&quot;deportistalink&quot; style=&quot;color:#000000&quot; href=&quot;/deportista/suscripcion&quot;&gt;"/> See more <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
@@ -29,6 +44,36 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8410541882862454603" datatype="html">
+        <source>Intermedio</source><target>Intermediate</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/cards/intermedium/intermedium.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8958531078371076584" datatype="html">
+        <source>Premium</source><target>Premium</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/deportista/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/cards/premium/premium.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
+          <context context-type="linenumber">27,28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2123418512580585027" datatype="html">
@@ -794,8 +839,8 @@
           <context context-type="linenumber">17,18</context>
         </context-group>
       </trans-unit>
-            <trans-unit id="7643625730323027797" datatype="html">
-        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a id=&quot;a_deportistalink&quot; href=&quot;/planes&quot;&gt;"/> Cambiar afiliación <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+      <trans-unit id="7643625730323027797" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a id=&quot;a_deportistalink&quot; href=&quot;/planes&quot;&gt;"/> Cambiar afiliación <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source><target><x id="START_LINK" ctype="x-a" equiv-text="&lt;a id=&quot;a_deportistalink&quot; href=&quot;/planes&quot;&gt;"/> Change subscription <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/deportista/suscripcion/suscripcion.component.html</context>
           <context context-type="linenumber">20,21</context>
@@ -1029,17 +1074,6 @@
           <context context-type="linenumber">157,158</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8447570688439069061" datatype="html">
-        <source>Gratuito</source><target>Free</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/plan/cards/free/free.component.html</context>
-          <context context-type="linenumber">3,4</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
-          <context context-type="linenumber">7,8</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="450875962687053746" datatype="html">
         <source>Tus beneficios: </source><target>Your benefits: </target>
         <context-group purpose="location">
@@ -1114,17 +1148,6 @@
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8410541882862454603" datatype="html">
-        <source>Intermedio</source><target>Intermediate</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/plan/cards/intermedium/intermedium.component.html</context>
-          <context context-type="linenumber">3,4</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
-          <context context-type="linenumber">54,55</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="7962091755328206831" datatype="html">
         <source>todo lo del plan gratuito</source><target>everything in the free plan</target>
         <context-group purpose="location">
@@ -1156,17 +1179,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
           <context context-type="linenumber">59,60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="8958531078371076584" datatype="html">
-        <source>Premium</source><target>Premium</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/plan/cards/premium/premium.component.html</context>
-          <context context-type="linenumber">3,4</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/plan/plan-list/plan-list.component.html</context>
-          <context context-type="linenumber">37,38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2298224189613253388" datatype="html">
@@ -1246,6 +1258,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/plan/plan-suscriber/plan-suscriber.component.html</context>
           <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9072482348026779287" datatype="html">
+        <source> Pagar Mensualmente: $<x id="INTERPOLATION" equiv-text="{{precioMensual}}"/>/mes </source><target> Pay Monthly: $<x id="INTERPOLATION" equiv-text="{{precioMensual}}"/>/month </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-suscriber/plan-suscriber.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2397353918082063214" datatype="html">
+        <source> Pagar Anualmente: $<x id="INTERPOLATION" equiv-text="{{precioAnual}}"/>/año </source><target> Pay Annually: $<x id="INTERPOLATION" equiv-text="{{precioAnual}}"/>/year </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/plan/plan-suscriber/plan-suscriber.component.html</context>
+          <context context-type="linenumber">36,37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4991251434648524304" datatype="html">

@@ -30,7 +30,7 @@
               <p *ngIf="usuario == null">Error</p>
               <div *ngIf="subscripcion == '' || subscripcion=='GRATUITO'" class="card" style="background-color: #9f9fed;">
                 <div class="card-body">
-                  <h5>Gratuito</h5>
+                  <h5 i18n>Gratuito</h5>
                   <button type="button" class="btn btn-secundario btn-continue"i18n>
                     <a class="deportistalink" style="color:#000000" href="/deportista/suscripcion"> Ver mas </a>
                   </button>
@@ -38,7 +38,7 @@
               </div>
               <div *ngIf="subscripcion=='INTERMEDIO'" class="card" style="background-color: #f2dfd7;">
                 <div class="card-body">
-                  <h5>Intermedio</h5>
+                  <h5 i18n>Intermedio</h5>
                   <button type="button" class="btn btn-primario btn-continue"i18n>
                     <a class="deportistalink"  href="/deportista/suscripcion"> Ver mas </a>
                   </button>
@@ -46,7 +46,7 @@
               </div>
               <div *ngIf="subscripcion=='PREMIUM'" class="card" style="background-color: #fef9ff;">
                 <div class="card-body">
-                  <h5>Premium</h5>
+                  <h5 i18n>Premium</h5>
                   <button type="button" class="btn btn-primario btn-continue"i18n>
                     <a class="deportistalink" href="/deportista/suscripcion"> Ver mas </a>
                   </button>
