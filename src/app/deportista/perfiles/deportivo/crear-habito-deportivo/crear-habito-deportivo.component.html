@@ -3,7 +3,7 @@
                       ">
   <div class="row g-3 custom-input">
     <div class="col-sm-3">
-      <label for="inputTitulo" class="col-form-label">Título</label>
+      <label for="inputTitulo" class="col-form-label" i18n>Título</label>
     </div>
     <div class="col-sm-9">
       <input id="inputTituloHabito" class="form-control" aria-describedby="passwordHelpInline" formControlName="titulo">
@@ -13,10 +13,10 @@
 
   <div class="row g-3 align-items-center custom-input">
     <div class="col-sm-3">
-      <label for="inputFrecuenciaHabito" class="col-form-label">Frecuencia</label>
+      <label for="inputFrecuenciaHabito" class="col-form-label" i18n>Frecuencia</label>
     </div>
     <div class="col-sm-9">
-      <select id="frecuenciaHabito" class="form-select" aria-label="Default select example"
+      <select i18n id="frecuenciaHabito" class="form-select" aria-label="Default select example"
         formControlName="frecuencia">
         <option value="0">Seleccionar</option>
         <option value="Diario">Diario</option>
@@ -31,7 +31,7 @@
 
   <div class="row g-3 custom-input">
     <div class="col-sm-3">
-      <label for="inputDescripcion" class="col-form-label">Descripción</label>
+      <label for="inputDescripcion" class="col-form-label" i18n>Descripción</label>
     </div>
     <div class="col-sm-9">
       <textarea type="descripcion" id="inputDescripcionHabito" class="form-control" aria-describedby="descripcionHelpInline"
@@ -61,37 +61,37 @@
       <p *ngIf="
                 habitoForm.get('titulo')!.hasError('required') &&
                 habitoForm.get('titulo')!.touched
-              ">
+              " i18n>
         Debe ingresar un título
       </p>
       <p *ngIf="
                 habitoForm.get('titulo')!.hasError('minlength') &&
                 habitoForm.get('titulo')!.touched
-              ">
+              " i18n>
         mínimo 2 caracteres para el título
       </p>
       <p *ngIf="
                   habitoForm.get('titulo')!.hasError('maxlength') &&
                   habitoForm.get('titulo')!.touched
-                ">
+                " i18n>
         exediste el máximo para el título
       </p>
       <p *ngIf="
                   habitoForm.get('descripcion')!.hasError('required') &&
                   habitoForm.get('descripcion')!.touched
-                ">
+                " i18n>
             Debe ingresar una descripción
             </p>
             <p *ngIf="
                               habitoForm.get('descripcion')!.hasError('minlength') &&
                               habitoForm.get('descripcion')!.touched
-                            ">
+                            " i18n>
             mínimo 2 caracteres para la descripción
             </p>
             <p *ngIf="
                               habitoForm.get('descripcion')!.hasError('maxlength') &&
                               habitoForm.get('descripcion')!.touched
-                            ">
+                            " i18n>
             exediste el máximo para la descripción
             </p>
 
@@ -101,6 +101,6 @@
             </div>
   </div>
 
-  <button type="submit" id="registrarHabito" class="btn btn-primario" [disabled]="!habitoForm.valid">Crear Nuevo Habito
+  <button type="submit" id="registrarHabito" class="btn btn-primario" [disabled]="!habitoForm.valid" i18n>Crear Nuevo Habito
   </button>
 </form>
