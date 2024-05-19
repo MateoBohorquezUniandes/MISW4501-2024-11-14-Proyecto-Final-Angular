@@ -2,7 +2,7 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:4200',
+    baseUrl: 'https://angular2-5dafvog5ta-uc.a.run.app',
     setupNodeEvents(on, config) {
       require('@cypress/code-coverage/task')(on, config);
       // include any other plugin code...
