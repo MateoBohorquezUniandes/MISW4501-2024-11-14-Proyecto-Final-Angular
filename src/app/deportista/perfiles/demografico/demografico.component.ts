@@ -107,6 +107,7 @@ export class PerfilDemograficoComponent implements OnInit {
     this.perfilesService.updateGeneralData(request).subscribe(
       (response) => {
         this.toastr.success('Se ha actualizado su perfil', 'Success');
+        this.getProfile()
       },
       (error) => {
         this.toastr.error('Error al consultar el perfil:' + error.message, 'Error');
