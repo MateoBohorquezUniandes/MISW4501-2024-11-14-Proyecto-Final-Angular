@@ -6,7 +6,7 @@ export const options: any = {
     },
     {
       option: 'Afiliación',
-      path: '/',
+      path: '/deportista/suscripcion',
     },
     {
       option: 'Perfiles Deportivos',

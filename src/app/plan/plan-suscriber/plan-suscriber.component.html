@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-sm">
+      <div *ngIf="subscription=='intermedium'">
+        <app-intermedium></app-intermedium>
+      </div>
+      <div *ngIf="subscription=='premium'">
+        <app-premium></app-premium>
+      </div>
+      <br>
+      <button
+        type="button"
+        id="continuar"
+        class="btn btn-primario2"
+        i18n
+      >
+        <a id="a_deportistalink" href="/planes"> Volver </a>
+      </button>
+    </div>
+    <div class="col-sm">
+      <div>
+        <div class="card" style="height: 10rem; background-color: #fef9ff">
+          <div class="card-body">
+            <h5 i18n class="card-title text-center my-card-title">¿Como deseas Pagar?</h5>
+            <p i18n class="card-text"></p>
+            <div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Pagar Mensualmente: ${{precioMensual}}/mes
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Pagar Anualmente: ${{precioAnual}}/año
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="card" style=" background-color: #fef9ff">
+          <div class="card-body">
+            <form [formGroup]="tarjetaForm" (ngSubmit)="!tarjetaForm.invalid && cambiarPlan(
+              tarjetaForm.controls.numero.value, tarjetaForm.controls.fecha.value, tarjetaForm.controls.cvc.value)">
+            <div class="row">
+              <div class="col">
+                <label i18n>Número de tarjeta</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control campo_n" placeholder="0000 0000 0000 0000" formControlName="numero" id="input_altura" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label i18n>Nombre</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control campo_n" placeholder="OSCAR J GUTIERREZ M" formControlName="nombre" id="input_altura" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label i18n>Fecha de expiración</label>
+              </div>
+              <div class="col">
+                <label i18n>CVC</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control campo_p" placeholder="02/30" formControlName="fecha" id="input_altura" />
+              </div>
+              <div class="col">
+                <input type="text" class="form-control campo_p" placeholder="947" formControlName="cvc" id="input_altura" />
+              </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+              <div
+              class="alert alert-danger dismissible fade show"
+              style="max-width: 400px"
+              *ngIf="
+                (tarjetaForm.get('numero')!.touched &&
+                tarjetaForm.get('numero')!.errors) ||
+                (tarjetaForm.get('nombre')!.touched &&
+                tarjetaForm.get('nombre')!.errors) ||
+                (tarjetaForm.get('fecha')!.touched &&
+                tarjetaForm.get('fecha')!.errors) ||
+                (tarjetaForm.get('cvc')!.touched &&
+                tarjetaForm.get('cvc')!.errors)
+              "
+            >
+              <p i18n *ngIf="tarjetaForm.get('numero')!.hasError('required') && tarjetaForm.get('numero')!.touched">Debe ingresar un número de tarjeta</p>
+              <p i18n *ngIf="tarjetaForm.get('numero')!.hasError('minlength') && tarjetaForm.get('numero')!.touched">El número de tarjeta debe tener 16 digitos</p>
+              <p i18n *ngIf="tarjetaForm.get('numero')!.hasError('maxlength') && tarjetaForm.get('numero')!.touched">El número de tarjeta debe tener 16 digitos</p>
+              <p i18n *ngIf="tarjetaForm.get('numero')!.hasError('pattern') && tarjetaForm.get('numero')!.touched">El número de tarjeta debe constar solo de números</p>
+              <p i18n *ngIf="tarjetaForm.get('nombre')!.hasError('required') && tarjetaForm.get('nombre')!.touched">Debe ingresar un nombre</p>
+              <p i18n *ngIf="tarjetaForm.get('fecha')!.hasError('required') && tarjetaForm.get('fecha')!.touched">Debe ingresar una fecha</p>
+              <p i18n *ngIf="tarjetaForm.get('fecha')!.hasError('minlength') && tarjetaForm.get('fecha')!.touched">La fecha debe tener 5 caracteres</p>
+              <p i18n *ngIf="tarjetaForm.get('fecha')!.hasError('maxlength') && tarjetaForm.get('fecha')!.touched">La fecha debe tener 5 caracteres</p>
+              <p i18n *ngIf="tarjetaForm.get('fecha')!.hasError('pattern') && tarjetaForm.get('fecha')!.touched">La fecha ingresada no sigue un patrón valido</p>
+              <p i18n *ngIf="tarjetaForm.get('cvc')!.hasError('required') && tarjetaForm.get('cvc')!.touched">Debe ingresar un código de verificación</p>
+              <p i18n *ngIf="tarjetaForm.get('cvc')!.hasError('minlength') && tarjetaForm.get('cvc')!.touched">El codigo de verificacion debe tener 3 digitos</p>
+              <p i18n *ngIf="tarjetaForm.get('cvc')!.hasError('maxlength') && tarjetaForm.get('cvc')!.touched">El codigo de verificacion debe tener 3 digitos</p>
+              <p i18n *ngIf="tarjetaForm.get('cvc')!.hasError('pattern') && tarjetaForm.get('cvc')!.touched">El código de verificación debe constar solo de números</p>
+            </div>
+            </div>
+            <br>
+            <div class="row justify-content-md-center">
+              <button type="submit" class="btn btn-primario" [disabled]="tarjetaForm.invalid">
+                <p i18n *ngIf="subscription=='intermedium'">Pasarme a Intermedio</p>
+                <p i18n *ngIf="subscription=='premium'">Pasarme a Premium</p>
+              </button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

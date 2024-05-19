@@ -89,6 +89,15 @@ describe('LayoutComponent', () => {
     fixture.detectChanges();
   });
 
+  it('router deportista token', () => {
+    spyPropertyGetter(spy2, 'url').and.returnValue("/deportista?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMzMxMjYxNCwianRpIjoiMTk2ODc2YWYtNDFhNy00YjI4LThlM2ItYTZmMmViYWE1YjlhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ0aXBvIjoiQ0MiLCJ2YWxvciI6IjEyMzQ1Njc4OSJ9LCJuYmYiOjE3MTMzMTI2MTQsImNzcmYiOiJlZWYxOGEzMC1lMzgyLTRiOTItYjlhOS02ZjJlZjdiYjgzZWMiLCJleHAiOjE3MTMzMzc4MTR9.OAq6ifrIhmXtflYzgEG1wd5r1kiUTfSn-y4DlH_RcDA")
+    fixture.detectChanges();
+    spy.getToken.and.returnValue('');
+    fixture = TestBed.createComponent(SidebarComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
   it('router socio token', () => {
     spyPropertyGetter(spy2, 'url').and.returnValue("/socio?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMzMxMjYxNCwianRpIjoiMTk2ODc2YWYtNDFhNy00YjI4LThlM2ItYTZmMmViYWE1YjlhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJ0aXBvIjoiQ0MiLCJ2YWxvciI6IjEyMzQ1Njc4OSJ9LCJuYmYiOjE3MTMzMTI2MTQsImNzcmYiOiJlZWYxOGEzMC1lMzgyLTRiOTItYjlhOS02ZjJlZjdiYjgzZWMiLCJleHAiOjE3MTMzMzc4MTR9.OAq6ifrIhmXtflYzgEG1wd5r1kiUTfSn-y4DlH_RcDA")
     fixture.detectChanges();

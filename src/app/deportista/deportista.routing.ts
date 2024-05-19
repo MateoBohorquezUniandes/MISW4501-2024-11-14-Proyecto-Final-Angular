@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {} from './perfiles/perfil_deportivo';
+import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -31,4 +31,5 @@ export const routes: Routes = [
       },
     ],
   },
+  {path: 'suscripcion', component: SuscripcionComponent}
 ];

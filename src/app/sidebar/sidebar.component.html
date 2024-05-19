@@ -22,7 +22,13 @@
           <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
               aria-expanded="false"  style="margin: 20px;">
-              <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+              <div id="icon" class="rounded-circle me-3">
+                <svg class="bi " fill="#000000" width="32" height="32">
+                  <use
+                    xlink:href="assets/img/bootstrap-icons.svg#person"
+                  />
+                </svg>
+              </div>
               <strong>{{user}}</strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
@@ -45,7 +51,13 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <button mat-button (click)="sidenav.toggle()">></button>
+    <button mat-button id="open" (click)="sidenav.toggle()">
+      <svg class="bi " fill="#000000" width="32" height="32">
+        <use
+          xlink:href="assets/img/bootstrap-icons.svg#three-dots"
+        />
+      </svg>
+    </button>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

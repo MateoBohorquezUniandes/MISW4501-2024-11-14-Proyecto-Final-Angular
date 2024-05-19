@@ -90,13 +90,25 @@ export class PerfilDemograficoComponent implements OnInit {
     altura: string | null,
     pais_vivienda: string | null,
     ciudad_vivienda: string | null){
-    const request = {}
+    const request = {
+      payload: {
+        fisiologia:{
+          peso: peso,
+          altura: altura,
+          genero: genero,
+          edad: edad
+        },
+        demografia:{
+          pais_residencia: pais_vivienda,
+          ciudad_residencia: ciudad_vivienda
+        }
+      }
+    }
     this.perfilesService.updateGeneralData(request).subscribe(
       (response) => {
         this.toastr.success('Se ha actualizado su perfil', 'Success');
       },
       (error) => {
-        console.log(error);
         this.toastr.error('Error al consultar el perfil:' + error.message, 'Error');
       }
     );
@@ -109,13 +121,18 @@ export class PerfilDemograficoComponent implements OnInit {
     tipo_examen:string | null,
     valor_examen:string | null,
     unidad_examen:string | null){
-      const request = {}
+      const request = {
+        resultado: {
+          tipo_examen: tipo_examen,
+          valor: valor_examen,
+          unidad: unidad_examen
+        }
+      }
       this.perfilesService.addChemicalReport(request).subscribe(
         (response) => {
           this.toastr.success('Se ha actualizado su perfil', 'Success');
         },
         (error) => {
-          console.log(error);
           this.toastr.error('Error al consultar el perfil:' + error.message, 'Error');
         }
       );

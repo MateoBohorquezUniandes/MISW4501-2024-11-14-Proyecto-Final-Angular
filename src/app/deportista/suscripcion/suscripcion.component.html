@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div style="max-width: 416px;" *ngIf="subscripcion=='' || subscripcion=='free'">
+      <app-free></app-free>
+    </div>
+    <div style="max-width: 416px;" *ngIf="subscripcion=='intermedium'">
+      <app-intermedium></app-intermedium>
+    </div>
+    <div style="max-width: 416px;" *ngIf="subscripcion=='premium'">
+      <app-premium></app-premium>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <button
+    type="button"
+    id="continuar"
+    class="btn btn-primario btn-continue"
+    i18n
+    >
+      <a id="a_deportistalink" href="/planes"> Cambiar afiliación </a>
+    </button>
+  </div>
+</div>

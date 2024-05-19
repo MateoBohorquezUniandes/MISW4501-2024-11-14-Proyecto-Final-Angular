@@ -107,7 +107,6 @@ export class CrearIndicadorComponent implements OnInit {
     descripcion: string | null,
     formula: string | null
   ): void {
-    console.log('CREAR UIndicador');
     let formulaPayload = {
       nombre: nombre,
       descripcion: descripcion,
@@ -125,7 +124,6 @@ export class CrearIndicadorComponent implements OnInit {
 
     formulaPayload.parametros = parametros;
 
-    console.log(JSON.stringify(formulaPayload));
 
     this.indicadorService.crearFormula(formulaPayload).subscribe(
       (data) => {
