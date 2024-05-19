@@ -13,12 +13,12 @@ export class PerfilDemograficoData {
   clasificacion_riesgo: ClasificacionRiesgo;
   fisiologia: Fisiologia;
   demografia: Demografia;
-  reportes_sanguineo: Array<ReporteQuimico> = [];
+  reportes_sanguineo: Array<ResultadoExamenes> = [];
   constructor(
     clasificacion_riesgo: ClasificacionRiesgo,
     fisiologia: Fisiologia,
     demografia: Demografia,
-    reportes_sanguineo: Array<ReporteQuimico> = []
+    reportes_sanguineo: Array<ResultadoExamenes> = []
   ){
     this.clasificacion_riesgo = clasificacion_riesgo;
     this.fisiologia = fisiologia;
@@ -76,16 +76,23 @@ export class Demografia {
   }
 }
 
+export class ResultadoExamenes{
+  resultado: ReporteQuimico;
+  constructor(resultado:ReporteQuimico){
+    this.resultado = resultado;
+  }
+}
+
 export class ReporteQuimico {
-  tipo: string;
+  tipo_examen: string;
   valor: number;
   unidad: string;
   constructor(
-    tipo: string,
+    tipo_examen: string,
     valor: number,
     unidad: string
   ){
-    this.tipo = tipo;
+    this.tipo_examen = tipo_examen;
     this.valor = valor;
     this.unidad = unidad;
   }

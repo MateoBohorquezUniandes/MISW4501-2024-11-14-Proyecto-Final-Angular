@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { PerfilDemografico, Imc, Fisiologia, Demografia, ReporteQuimico } from '../perfil_demografico';
+import { PerfilDemografico, Imc, Fisiologia, Demografia, ReporteQuimico, ResultadoExamenes } from '../perfil_demografico';
 import { PerfilesService } from '../perfiles.service';
 import { ToastrService } from 'ngx-toastr';
 import { PerfilesModule } from '../perfiles.module';
@@ -19,7 +19,7 @@ export class PerfilDemograficoComponent implements OnInit {
   imc: Imc = new Imc("",0);
   fisiologia: Fisiologia = new Fisiologia(0,0,"",0);
   demografia: Demografia = new Demografia("","");
-  reportes_sanguineos: Array<ReporteQuimico> = [];
+  reportes_sanguineos: Array<ResultadoExamenes> = [];
   actualizar_datos:boolean = false;
   agregar_reporte:boolean = false;
   generalForm = this.formBuilder.group({
@@ -125,7 +125,7 @@ export class PerfilDemograficoComponent implements OnInit {
       const request = {
         resultado: {
           tipo_examen: tipo_examen,
-          valor: valor_examen,
+          valor: Number(valor_examen),
           unidad: unidad_examen
         }
       }

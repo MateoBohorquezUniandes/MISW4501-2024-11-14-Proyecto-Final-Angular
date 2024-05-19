@@ -36,7 +36,7 @@ h5 {
   margin-top: 30px;
   display: flex;
 }
-a, p, label, input{
+a, p, label, input, li{
   font-family: "Roboto Condensed";
   font-size: 16px;
   font-weight: bold;
@@ -91,6 +91,12 @@ p.izquierda{
 
 p.blanco {
   color: #FFFFFF;
+}
+
+svg{
+  width:24px;
+  height:24px;
+  pointer-events: none;
 }
 
 label.blanco{

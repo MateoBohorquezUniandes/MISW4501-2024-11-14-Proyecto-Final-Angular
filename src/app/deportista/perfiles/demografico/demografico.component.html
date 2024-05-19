@@ -225,8 +225,15 @@
                   <li
                     class="list-group-item list-group-item-action"
                     *ngFor="let reporte of reportes_sanguineos"
-                  >{{reporte.tipo}}</li>
+                  >
+                  <svg class="bi" fill="#5227cc">
+                    <use
+                      xlink:href="assets/img/bootstrap-icons.svg#file-earmark-medical-fill"
+                    />
+                  </svg>
+                  {{reporte.resultado.tipo_examen}} : {{reporte.resultado.valor}}{{reporte.resultado.unidad}}</li>
                 </ul>
+                <br>
                 <button *ngIf="!agregar_reporte" type="button" class="btn btn-primario" i18n (click)="form_reporte()">Agregar Reporte</button>
                 <div *ngIf="agregar_reporte">
                   <form [formGroup]="reportesForm"
